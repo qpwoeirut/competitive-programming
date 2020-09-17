@@ -1,0 +1,125 @@
+I am on line 124, the second-last line. This is because I just barely made the cutoff score.
+
+
+Final Results: USACO 2018 US Open Contest, Bronze Division
+Key:
+* = Correct
+x = Wrong Answer (including possibly empty or missing output file)
+t = Timeout     
+c = Didn't Compile
+! = Run-time error or exceeded memory limits
+
+Pre-College Participants (Full List):
+Country	  Year	    Name	            Score	   	       tttt   	                  milkorder	   	                    family
+CHN	      2023   	Moheng Chen	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2022   	Eric Yang	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2019   	Andrew Zhang	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+BGR	      2018   	Viktor Terziev	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2018   	Sfiction Siunaus	1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2020   	Shihan Chen	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2019   	Andrew Lim	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2021   	Shannon Bannach	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+KOR	      2021   	Dawn Che	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2019   	Pu Sun	            1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2021   	Baitian Li	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+BLR	      2021   	Kostya Smirnov	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2019   	Lingyu Wang	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2018   	Chengxi Xie	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2019   	Yuankai Xue	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2021   	Jack Zhang	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2019   	Richard Horn	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2020   	Michael Song	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2020   	Annie Blue	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2019   	Pengyi Jiao	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+IRL	      2020   	Eoin Davey	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2021   	Sidra Xu	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2018   	Yawen Zhang	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+TWN	      2018   	Wayne Tu	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+GBR	      2018   	Chris Finn	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2023   	Yumin Zhuang	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2019   	Libin Yang	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+HRV	      2022   	Domagoj Sabolic	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2021   	Andrew Wang	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+IND	      2019   	Teja Vardhan Reddy Dasannagari	1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2019   	Qianlong Cai	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2020   	Justin Yu	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+TWN	      2019   	Tommy Chiang	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2021   	Mahesh John	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+POL	      2018   	Kacper Kluk	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2019   	Mingyu Yu	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2020   	Srikanth Rdy	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+TWN	      2018   	Tangent Cheng	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+TWN	      2019   	Brian Tsai	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+TWN	      2019   	Leo Wang	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+TWN	      2019   	Puyu Liao	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2020   	Shane Rhoads	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2021   	Kyle Chang	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+KOR	      2019   	Michael Jang	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2020   	Yesheng Hang	    1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2019   	Haoyang Fan	        1000		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * * 
+CHN	      2019   	Yuan Zhang	         978		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * x * *
+USA	      2020   	Nafew Lgn	         978		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * ! * * * * * * * * 
+UKR	      2019   	Oleg Fomenko	     978		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * x * * * * * *
+USA	      2020   	Melanie Lin	         978		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * ! * * * * * * * * 
+TWN	      2018   	YuChe Cheng	         978		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * * * * x  
+BGR	      2020   	Stanislav Nikolov	 967		* * * * * * * * * * 		* * * * x * * * * * 		* * * * * * * * * * * * * * *
+USA	      2019   	Siddhant Abhijit	 967		* * * * * * * * * * 		* * * * * * x * * * 		* * * * * * * * * * * * * * *
+CAN	      2019   	Gary Xin	         967		* * * * * * * * * * 		* * * x * * * * * * 		* * * * * * * * * * * * * * * 
+USA	      2020   	Jinay Jain	         956		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * * * * x x * * 
+UKR	      2019   	Dmitriy Dyakivnych	 933		* * * * * * * * * * 		* * * * * * x x * * 		* * * * * * * * * * * * * * * 
+USA	      2020   	Jie Istore	         911		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * x x x * * x * 
+CHN	      2019   	Shaoben Zhu	         911		* * * * * * * * * * 		* * * * * * * * * * 		* * * * * * * * x x x * * x * 
+USA	      2020   	Caleb Chan	         911		* * * * * * * * * * 		* * x * * * x * * * 		* * * * * * * * * * * * * x * 
+CHN	      2021   	Zhiyi Liu	         900		* * * * * * * * * * 		* * * * * x x x * * 		* * * * * * * * * * * * * * * 
+USA	      2022   	Emily Wang	         900		* * x * * * * * * * 		* * * * * * x * * x 		* * * * * * * * * * * * * * * 
+GBR	      2018   	Phoenix Sremcevic	 900		* * * * * * * * * * 		* * x x * * x * * * 		* * * * * * * * * * * * * * * 
+USA	      2021   	Allen Zhang	         900		* * * * * * * * * * 		* * * x x * x * * * 		* * * * * * * * * * * * * * * 
+USA	      2021   	Hubert Yang	         900		* * * * * * * * * * 		* * * x * * x * * x 		* * * * * * * * * * * * * * * 
+ROU	      2020   	Mihai-Cezar Titianu	 889		* * * * * * * * * * 		* * * * * * * * * * 		* x * * * * * x x * * * * x x 
+USA	      2020   	Luke Ostyn	         889		* * * * * * * * * * 		* * x x * * * * * * 		* * * * * * * * * * x * * x * 
+USA	      2020   	Sahaj Rastogi	     889		* * * * * * * * * * 		* * x * * * x * * * 		* * * * * * * * * * x * * x * 
+USA	      2019   	Steven Wu	         878		* * * * * * * * * x 		* * * * * * * * * * 		* x * * * * * * x * * * * x x 
+IRL	      2018   	Agustin Plaza Reino	 867		* * * * * * * * * * 		* * * * x * * * x * 		* x * * * * * * * * * x * * x 
+USA	      2020   	Andrew Song	         867		* * * * * * * * * * 		* * x x x * x * * * 		* * * * * * * * * * * * * * * 
+USA	      2021   	Spandan Das	         856		* * * * * * * * * * 		* * * x x * x * * * 		* * * * * * * * * * * x x * * 
+USA	      2020   	Trevor Ong	         844		* * * * * * * * * * 		* * * * * * * * * * 		* x x * * x x * * * x * * x x 
+USA	      2021   	Daniel Sun	         844		* * * * * * * * * * 		* * x * * * ! * * * 		* x * * * * * * x * * * * x x 
+GEO	      2022   	Datka Khantadze	     844		* * * * * * * * * * 		* * x x x * x * * * 		* * * * * * * x * * * * * * * 
+USA	      2019   	Jeong Ho Lee	     833		* * * * * * * * * x 		* * * * * * * * * * 		* x * x x * * * * * x * * x x 
+USA	      2019   	Akshay Bhamidipati	 833		* * * * * * * * * x 		* * * x x * x * x * 		* * * * * * * * * * * * * * * 
+USA	      2021   	Sunny Li	         822		* * * * * * * * * * 		* * * x x * x * x * 		* * * * * * ! * * * * * * ! * 
+USA	      2020   	Ezra Erives	         800		* * * * * * * * * * 		* * * x * * x * * * 		* x * x x * * * x * * * * t t
+USA	      2022   	Cheryl Lin	         800		* * * * * * * * * * 		* * x x x * x * x x 		* * * * * * * * * * * * * * * 
+CHN	      2020   	Bing Tao Ming	     800		* * * * * * * * * * 		* * x x x * x * * * 		* * * * * x x x * * * * * * * 
+USA	      2020   	Ayhan Hakimoglu	     800		* * * * * * * * * * 		* * * x x * x * x * 		* * * * * * * * * * * x x x * 
+USA	      2020   	Nelson Sun	         800		* * * * * * * * * * 		* x * * x x x * x x 		* * * * * * * * * * * * * * * 
+USA	      2018   	John Davies	         800		* * * * * * * * * * 		* * x x x * x * * * 		* * * * * ! ! x * * * * * * * 
+USA	      2019   	Edward Zhou	         789		* * * * * * * * * x 		* * x * * * x * * * 		* x * * * x x * * x * * * * x 
+CAN	      2020   	William Li	         789		* * * * * * * * * * 		* * * * x * x x x x 		* * * * * * * * x x * * * * * 
+USA	      2019   	Tyler Huang	         789		* x x x x * * * * x 		* * * * * * * * * * 		* * * * * * * * * * * x * x * 
+CHN	      2021   	Zixi Zhang	         778		* * * * * * * * * * 		* * * * * * * * * * 		* x x * * x x x * x x * x ! ! 
+USA	      2023   	William Zhang	     778		* * * * * * * * * * 		* * * x x * x * x * 		* * * * * * ! x x * * * * ! * 
+USA	      2019   	Vidur Gupta	         778		* * * * * * * * * * 		* * x x x * x * * * 		* * * * * * * * x x x * x * * 
+USA	      2021   	James Ni	         778		* * * * * * * * * * 		* ! * x x * x * * * 		* x * * * * ! * x * * * * * x 
+UKR	      2021   	Tihon Hryshechkin	 778		* * * * * * * * * * 		* * * x x x x * * * 		* x * * * * * * x * * * * x x 
+USA	      2022   	Alex Sima	         767		* * * * * * * * * * 		* * * x x * x * * * 		* x x * * x * * * * x * * x x 
+IND	      2022   	Kristopher Paul	     767		x * x x x * * x * x 		* * * * * x * * * * 		* * * * * * * * * * * * * * * 
+IDN	      2020   	Fathiya Nur Assyifa	 767		* * * * * * * * * * 		* x x x x * x * x x 		* * * * * * * * * * * * * * * 
+UKR	      2020   	Diana Kindiakova	 767		* * * * * * * * * * 		* x * x x * x * x * 		* x * * * * * * * * * * * x x 
+USA	      2021   	Pinran Cheng	     767		* * x * x * * * * * 		* * * x x * x * * * 		* x * * * * * x * * * * * * x 
+USA	      2020   	Anudeep Golla	     756		* * * * * * * * * * 		* * * * * * * * * * 		* x x x x * * x x x x x x * x 
+TUR	      2020   	Ghale Don Ghale	     756		* * * * * * * * * * 		* * * x * * x * * * 		* x x x x * * * x * x * * x x 
+USA	      2019   	Jason Jiang	         756		* * * * * x * * * * 		* x * * x * * * x * 		* x x * * * ! * * * * * * x x 
+USA	      2019   	Corey Tolbert	     756		* * x * x * * * * * 		* * x x x * x * * * 		* * * * * x x * * * * * * * * 
+USA	      2021   	Archan Das	         756		* * * * * * * * * x 		* * * x x * x * * * 		* x * * * * * * x * x * * x x 
+USA	      2019   	Lucy Ren	         744		* * * * * * * * * * 		* * * x x * x * * * 		* * * x x * * * x x x x * ! * 
+USA	      2020   	Pranav Pata	         744		* * * * * * * * * * 		* x * x * * x * * * 		* * * x x * * * x x x * x x * 
+USA	      2019   	Parth Purohit	     744		* x x x x * * * * x 		* * * * * * * * * * 		* x * * * * * * x * * * * x x 
+USA	      2020   	William Wu	         744		* * * * * * * * * x 		* * * x x * x * * x 		* x * * * * * * x * * * * x x 
+CHN	      2020   	Yueer Cheng	         733		* * * * * * * * * * 		* * * * * * * * * * 		* x x x x * * x x x x x x x x 
+USA	      2023   	Rishi Cherukuri	     711		* * * * * * * * * * 		* * x * * * x * * * 		* x x * * x x x x x x * * x x 
+USA	      2023   	Lucas Zheng	         700		* * * * * * * * * * 		* * * * * * x * * * 		* x x * * x x x x x x x x x x 
+USA	      2020   	Amy Lin	             700		* * * * * * * * * * 		* * * x x * x * * * 		* x * * * * ! * x x x x x ! x 
+USA	      2020   	Joshua Gong	         700		* * * * * * * * * x 		* * * * x * ! * ! ! 		* x x * * * * * * * * x x ! ! 
+USA	      2023   	Stanley Zhong	     700		* * * * * * * * * * 		* x * x x * x * x * 		x x x * * * * * * * * * x x x 
+USA	      2021   	Benjamin Gao	     700		* * * * * * * * * * 		* * x x x * x * x * 		* x * * * x * * x * * * x x x

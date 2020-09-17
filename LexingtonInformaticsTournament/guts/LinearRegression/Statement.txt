@@ -1,0 +1,16 @@
+You probably just tried looking for the easter egg xD. If you found it, congrats! If not, then its probably fine.
+
+Despite kNN's impressive ability to classify, there is no actual training process happening. It merely processes the data and use them. Therefore, let's get some training xD.
+
+The .in files contains information number numerous dots. Your job is to find the line of best fit with linear regression.
+
+Input format:
+The first line contains an Integer N: Total number of points
+The next N lines describes the N points with their x and y coordinate value in that order.
+
+You will submit two numbers separated by a comma (a,b), which describes the line y = ax + b
+You can have decimals, but remember that the input can at most be 255 characters long.
+
+For instance
+2.123125,6124124 is accepted
+6524.1221244242,,, is not

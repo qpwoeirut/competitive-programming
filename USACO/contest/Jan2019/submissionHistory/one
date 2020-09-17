@@ -1,0 +1,84 @@
+/*
+ * one.cpp
+ *
+ *  Created on: Jan 21, 2019
+ *      Author: Stanley
+ */
+
+#include <iostream>
+
+#include <fstream>
+#include <bitset>
+#include <list>
+#include <queue>
+#include <vector>
+
+using namespace std;
+
+int main() {
+	ifstream fin("planting.in");
+	ofstream fout("planting.out");
+
+	int field_c;
+	fin >> field_c;
+
+	int grass[100001];
+	vector<int> paths[100000];
+	int tmp_a, tmp_b;
+	for (int p=0; p<field_c-1; p++) {
+		fin >> tmp_a >> tmp_b;
+		paths[tmp_a-1].push_back(tmp_b-1);
+		paths[tmp_b-1].push_back(tmp_a-1);
+		grass[p] = -1;
+	}
+
+	int max_grass = 1;
+//	bitset<100001> used;
+	bitset<11> used;
+
+	queue<int> q;
+	q.push(0);
+	grass[0] = 0;
+
+	int cur, cur_grass;
+	vector<int> unvisited; // change to list?
+	while (q.size() > 0) {
+		cur = q.front();
+		cout << cur << endl;
+		q.pop();
+
+		unvisited.clear();
+		used.reset();
+		cout << "setting: " << grass[cur] << endl;
+		used.set(grass[cur]);
+		cout << "unvisited: ";
+		for (int i=0; i<paths[cur].size(); i++) {
+			if (grass[paths[cur][i]] != -1) {
+				cout << "setting: " << grass[paths[cur][i]] << endl;
+				used.set(grass[paths[cur][i]]);
+			}
+			else {
+				unvisited.push_back(paths[cur][i]);
+				cout << paths[cur][i] << " ";
+			}
+		}
+		cout << endl;
+		cout << "used: " << used.to_string() << endl;
+		cur_grass = 0;
+		while (unvisited.size() > 0) {
+			cout << "cg: " << cur_grass << endl;
+			if (used.test(cur_grass) == false) {
+				grass[unvisited[0]] = cur_grass;
+				q.push(unvisited[0]);
+				unvisited.erase(unvisited.begin());
+			}
+			cur_grass++;
+		}
+		max_grass = max(max_grass, cur_grass);
+	}
+
+	cout << endl << max_grass;
+	fout << max_grass;
+
+	return 0;
+}

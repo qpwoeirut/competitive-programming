@@ -1,0 +1,16 @@
+#USACO
+
+**/Debug
+**/.metadata
+**/.recommenders
+**/.cproject
+**/.project
+**/.settings
+
+**/.idea
+**/.vscode
+**.dSYM
+
+**/.DS_Store
+
+**/python3.4.0

@@ -1,0 +1,9 @@
+Contest: 2018 US Open, March 23 to March 26
+Took contest March 24
+Summary written April 3, 2018
+
+This was my first actual contest, and it went very well! I scored exactly the cutoff score, which was 700. This means I am now a Silver Division competitor. I was 1 of 7 seventh graders to be promoted. I also checked the Gold and Platinum results, and next year there will be 1 person the same grade as me in the Platinum Division.
+I was 110th out of all pre-college participants in the Bronze Division. I added up all the pre-college competitors in the higher divisions, and I finished 1442nd out of all of them.
+The Team Tic Tac Toe problem was the easiest. It was the only one in which I got all of the test cases right and I solved it in about 40 minutes.
+The Milking Order problem went okay. I got stuck on the hierarchical ordering of the cows if there were multiple cows in an exact number of positions. I started off with more test cases correct, and after fruitlessly trying to fix the problem, I reverted my changes so I would get more cases right. Sometime soon I will probably rewrite the code for this problem too.
+I just resubmitted the Family Tree problem and got 12 out of 15 test cases right. I will download the test data and update this afterward. UPDATE @ 8:41pm: I just submitted it again and got 100%. It turns out I just forgot to break the loops, so it would overwrite the correct answer with 'COUSINS'.

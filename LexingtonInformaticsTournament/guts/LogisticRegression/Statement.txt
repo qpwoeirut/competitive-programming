@@ -1,0 +1,12 @@
+Okay so Logistic Regression. It is sorta like linear regression?
+Except instead of trying to find a linear relationship between the two variables,
+you are trying to classify the points based on some probabilities.
+Okay, time for you to do more research about it I guess xD.
+
+Input format:
+The first line contains an Integer N: Total number of points
+The next N lines describes the N points with their x and y coordinate value in that order.
+Note that since this is a binary classification, y can be only either 1 or 2.
+
+Like the last problem. You will submit two numbers separated by a comma (a,b),
+which describes the curve y = (e^(ax + b))/(1 + e^(ax + b))

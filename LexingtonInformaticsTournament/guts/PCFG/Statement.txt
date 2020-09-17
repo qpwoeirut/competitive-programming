@@ -1,0 +1,34 @@
+Wow! Good job on getting to the last problem xD. Hm, I mean, if you can get here so quickly,
+I assume you are already pretty good at ML, so, let's keep things up a notch should we?
+No more kNN or linear Regression, or even the neural network you might be expecting, but rather,
+Context Free Grammar!
+
+Or more specifically, Probabilistic Context Free Grammar.
+
+At this point, I assume you've already done your research and know the basic lingos. So, here's the input format.
+
+The first line contains two integers, N and M:
+N is the number of production rules, and M is the number of strings generated using these production rules.
+
+Since this is PCFG, the probability of selecting each rule is not uniform, therefore,
+your job is to write a program, to analyze these generated strings,
+and figure out what the probability of each rules are, rounded to the nearest percentage.
+
+For instance, if the rules are
+S:A
+S:B
+A:a
+B:b
+
+and you get these 5 strings
+a
+b
+a
+a
+a
+
+Then you might say S:A has a probability of 80%, and S:B has a probability of 20%,
+and for the other two, they're both 100%, so for your output, you would write 80,20,100,100
+
+Also note that, we expect your percentages to be proper, meaning that the sum of all probabilities
+of a non-terminal should be 100.

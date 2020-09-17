@@ -1,0 +1,59 @@
+/*
+ * three.cpp
+ *
+ *  Created on: Jan 21, 2019
+ *      Author: Stanley
+ */
+
+#include <iostream>
+
+#include <fstream>
+#include <algorithm>
+#include <list>
+#include <vector>
+
+using namespace std;
+
+int main() {
+	ifstream fin("mountains.in");
+	ofstream fout("mountains.out");
+
+	int mtn_c;
+	fin >> mtn_c;
+
+	bool mtns[100000];
+	vector<pair<int, int> > points; // Check bounds later
+	int tmp_x, tmp_y;
+	for (int m=0; m<mtn_c; m++) {
+		fin >> tmp_x >> tmp_y;
+		points.push_back(make_pair(tmp_x - tmp_y, m));
+		points.push_back(make_pair(tmp_x + tmp_y, m));
+		mtns[m] = false;
+	}
+	sort(points.begin(), points.end());
+
+	int visible_mtns = 0;
+	vector<int> cur_mtns;
+	vector<int>::iterator it;
+	for (int i=0; i<points.size(); i++) {
+		if (cur_mtns.empty() == false && cur_mtns.front() == points[i].second) {
+			visible_mtns++;
+			cur_mtns.erase(cur_mtns.begin());
+			mtns[points[i].second] = false;
+		}
+		else {
+			it = find(cur_mtns.begin(), cur_mtns.end(), points[i].second);
+			if (it == cur_mtns.end()) {
+				cur_mtns.push_back(points[i].second);
+				mtns[points[i].second] = true;
+			}
+			else {
+				cur_mtns.erase(it);
+			}
+		}
+	}
+
+	fout << visible_mtns;
+
+	return 0;
+}

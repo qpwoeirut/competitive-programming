@@ -1,0 +1,13 @@
+# competitive-programming 
+
+Debug
+.metadata
+.project
+.cproject
+.settings
+
+.idea
+*.iml
+*.xml
+
+.DS_Store

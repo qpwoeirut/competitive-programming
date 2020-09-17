@@ -1,0 +1,56 @@
+Hello! This is your first problem on the Guts round called IFELSE!
+
+As you might know already, the theme of the Guts round is Artificial Intelligence.
+So you are probably wondering, how the heck is If and Else AI? Well, if you think about it, if else are the most primitive artificial intelligence. To be fair, ifelse isn't learning anything, but, I think this should serve as a nice starting point for our journey towards more advanced AI algorithms xD.
+
+Input Format:
+The first line contains one integer: N, describing the number of possible attributes
+The second line contains N strings of lowercase letters, separated by spaces, describing the names of the attributes.
+The third line contains N strings of either TRUE or FALSE, describing the object you're trying to identify's status for the respective attribute.
+Finally, all the other lines describe the IF ELSE states. More specifically it is in this structure
+
+IF object IS ATTRIBUTE (
+more IF and ELSE...
+) ELSE (
+more IF and ELSE...
+)
+And once there is enough information to identify what it is, there would be line in the form: OUTPUT xxx.
+
+Sample Input:
+3
+animal real cute
+TRUE FALSE TRUE
+IF object IS animal (
+IF object IS real (
+IF object IS cute (
+output kitty
+) ELSE (
+output blobfish
+)
+) ELSE (
+IF object IS cute (
+output pikachu
+) ELSE (
+output catdog
+)
+)
+) ELSE (
+IF object IS real (
+IF object IS cute (
+output lucky bamboo
+) ELSE (
+output grass
+)
+) ELSE (
+IF object IS cute (
+output golden rye
+) ELSE (
+output fake grass
+)
+)
+)
+
+Sample Output:
+pikachu
+
+<3

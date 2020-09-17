@@ -1,0 +1,32 @@
+3
+animal real cute
+TRUE FALSE TRUE
+IF object IS animal (
+IF object IS real (
+IF object IS cute (
+output kitty
+) ELSE (
+output blobfish
+)
+) ELSE (
+IF object IS cute (
+output pikachu
+) ELSE (
+output catdog
+)
+)
+) ELSE (
+IF object IS real (
+IF object IS cute (
+output lucky bamboo
+) ELSE (
+output grass
+)
+) ELSE (
+IF object IS cute (
+output golden rye
+) ELSE (
+output fake grass
+)
+)
+)
