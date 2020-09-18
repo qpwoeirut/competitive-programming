@@ -1,0 +1,34 @@
+{
+    "sy-full.cpp": {
+        "verdict": "model_solution"
+    },
+    "wy-full.cpp": {
+        "verdict": "correct"
+    },
+    "sy-calc-median.cpp": {
+        "verdict": "failed",
+        "except": {
+            "calc-median": "correct"
+        }
+    },
+    "sy-one-day-sort.cpp": {
+        "verdict": "failed",
+        "except": {
+            "calc-median": "correct",
+            "one-day-sort": "correct"
+        }
+    },
+    "limli-greedy-sum.cpp": {
+        "verdict": "failed",
+        "except": {
+            "two-locations": "correct",
+            "samples": "correct"
+        }
+    },
+    "limli-greedy-ends.cpp": {
+        "verdict": "failed",
+        "except": {
+            "samples": "correct"
+        }
+    }
+}

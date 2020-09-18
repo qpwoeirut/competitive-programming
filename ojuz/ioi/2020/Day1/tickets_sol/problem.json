@@ -1,0 +1,9 @@
+{
+    "name": "tickets",
+    "code": "tickets",
+    "title": "Carnival Tickets",
+    "type": "Batch",
+    "time_limit": 2.0,
+    "memory_limit": 2048,
+    "description": "tickets"
+}

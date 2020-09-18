@@ -1,0 +1,127 @@
+@subtask samples
+manual 1.in
+manual 2.in
+manual 3.in
+
+@subtask all-ones
+gen-uniform 1 1
+gen-uniform 2 1
+gen-uniform 3 1
+gen-uniform 5 1
+gen-uniform 10 1
+gen-uniform 200 1
+gen-uniform 1000 1
+
+@subtask zeros-and-ones
+@include all-ones
+gen-uniform 2 0
+gen-uniform 3 0
+gen-uniform 5 0
+gen-uniform 10 0
+gen-uniform 200 0
+gen-uniform 1000 0
+gen-uniform 5 01
+gen-uniform 10 01
+gen-uniform 200 01
+gen-uniform 1000 01
+gen-valid 3 1 0 0 0 0 1 0
+gen-valid 4 1 0 0 0 0 1 0
+gen-valid 500 30 0 0 40 1 0
+gen-valid 1000 10 0 0 0 1 0
+gen-valid 1000 400 0 0 1 1 0
+gen-valid 1000 2 0 0 1 1 0
+gen-valid 1000 2 0 0 950 1 1 01
+gen-valid 1000 10 0 0 0 1 1 01
+gen-valid 1000 400 0 0 1 1 1 01
+gen-valid 1000 2 0 0 1 1 1 01
+gen-valid 1000 2 0 0 950 1 1 01
+
+@subtask zeros-and-twos
+gen-uniform 2 0
+gen-uniform 3 0
+gen-uniform 1 2
+gen-uniform 2 2
+gen-uniform 3 2
+gen-uniform 5 0
+gen-uniform 10 0
+gen-uniform 200 0
+gen-uniform 1000 0
+gen-uniform 5 2
+gen-uniform 10 2
+gen-uniform 200 2
+gen-uniform 1000 2
+gen-uniform 5 02
+gen-uniform 10 02
+gen-uniform 200 02
+gen-uniform 1000 02
+gen-valid 3 0 1 0 0 0 1 0
+gen-valid 4 0 1 0 0 0 1 0
+gen-valid 5 0 1 0 1 1 0
+gen-valid 500 0 30 0 40 1 0
+gen-valid 1000 0 10 0 0 1 0
+gen-valid 1000 0 200 0 1 1 0
+gen-valid 1000 0 2 0 1 1 0
+gen-valid 1000 0 2 0 950 1 1 02
+gen-valid 1000 0 10 0 0 1 1 02
+gen-valid 1000 0 200 0 1 1 1 02
+gen-valid 1000 0 2 0 1 1 1 02
+gen-valid 1000 0 2 0 950 1 1 02
+
+@subtask zeros-ones-and-twos-possible
+@include all-ones
+gen-uniform 3 0
+gen-uniform 3 2
+gen-valid 5 1 0 0 1 1 0
+gen-valid 500 30 0 0 40 1 0
+gen-valid 1000 10 0 0 0 1 0
+gen-valid 1000 400 0 0 1 1 0
+gen-valid 1000 2 0 0 1 1 0
+gen-valid 5 0 1 0 1 1 0
+gen-valid 500 0 30 0 40 1 0
+gen-valid 1000 0 10 0 0 1 0
+gen-valid 1000 0 200 0 1 1 0
+gen-valid 1000 0 2 0 1 1 0
+gen-valid 5 0 1 0 1 1 0
+gen-valid 10 1 1 0 1 1 0
+gen-valid 10 1 1 1 1 1 0
+gen-valid 500 2 30 20 40 1 0
+gen-valid 1000 0 10 0 0 1 0
+gen-valid 1000 0 0 10 0 1 0
+gen-valid 1000 10 10 10 10 1 0
+gen-valid 1000 1 1 1 950 1 0
+
+@subtask zeros-ones-and-twos
+@include zeros-ones-and-twos-possible
+@include zeros-and-ones
+@include zeros-and-twos
+gen-uniform 5 012
+gen-uniform 10 012
+gen-uniform 200 012
+gen-uniform 1000 012
+gen-valid 5 0 1 0 1 1 1 012
+gen-valid 10 1 1 0 1 1 1 012
+gen-valid 10 1 1 1 1 1 1 012
+gen-valid 500 2 30 20 40 1 1 012
+gen-valid 1000 0 10 0 0 1 5 012
+gen-valid 1000 0 0 10 0 1 5 012
+gen-valid 1000 10 10 10 10 1 5 012
+gen-valid 1000 1 1 1 950 1 5 012
+
+@subtask full
+@include zeros-ones-and-twos
+gen-uniform 5 0123
+gen-uniform 10 0123
+gen-uniform 200 0123
+gen-uniform 1000 0123
+gen-valid 5 0 1 0 1 1 1 3
+gen-valid 10 1 1 0 1 1 1 3
+gen-valid 10 1 1 1 1 1 1 3
+gen-valid 500 2 30 20 40 1 1 3
+gen-valid 1000 0 10 0 0 1 1 3
+gen-valid 1000 0 0 10 0 1 1 3
+gen-valid 1000 10 10 10 10 1 1 3
+gen-valid 1000 1 1 1 950 1 1 3
+gen-uniform 1000 3
+gen-uniform 1000 23
+gen-uniform 1000 13
+gen-uniform 1000 03

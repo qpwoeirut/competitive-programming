@@ -1,0 +1,40 @@
+{
+	"global_validators": ["validator.cpp"],
+	"subtasks": {
+		"samples": {
+			"index": 0,
+			"score": 0,
+			"validators": []
+		},
+		"all-ones": {
+			"index": 1,
+			"score": 11,
+			"validators": ["validator-all-ones.cpp"]
+		},
+		"zeros-and-ones": {
+			"index": 2,
+			"score": 10,
+			"validators": ["validator-zeros-and-ones.cpp"]
+		},
+		"zeros-and-twos": {
+			"index": 3,
+			"score": 19,
+			"validators": ["validator-zeros-and-twos.cpp"]
+		},
+		"zeros-ones-and-twos-possible": {
+			"index": 4,
+			"score": 35,
+			"validators": ["validator-zeros-ones-and-twos.cpp", "validator-possible.cpp"]
+		},
+		"zeros-ones-and-twos": {
+			"index": 5,
+			"score": 21,
+			"validators": ["validator-zeros-ones-and-twos.cpp"]
+		},
+		"full": {
+			"index": 6,
+			"score": 4,
+			"validators": []
+		}
+	}
+}

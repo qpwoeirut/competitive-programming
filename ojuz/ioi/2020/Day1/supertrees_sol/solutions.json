@@ -1,0 +1,43 @@
+{
+    "limli-full.cpp": {
+        "verdict": "model_solution"
+    },
+    "limli-line-st1.cpp": {
+        "verdict": "incorrect",
+        "except": {
+            "all-ones": "correct"
+        }
+    },
+    "limli-many-forest-st1-2.cpp": {
+        "verdict": "incorrect",
+        "except": {
+            "all-ones": "correct",
+            "zeros-and-ones": "correct"
+        }
+    },
+    "limli-many-circle-st3.cpp": {
+        "verdict": "incorrect",
+        "except": {
+            "zeros-and-twos": "correct"
+        }
+    },
+    "limli-always-possible-st4.cpp": {
+        "verdict": "incorrect",
+        "except": {
+            "all-ones": "correct",
+            "zeros-ones-and-twos-possible": "correct"
+        }
+    },
+    "return-zeros.cpp": {
+        "verdict": "incorrect"
+    },
+    "yanhao-full.java": {
+        "verdict": "correct"
+    },
+    "bad-behavior.cpp": {
+        "verdict": "incorrect"
+    },
+    "bad-behavior.java": {
+        "verdict": "incorrect"
+    }
+}

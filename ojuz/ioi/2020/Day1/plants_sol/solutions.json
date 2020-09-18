@@ -1,0 +1,135 @@
+{
+	"plants-yanhao-optimized.cpp": {
+        "verdict": "model_solution"
+    },
+    "plants-original-ac.cpp": {
+        "verdict": "correct"
+    },
+    "plants-yanhao-ac.cpp": {
+        "verdict": "correct"
+    },
+	"plants-yanhao-postorder.cpp": {
+        "verdict": "correct"
+    },
+	"plants-yanhao-sqrt.cpp": {
+		"verdict": "correct"
+	},
+	"plants-yanhao-sqrt_opt.cpp": {
+		"verdict": "correct"
+	},
+	"plants-yanhao-naive_pull.cpp": {
+		"verdict": "failed",
+        "except": {
+            "k_large_segtree": "correct"
+        }		
+	},
+	"plants-yanhao-no_2k.cpp": {
+		"verdict": "failed",
+		"except": {
+			"dfs": "correct",
+			"k_large_segtree": "correct"
+		}
+	},
+    "plants-yanhao-mountain_valley.cpp": {
+        "verdict": "failed",
+        "except": {
+            "mountain_valley": "correct"
+        }
+    },
+	 "plants-yanhao-k_large.cpp": {
+        "verdict": "failed",
+        "except": {
+            "k_large": "correct"
+        }
+    },
+    "plants-yanhao-k_large_segtree.cpp": {
+        "verdict": "failed",
+        "except": {
+            "k_large_segtree": "correct"
+        }
+    },
+	"plants-yanhao-always_comparable.cpp": {
+        "verdict": "failed",
+        "except": {
+            "always_comparable": "correct"
+        }
+    },
+	"plants-yanhao-flyod_warshall.cpp": {
+        "verdict": "failed",
+        "except": {
+            "flyod_warshall": "correct"
+        }
+    },
+	"plants-yanhao-many_permutations.cpp": {
+        "verdict": "failed",
+        "except": {
+            "flyod_warshall": "correct"
+        }
+    },
+	"plants-yanhao-st5_alt.cpp": {
+        "verdict": "failed",
+        "except": {
+            "flyod_warshall": "correct"
+        }
+    },
+	"plants-yanhao-dfs.cpp": {
+        "verdict": "failed",
+        "except": {
+			"dfs": "correct"
+        }
+    },
+	"plants-yanhao-bfs.cpp": {
+        "verdict": "failed",
+        "except": {
+			"dfs": "correct"
+        }
+    },
+	"plants-yanhao-mountain_valley.java": {
+        "verdict": "failed",
+        "except": {
+            "mountain_valley": "correct"
+        }
+    },
+	 "plants-yanhao-k_large.java": {
+        "verdict": "failed",
+        "except": {
+            "k_large": "correct"
+        }
+    },
+    "plants-yanhao-k_large_segtree.java": {
+        "verdict": "failed",
+        "except": {
+            "k_large_segtree": "correct"
+        }
+    },
+	"plants-yanhao-always_comparable.java": {
+        "verdict": "failed",
+        "except": {
+            "always_comparable": "correct"
+        }
+    },
+	"plants-yanhao-flyod_warshall.java": {
+        "verdict": "failed",
+        "except": {
+            "flyod_warshall": "correct"
+        }
+    },
+	"plants-yanhao-dfs.java": {
+        "verdict": "failed",
+        "except": {
+			"dfs": "correct"
+        }
+    },
+	"plants-yanhao-bfs.java": {
+        "verdict": "failed",
+        "except": {
+			"dfs": "correct"
+        }
+    },
+	"plants-yanhao-scam.cpp": {
+		"verdict": "failed"
+	},
+	"plants-return_zero.cpp": {
+		"verdict": "failed"
+	}
+}

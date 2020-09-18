@@ -1,0 +1,114 @@
+@subtask samples
+manual 1.in
+manual 2.in
+
+@subtask mountain_valley
+manual 3.in
+manual 4.in
+gen-random 4 2 3
+gen-random 7 2 10
+gen-random 10 2 30
+gen-st1_longpath 20 2 200000 2
+gen-st1_longpath 20000 2 200000 100
+gen-st1_longpath 200000 2 200000 10
+gen-st1_longpath 200000 2 200000 100
+gen-st1_longpath 200000 2 200000 1000
+gen-st1_longpath 200000 2 200000 10000
+gen-st1_longpath 200000 2 200000 50000
+trivial 200000 2 200000 0
+trivial 200000 2 200000 1
+
+@subtask k_large
+manual 3.in
+manual 4.in
+gen-random 4 3 6
+gen-random 5 3 10
+gen-random 100 80 500
+gen-random 1000 800 5000
+gen-random 5000 4000 200000
+gen-longpath 100 80 5000
+gen-longpath 1000 800 5000
+gen-longpath 5000 4000 200000
+trivial 5000 2501 200000 0
+trivial 5000 2501 200000 1
+trivial2 5000 200000
+
+@subtask k_large_segtree
+@include k_large
+gen-random 20000 10269 200000
+gen-random 200000 123456 200000
+gen-longpath 20000 10269 200000
+gen-longpath 200000 123456 200000
+trivial 200000 100001 200000 0
+trivial 200000 100001 200000 1
+trivial2 200000 200000
+
+@subtask always_comparable
+@include k_large_segtree
+gen-longpath 5 2 3 4
+gen-longpath 20 8 1 4
+gen-longpath 2000 10 200000 4
+gen-longpath 200000 10 200000 4
+gen-longpath 200000 100 200000 4
+gen-longpath 200000 1000 200000 4
+gen-longpath 200000 10000 200000 4
+gen-longpath 200000 90000 200000 4
+gen-jump_around 200000 30 200000 4
+gen-interval 200000 30 200000 20 4
+trivial 200000 2 200000 0
+trivial 200000 100 200000 1
+trivial 200000 60000 200000 0
+
+@subtask flyod_warshall
+manual 3.in
+manual 4.in
+gen-random 6 2 15 5
+gen-random 6 3 15 5
+gen-random 30 3 435 5
+gen-random 100 6 4950 5
+gen-random 300 10 44850 5
+gen-random 300 100 44850 5
+gen-longpath 300 10 44850 5
+gen-longpath 300 100 44850 5
+gen-interval 300 10 44850 7 5
+gen-interval 300 20 44850 16 5
+trivial2 300 44850
+
+@subtask dfs
+manual 3.in
+manual 4.in
+gen-random 5 2 4 6
+gen-random 10 3 9 6
+gen-random 1001 100 1000 6
+gen-random 200000 100 199999 6
+gen-random 200000 1000 199999 6
+gen-random 200000 10000 199999 6
+gen-random 200000 90000 199999 6
+gen-jump_around 200000 30 199999 6
+gen-jump_around 200000 80001 199999 6
+gen-longpath 200000 10 199999 6
+gen-longpath 200000 100 199999 6
+gen-longpath 200000 1000 199999 6
+gen-longpath 200000 10000 199999 6
+gen-interval 200000 15 199999 8 6
+gen-interval 200000 120 199999 112 6
+
+@subtask full
+@include mountain_valley
+@include flyod_warshall
+@include always_comparable
+gen-random 2000 10 200000
+gen-random 20000 10 200000
+gen-random 200000 10 200000
+gen-random 200000 100 200000
+gen-random 200000 1000 200000 
+gen-random 200000 10000 200000
+gen-random 200000 90000 200000
+gen-jump_around 200000 30 200000 50
+gen-jump_around 200000 80001 200000 50
+gen-longpath 200000 10 200000 50
+gen-longpath 200000 100 200000 50
+gen-longpath 200000 1000 200000 50
+gen-longpath 200000 10000 200000 50
+gen-interval 200000 15 200000 100 8
+gen-interval 200000 120 200000 100 112

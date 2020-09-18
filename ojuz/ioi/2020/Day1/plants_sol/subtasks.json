@@ -1,0 +1,45 @@
+{
+	"global_validators": ["validator.cpp"],
+	"subtasks": {
+		"samples": {
+			"index": 0,
+			"score": 0,
+			"validators": []
+		},
+		"mountain_valley": {
+			"index": 1,
+			"score": 5,
+			"validators": ["validator-mountain_valley.cpp"]
+		},
+		"k_large": {
+			"index": 2,
+			"score": 14,
+			"validators": ["validator-k_large.cpp"]
+		},
+		"k_large_segtree": {
+			"index": 3,
+			"score": 13,
+			"validators": ["validator-k_large_segtree.cpp"]
+		},
+		"always_comparable": {
+			"index": 4,
+			"score": 17,
+			"validators": ["validator-always_comparable.cpp", "validator-always_comparable2.cpp"]
+		},
+		"flyod_warshall": {
+			"index": 5,
+			"score": 11,
+			"validators": ["validator-flyod_warshall.cpp"]
+		},
+		"dfs": {
+			"index": 6,
+			"score": 15,
+			"validators": ["validator-dfs.cpp"]
+		},
+		"full": {
+			"index": 7,
+			"score": 25,
+			"validators": []
+		}
+	}
+}

@@ -1,0 +1,94 @@
+@subtask samples
+manual 1.in
+manual 2.in
+
+@subtask calc-median
+gen-random 2 1 1 1
+gen-random 6 1 1 1
+gen-random 10 1 1 1
+gen-random 80 1 1 1
+gen-random 300 1 1 1
+gen-random 1500 1 1 1
+
+@subtask one-day-sort
+gen-random 2 2 1 1
+gen-random 6 6 1 1
+gen-random 10 10 1 1
+gen-random 80 80 1 1
+gen-random 300 300 1 1
+gen-random 1500 1500 1 1
+
+@subtask two-locations
+manual 3.in
+gen-random 2 2 1 0
+gen-random 10 10 5 0
+gen-random 80 80 40 0
+gen-random 300 300 150 0
+gen-random 1500 1500 750 0
+gen-random 1500 1500 1000 0
+gen-random 100 100 100 0
+gen-random 10 10 10 0
+gen-random 10 10 9 0
+gen-random 10 10 8 0
+kill-greedy-scam 150 150 100 1
+kill-greedy-scam 500 150 100 1
+kill-greedy-scam 150 500 400 1
+kill-greedy-scam 1500 1500 1200 1
+
+@subtask all-sent
+manual 4.in
+gen-random 2 2 2 1
+gen-random 10 10 10 1
+gen-random 80 80 80 1
+gen-random 300 300 300 1
+gen-random 10 1500 1500 1
+gen-random 1500 10 10 1
+gen-random 1500 1500 1500 1
+kill-greedy-scam 1500 1400 1400 1000000000
+kill-greedy-scam 1400 1500 1500 1000000000
+kill-greedy-scam 1500 1500 1500 1000000000
+
+@subtask n2k2-knapsack
+manual 4.in
+gen-random 80 80 1 1
+gen-random 80 80 5 1
+gen-random 80 80 20 1
+gen-random 80 80 40 1
+gen-random 80 80 60 1
+gen-random 10 80 65 1
+gen-random 80 8 7 1
+kill-greedy-scam 80 80 50 1000
+kill-greedy-scam 80 80 50 1000000000
+kill-greedy-scam 80 80 70 1000
+kill-greedy-scam 80 80 70 1000000000
+
+@subtask n2k-no-pq
+@include n2k2-knapsack
+gen-random 300 300 2 1
+gen-random 300 300 10 1
+gen-random 300 300 150 1
+gen-random 300 300 300 1
+gen-random 8 300 6 1
+gen-random 300 20 8 1
+gen-random 300 8 4 1
+kill-greedy-scam 300 290 200 1000
+kill-greedy-scam 290 300 200 1000000000
+kill-greedy-scam 300 290 280 1000
+kill-greedy-scam 290 300 280 1000000000
+
+@subtask full 
+@include n2k-no-pq
+gen-random 500 500 2 1
+gen-random 500 500 10 1
+gen-random 500 500 500 1
+gen-random 1000 1000 500 1
+gen-random 1000 1000 1000 1
+gen-random 1500 10 10 1
+gen-random 10 1500 1500 1
+gen-random 1500 1500 10 1
+gen-random 1500 1500 750 1
+gen-random 1500 1500 1500 1
+kill-greedy-scam 1500 1450 1400 1000
+kill-greedy-scam 1450 1500 1400 1000000000
+kill-greedy-scam 1500 1450 800 1000
+kill-greedy-scam 1450 1500 800 1000000000

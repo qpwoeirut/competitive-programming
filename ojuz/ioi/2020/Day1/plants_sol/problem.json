@@ -1,0 +1,9 @@
+{
+    "name": "plants",
+    "code": "plants",
+    "title": "Comparing Plants",
+    "type": "Batch",
+    "time_limit": 4.0,
+    "memory_limit": 2048,
+    "description": "plants"
+}

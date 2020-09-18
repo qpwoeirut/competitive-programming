@@ -1,0 +1,45 @@
+{
+	"global_validators": ["validator.cpp"],
+	"subtasks": {
+		"samples": {
+			"index": 0,
+			"score": 0,
+			"validators": []
+		},
+		"calc-median": {
+			"index": 1,
+			"score": 11,
+			"validators": ["validator-calc-median.cpp"]
+		},
+		"one-day-sort": {
+			"index": 2,
+			"score": 16,
+			"validators": ["validator-one-day-sort.cpp"]
+		},
+		"two-locations": {
+			"index": 3,
+			"score": 14,
+			"validators": ["validator-two-locations.cpp"]
+		},
+		"all-sent": {
+			"index": 4,
+			"score": 14,
+			"validators": ["validator-all-sent.cpp"]
+		},
+		"n2k2-knapsack": {
+			"index": 5,
+			"score": 12,
+			"validators": ["validator-n2k2-knapsack.cpp"]
+		},
+		"n2k-no-pq": {
+			"index": 6,
+			"score": 23,
+			"validators": ["validator-n2k-no-pq.cpp"]
+		},
+		"full": {
+			"index": 7,
+			"score": 10,
+			"validators": []
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+    "name": "supertrees",
+    "code": "supertrees",
+    "title": "Connecting Supertrees",
+    "type": "Batch",
+    "time_limit": 1.0,
+    "memory_limit": 2048,
+    "description": "supertrees"
+}
