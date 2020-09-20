@@ -25,7 +25,7 @@ def main():
     args = parser.parse_args()
     filename = args.filename
     if os.path.isfile(filename):
-        if input("Replace existing file? y/n").lower() not in ['y', 'yes']:
+        if input("Replace existing file? y/n: ").lower() not in ['y', 'yes']:
             return
         else:
             print("Replacing file")
