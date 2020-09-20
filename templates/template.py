@@ -2,17 +2,19 @@
 
 import argparse
 import datetime
+import os
 
 
 class Feature:
     EMPTY = []
+    TIMESTAMP = "timestamp"
     FILE_IO = "file-io"
     TC_FORMAT = "tc-format"
     PROBLEM_HEADER = "header"
     USE_CLASS = "class"
 
 
-FEATURES = [Feature.EMPTY, Feature.FILE_IO, Feature.TC_FORMAT, Feature.PROBLEM_HEADER]  # , Feature.USE_CLASS]
+FEATURES = [Feature.EMPTY, Feature.TIMESTAMP, Feature.FILE_IO, Feature.TC_FORMAT, Feature.PROBLEM_HEADER]  # , Feature.USE_CLASS]
 
 
 def main():
@@ -21,17 +23,27 @@ def main():
     parser.add_argument('features', nargs='*', help='list of features to include in template', choices=FEATURES)
 
     args = parser.parse_args()
+    filename = args.filename
+    if os.path.isfile(filename):
+        if input("Replace existing file? y/n").lower() not in ['y', 'yes']:
+            return
+        else:
+            print("Replacing file")
 
     features = args.features
 
     comment = f"\n//{args.filename} created at {datetime.datetime.now().strftime('%D %T')}\n"
 
+    if Feature.TIMESTAMP in features:
+        with open(filename, 'w') as prog:
+            prog.write(comment.strip() + '\n\n')
+        return
     header = comment + HEADER
     if Feature.PROBLEM_HEADER in features:
-        header = """
+        header = f"""
 /*
 ID: zhongbr1
-TASK: {args.filename}
+TASK: {filename}
 LANG: C++11
 */
         """ + header
@@ -60,7 +72,7 @@ void solve(int testcase) {
     parts = [header, DEFINE, TYPEDEF, FUNC, io, CONST, main_func]
     file = '\n\n'.join([part.strip() for part in parts])
 
-    with open(args.filename, 'w') as prog:
+    with open(filename, 'w') as prog:
         prog.write(file)
 
 
