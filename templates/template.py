@@ -135,7 +135,7 @@ template <class T1,class T2> struct cmps {
 
 ll binpow(ll x, ll p, const ll& mod) {assert(mod>0);
     ll ret = 1;
-    for(; p>0; p>>=1, x = x*x % mod) if(p & 1) ret = ret*x % MOD;
+    for(; p>0; p>>=1, x = x*x % mod) if(p & 1) ret = ret*x % mod;
     return ret;
 }
 
