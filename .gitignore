@@ -14,6 +14,8 @@ Debug
 
 *.zip
 
+/CSES/contests/BOI/2019/Day2/primes.out
+
 ######## from IOI Solutions ########
 /sandbox/
 /tests/
