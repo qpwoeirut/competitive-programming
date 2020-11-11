@@ -12,6 +12,9 @@ Debug
 
 .DS_Store
 
+# This stuff is stored on YT
+/Recordings
+
 *.zip
 
 /CSES/contests/BOI/2019/Day2/primes.out
