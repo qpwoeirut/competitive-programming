@@ -33,6 +33,7 @@ def main():
     features = args.features
 
     comment = f"\n//{args.filename} created at {datetime.datetime.now().strftime('%D %T')}\n"
+    basename = args.filename.rsplit('.', maxsplit=1)[0]
 
     if Feature.TIMESTAMP in features:
         with open(filename, 'w') as prog:
@@ -50,7 +51,7 @@ LANG: C++11
 
     io = IO
     if Feature.FILE_IO in features:
-        io = FILE_IO
+        io = gen_file_io(basename)
 
     if Feature.TC_FORMAT in features:
         main_func = """
@@ -110,11 +111,12 @@ typedef pair<int,int> pii;
 typedef pair<ll,ll> pll;
 
 typedef unsigned long long ull;
+typedef long double dbl;
 typedef pair<int,bool> pib;
 typedef pair<ll,bool> plb;
-typedef pair<double,double> pdd;
+typedef pair<dbl,dbl> pdd;
 typedef map<ll,ll> mll;
-typedef map<char, int> mci;
+typedef map<char,int> mci;
 typedef map<string,int> msi;
 typedef map<string,string> mss;
 """
@@ -139,21 +141,23 @@ ll binpow(ll x, ll p, const ll& mod) {assert(mod>0);
     return ret;
 }
 
-template <class T> void chmn(T& a, const T& b) {if (a>b) a=b;}
-template <class T> void chmx(T& a, const T& b) {if (a<b) a=b;}
+template <class T> bool chmn(T& a, const T& b) {return ((a>b) ? ((a=b) || true) : false);}
+template <class T> bool chmx(T& a, const T& b) {return ((a<b) ? ((a=b) || true) : false);}
 """
 
 IO = """
 void setIO(const string& filename = "") {
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr); cout.tie(nullptr);
+	cin.tie(0)->sync_with_stdio(0);
+    if (filename.size() > 0) {
+        freopen((filename + ".in").c_str(), "r", stdin);
+        freopen((filename + ".out").c_str(), "w", stdout);
+    }
 }
 """
 
-FILE_IO = """
-void setIO(const string& filename = "") {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr); cout.tie(nullptr);
+def gen_file_io(basename):
+    return f"""void setIO(const string& filename = "{basename}") """ + """{
+    cin.tie(0)->sync_with_stdio(0);
     if (filename.size() > 0) {
         freopen((filename + ".in").c_str(), "r", stdin);
         freopen((filename + ".out").c_str(), "w", stdout);
@@ -165,12 +169,12 @@ CONST = """
 int chr[8] = {-1, 0, 1, 0, -1, -1, 1, 1};
 int chc[8] = {0, 1, 0, -1, -1, 1, -1, 1};
 
-const ll MOD = 1e9+7; //998244353;
+const ll MOD = 1e9+7; //998244353 //1e9+9 //1e9+21 // 1e9+33;
 const int INIT = 1001001001;
 const int MN = 1001001;
 
 ll N, M, K;
-//ll A[MN];
+ll A[MN];
 //ll G[MN][MN];
 //set<ll> adj[MN];
 """
