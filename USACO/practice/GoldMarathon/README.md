@@ -5,23 +5,14 @@ Starting Thursday, November 12th, I want to solve (or re-solve) every USACO Gold
 ## November 12th
 Start Time: 4:45pm
 
-### December 2015
-High Card Low Card (Gold) (cardgame): 5:07pm
-    - Greedy
-Fruit Feast (feast): 5:14pm
-    - Knapsack DP
-Bessie's Dream (dream): 5:41pm
-    - BFS with 4-D states
-
-## January 2016
-Angry Cows (angry): 6:32pm
-    - Precompute prefix/suffix, binary search on answer with sliding window
-Radio Contact (radio): 6:53pm
-    - Precompute positions, DP\[fj]\[bessie]
-Lights Out (lightsout): 7:51pm
-    - Wrote an N^2 log N^2 with hashing, distance precomp
-    - Had to look up the ccw function
-    - N <= 200 so I didn't have to do N^2 log N^2 but I did anyways
+| Contest  | Time Solved | ID        | Name                      | Method          |
+| -------- | ----------- | --------- | ------------------------- | --------------- |
+| Dec 2015 | 5:07pm      | cardgame  | High Card Low Card (Gold) | Greedy          |
+| Dec 2015 | 5:14pm      | feast     | Fruit Feast               | Knapsack DP     |
+| Dec 2015 | 5:41pm      | dream     | Bessie's Dream            | BFS with 4-D states|
+| Jan 2016 | 6:32pm      | angry     | Angry Cows                | Precompute prefix/suffix, binary search on answer with sliding window             |
+| Jan 2016 | 6:53pm      | radio     | Radio Contact             | Precompute positions, DP\[fj]\[bessie] |
+| Jan 2016 | 7:51pm      | lightsout | Lights Out                | Wrote an N<sup>2</sup> log N<sup>2</sup> with hashing, distance precomp<br>Had to look up the ccw function<br>N <= 200 so I didn't have to do N<sup>2</sup> log N<sup>2</sup> but I did anyways
 
 Stopped because of Chemistry H Unit 2 Test tomorrow
 
