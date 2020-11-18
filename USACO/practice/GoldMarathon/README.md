@@ -2,7 +2,7 @@
 
 Starting Thursday, November 12th, I want to solve (or re-solve) every USACO Gold problem from December 2015 onwards. This is in preparation for the upcoming USACO contest season, which will start in December.
 
-## November 12th
+## Thursday, November 12th
 Start Time: 4:45pm
 
 | Contest  | Time Solved | ID        | Name                      | Method          |
@@ -15,4 +15,16 @@ Start Time: 4:45pm
 | Jan 2016 | 7:51pm      | lightsout | Lights Out                | Wrote an N<sup>2</sup> log N<sup>2</sup> with hashing, distance precomp<br>Had to look up the ccw function<br>N <= 200 so I didn't have to do N<sup>2</sup> log N<sup>2</sup> but I did anyways
 
 Stopped because of Chemistry H Unit 2 Test tomorrow
+
+
+## Sunday, November 15th
+Start Time: 7:30pm
+
+| Contest  | Time Solved | ID      | Name                    | Method               |
+| -------- | ----------- | ------- | ----------------------- | -------------------- |
+| Jan 2016 | 7:44pm      | cbarn   | Circular Barn           | Greedy Simulation    |
+| Jan 2016 | 8:15pm      | cbarn2  | Circular Barn Revisited | DP\[door]\[i]\[prev] | 
+| Jan 2016 | Unfinished (Stopped at 10:17pm, got 9/10) | fencedin | Fenced In | MST |
+
+Need to go finish an essay organizer for an essay on Lord of the Flies
 
