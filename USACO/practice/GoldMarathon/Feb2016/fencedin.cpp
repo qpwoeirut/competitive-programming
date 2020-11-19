@@ -10,26 +10,34 @@ using namespace std;
 typedef long long ll;
 
 const int MN = 2005;
+const int SHF = 11;
+const int AND = (1 << 11) - 1;
 
 int W, H, N, M;
 int A[MN], B[MN];
 
 int par[MN][MN];
-int size[MN][MN];
-pair<int,int> root(const pii& p) {
-    if (par[p.x][p.y] != p) {
-        par[p.x][p.y] = root(par[p.x][p.y]);
+int sz[MN][MN];
+int root(const int p) {
+    const int x = p >> SHF, y = p & AND;
+    if (par[x][y] != p) {
+        par[x][y] = root(par[x][y]);
     }
-    return par[p.x][p.y];
+    return par[x][y];
 }
 
-bool join(const pii& u, const pii& v) {
-    const pii ru = root(u), rv = root(v);
+bool join(const int u, const int v) {
+    const int ru = root(u), rv = root(v);
     if (ru == rv) return false;
 
-    if (sz[ru.x][ru.y] < sz[rv.x][rv.y]) swap(ru, rv);
-    sz[ru.x][ru.y] += sz[rv.x][rv.y];
-    par[rv.x][rv.y] = ru;
+    int rux = ru >> SHF, ruy = ru & AND;
+    int rvx = rv >> SHF, rvy = rv & AND;
+    if (sz[rux][ruy] < sz[rvx][rvy]) {
+        swap(rux, rvx);
+        swap(ruy, rvy);
+    }
+    sz[rux][ruy] += sz[rvx][rvy];
+    par[rvx][rvy] = ru;
     return true;
 }
 
@@ -40,4 +48,46 @@ int main() {
 
     cin >> W >> H >> N >> M;
     for (int i=0; i<N; ++i) {
-        cin >> A[i]
+        cin >> A[i];
+    }
+    for (int i=0; i<M; ++i) {
+        cin >> B[i];
+    }
+    sort(A, A+N);
+    sort(B, B+M);
+    A[N] = W;
+    B[M] = H;
+    for (int i=N; i>0; --i) {
+        A[i] -= A[i-1];
+    }
+    for (int i=M; i>0; --i) {
+        B[i] -= B[i-1];
+    }
+    ++N; ++M;
+    sort(A, A+N);
+    sort(B, B+M);
+
+    for (int i=0; i<N; ++i) {
+        for (int j=0; j<M; ++j) {
+            par[i][j] = (i << SHF) | j;
+            sz[i][j] = 1;
+        }
+    }
+
+    ll ans = 0;
+    for (int i=0, j=0; i<N || j<M;) {
+        if (j == M || (i < N && A[i] <= B[j])) {
+            for (int k=0; k+1<M; ++k) {
+                if (join((i << SHF) | k, (i << SHF) |(k + 1))) ans += A[i];
+            }
+            ++i;
+        } else {
+            for (int k=0; k+1<N; ++k) {
+                if (join((k << SHF) | j, ((k + 1) << SHF) | j)) ans += B[j];
+            }
+            ++j;
+        }
+    }
+
+    cout << ans << endl;
+}

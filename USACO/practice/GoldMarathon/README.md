@@ -28,3 +28,19 @@ Start Time: 7:30pm
 
 Need to go finish an essay organizer for an essay on Lord of the Flies
 
+## Monday, November 16th - Wednesday, November 18th
+I spent a couple hours trying to constant optimize my Prim's solution.
+I changed my solution to use bitshifts to store the items, and used the `push_heap` and `pop_heap` STL functions instead of a `priority_queue` to save on the overhead of container expansion.
+I wasn't able to get the last test case.
+![](./Feb2016/fencedin_with_prim.png)
+
+In the end I read the editorial and used Kruskal.
+The editorial's code makes use of the neat observation that the cost of the edges separating any one row or column will always be the same, so we don't actually need to store and then sort all of the edges.
+Instead we just sort the horizontal difference array and the vertical difference array, and then go through both of those.
+I glanced at the Plat version's editorial as well, and it seems to be key to the Plat solutions.
+Of course, the editorial's text decided to not mention this observation at all.
+I had to spend 30 minutes reading the editorial code and drawing things to figure out what it was doing.
+
+My final solution was based on the editorial's code and so they look very similar.
+![](./Feb2016/fencedin_with_kruskal.png)
+
