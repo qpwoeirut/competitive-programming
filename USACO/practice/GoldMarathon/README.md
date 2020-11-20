@@ -22,11 +22,12 @@ Start Time: 7:30pm
 
 | Contest  | Time Solved | ID      | Name                    | Method               |
 | -------- | ----------- | ------- | ----------------------- | -------------------- |
-| Jan 2016 | 7:44pm      | cbarn   | Circular Barn           | Greedy Simulation    |
-| Jan 2016 | 8:15pm      | cbarn2  | Circular Barn Revisited | DP\[door]\[i]\[prev] | 
-| Jan 2016 | Unfinished (Stopped at 10:17pm, got 9/10) | fencedin | Fenced In | MST |
+| Feb 2016 | 7:44pm      | cbarn   | Circular Barn           | Greedy Simulation    |
+| Feb 2016 | 8:15pm      | cbarn2  | Circular Barn Revisited | DP\[door]\[i]\[prev] | 
+| Feb 2016 | Unfinished (Stopped at 10:17pm, got 9/10) | fencedin | Fenced In | MST |
 
 Need to go finish an essay organizer for an essay on Lord of the Flies
+
 
 ## Monday, November 16th - Wednesday, November 18th
 I spent a couple hours trying to constant optimize my Prim's solution.
@@ -43,4 +44,20 @@ I had to spend 30 minutes reading the editorial code and drawing things to figur
 
 My final solution was based on the editorial's code and so they look very similar.
 ![](./Feb2016/fencedin_with_kruskal.png)
+
+
+## Thursday, November 19th
+Start Time: 6:50pm
+Read Open 2016 editorials from 7:51-7:58
+Dinner + talking w/ family until 9pm
+
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Open 2016 | 7:12pm      | split     | Splitting the Field | Sweepline               |
+| Open 2016 | 7:26pm      | closing   | Closing the Farm    | Reverse input, DSU      |
+| Open 2016 | 7:51pm      | 248       | 248                 | Interval DP             |
+| Dec 2016  | 9:17pm      | moocast   | Moocast             | Euclidean MST w/ Prim   |
+| Dec 2016  | 9:37pm      | checklist | Cow Checklist       | DP\[h]\[g]\[prev]       |
+| Dec 2016  | 10:52pm     | lasers    | Lasers and Mirrors  | Model as graph, 0-1 BFS |
+
 
