@@ -47,9 +47,9 @@ My final solution was based on the editorial's code and so they look very simila
 
 
 ## Thursday, November 19th
-Start Time: 6:50pm
-Read Open 2016 editorials from 7:51-7:58
-Dinner + talking w/ family until 9pm
+Start Time: 6:50pm<br>
+Read Open 2016 editorials from 7:51-7:58<br>
+Dinner + talking w/ family until 9pm<br>
 
 | Contest   | Time Solved | ID        | Name                | Method                  |
 | --------- | ----------- | --------- | ------------------- | ----------------------- |
