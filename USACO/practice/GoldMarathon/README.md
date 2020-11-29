@@ -61,3 +61,64 @@ Dinner + talking w/ family until 9pm<br>
 | Dec 2016  | 10:52pm     | lasers    | Lasers and Mirrors  | Model as graph, 0-1 BFS |
 
 
+## Sunday, November 22nd
+Start Time: 7:00pm<br>
+Pause to eat dinner: 8:06pm -  8:34pm<br>
+
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Jan 2017  | 7:10pm      | bphoto    | Balanced Photo      | BIT                     |
+| Jan 2017  | 7:19pm      | hps       | Hoof, Paper, Scissors | DP\[game]\[changes]\[cur] |
+| Jan 2017  | 8:02pm      | cownav    | Cow Navigation      | BFS with lots of state info |
+| Feb 2017  | 8:53pm      | visitfj   | WDTCCTR             | Dijkstra                |
+| Feb 2017  | 9:02pm      | nocross   | WDTCCTR II          | DP\[left]\[right\       |
+| Feb 2017  | 9:32pm      | circlecross | WDTCCTR III       | BIT                     |
+| Open 2017 | 10:56pm (unfinished) | cownomics | Bovine Genomics | String hash + binsearch |     
+
+
+
+## Monday, November 23rd
+Solved Bovine Genomics by fixing the substring hash calculation<br>
+N and M were also swapped when fixing the left endpoint of the position search, so I fixed that too.<br>
+It doesn't seem like there were any anti-hash hacks so I changed `MCT` to 1 and only used 1e9 + 7.<br>
+I could probably make this a bit faster by removing the creation of arrays but it passes comfortably already so I won't bother.<br>
+![](./Open2017/cownomics.png)
+
+
+## Wednesday, November 25th
+Started solving Modern Art 2 around 9:15pm<br>
+Finished at 9:37pm<br>
+![](./Open2017/art2.png)
+
+Recap of Open 2017:<br>
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Open 2017 |             | cownomics | Bovine Genomics     | String hash + binsearch |
+| Open 2017 | 9:37pm      | art2      | Modern Art 2        | Observation + stack     |
+
+
+## Thursday, November 26th
+Start Time: 5:10pm
+Thanksgiving Dinner w/ family: 6:00pm - 7:55pm
+
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Dec 2017  | 5:56pm      | piepie    | A Pie for a Pie     | BFS with sketchy unvisited set |
+| Dec 2017  | 8:29pm      | barnpainting | Barn Painting    | DP on tree              |
+| Dec 2017  | 8:36pm      | hayfeast  | Haybale Feast       | Two pointers            |
+| Jan 2018  | 8:57pm      | mootube   | MooTube             | Offine queries w/ DSU   |
+| Jan 2018  | 9:17pm      | atlarge   | Cow At Large        | DFS and dist in tree    |
+| Jan 2018  | 10:20pm     | spainting | Stamp Painting      | DP + psum + combo + bpow |
+
+
+## Friday, November 27th
+Start Time: 4:50pm
+
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Feb 2018  | 5:31pm      | snowboots | Snow Boots          | Offine queries w/ DSU   |
+| Feb 2018  | 6:03pm      | dirtraverse | Directory Traversal | DP on tree            |
+| Feb 2018  | 6:18pm      | taming    | Taming the Herd     | DP\[day]\[breakout]\[val] |
+| Open 2018 | 6:58pm      | sort      | Out of Sorts        | Remembering what the editorial said |
+| Open 2018 | 7:15pm      | milkorder | Milking Order       | Binsearch + toposort    |
+| Open 2018 | 7:47pm      | talent    | Talent Show         | Knapsack on both weight and talent |
