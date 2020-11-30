@@ -122,3 +122,16 @@ Start Time: 4:50pm
 | Open 2018 | 6:58pm      | sort      | Out of Sorts        | Remembering what the editorial said |
 | Open 2018 | 7:15pm      | milkorder | Milking Order       | Binsearch + toposort    |
 | Open 2018 | 7:47pm      | talent    | Talent Show         | Knapsack on both weight and talent |
+
+
+## Sunday, November 29th
+Start Time: 7:00pm
+Doing Cow Land last since I remember this problem being very difficult and I never actually solved it.
+My computer crashed around 8:02pm and I lost the recording for the first hour.
+
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Feb 2019  | 7:27pm      | dishes    | Dishwashing         | Binary search + greedy  |
+| Feb 2019  | 8:51pm      | paintbarn | Painting the Barn   | 2D psum + 2D Kadane     |
+| Feb 2019  | 9:36pm      | cowland   | Cow Land            | LCA + BIT for update ranges |
+
