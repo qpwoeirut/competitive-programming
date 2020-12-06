@@ -135,3 +135,30 @@ My computer crashed around 8:02pm and I lost the recording for the first hour.
 | Feb 2019  | 8:51pm      | paintbarn | Painting the Barn   | 2D psum + 2D Kadane     |
 | Feb 2019  | 9:36pm      | cowland   | Cow Land            | LCA + BIT for update ranges |
 
+
+## Thursday, December 3rd
+Start Time: 5:00pm
+
+This contest was the first Gold contest I participated in.
+I got 381 on it by solving walk and getting a few test cases on balance.
+I checked my old solution for walk today and I have absolutely no idea how it worked.
+It also had an array whose bounds were 750x750 instead of 7500x7500 but fortunately that array wasn't used.
+For snakes my old solution got MLE but I didn't realize it because the grader was misconfigured and told me Missing Output File instead.
+Also, today for snakes I used a 3d DP with mod 2 trick but there's a way to do it with only 2 states as well.
+
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Open 2019 | 5:17pm      | snakes    | Snakes              | DP with mod 2 and min   |
+| Open 2019 | 6:13pm      | walk      | I Would Walk 500 Miles | MST w/ Prim + removing |
+| Open 2019 | 7:10pm      | balance   | Balancing Inversions | Observation + simulation |
+
+
+## Saturday, December 5th
+Start Time: 7:00pm
+
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Dec 2019  | 7:21pm      | pump      | Milk Pumping        | Try all f\_i, M log N Dijkstra |
+| Dec 2019  | 9:28pm      | milkvisits | Milk Visits        | Binlift + sqrt decomp   |
+| Dec 2019  | 10:02pm     | cowmbat   | Moortal Cowmbat     | Fld-Wrshl + psum + DP   |
+
