@@ -162,3 +162,15 @@ Start Time: 7:00pm
 | Dec 2019  | 9:28pm      | milkvisits | Milk Visits        | Binlift + sqrt decomp   |
 | Dec 2019  | 10:02pm     | cowmbat   | Moortal Cowmbat     | Fld-Wrshl + psum + DP   |
 
+
+## Tuesday, December 8th
+Start Time: 7:15pm
+
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Jan 2020  | 7:27pm      | time      | Time is Mooney      | DP\[time]\[node]        |
+| Jan 2020  | 8:10pm      | threesum  | Farmer John Solves 3SUM | Iterate pairs + bsearch + dp |
+| Jan 2020  | 8:45pm      | boards    | Springboards        | Coord comp + sort + dp + BIT |
+
+
+
