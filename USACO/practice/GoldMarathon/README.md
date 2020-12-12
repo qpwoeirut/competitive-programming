@@ -173,4 +173,17 @@ Start Time: 7:15pm
 | Jan 2020  | 8:45pm      | boards    | Springboards        | Coord comp + sort + dp + BIT |
 
 
+## Friday, December 11th
+Start Time: 6:00pm
+
+Notes before contest:
+I made a bad decision and poured a lot of time into Russian AI Cup yesterday.
+I remember that this contest was pretty hard (because there was a mathy problem) so I decided to postpone until today so that I could have as much time as possible.
+
+
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Feb 2020  | 6:20pm      | timeline  | Timeline            | Toposort                |
+| Feb 2020  | 8:01pm      | help      | Help Yourself       | Contribution of individual segment (segment is leftmost in its component) |
+| Feb 2020  | 8:48pm      | deleg     | Delegation          | DFS and combine paths, optimize for tree case |
 
