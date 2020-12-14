@@ -187,3 +187,28 @@ I remember that this contest was pretty hard (because there was a mathy problem)
 | Feb 2020  | 8:01pm      | help      | Help Yourself       | Contribution of individual segment (segment is leftmost in its component) |
 | Feb 2020  | 8:48pm      | deleg     | Delegation          | DFS and combine paths, optimize for tree case |
 
+
+## Saturday, December 12th
+Start Time: 7:30pm
+
+Paused for about 12 mins after 9pm to do Advent of Code
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Open 2020 | 7:45pm      | haircut   | Haircut             | BIT to count inversions |
+| Open 2020 | 9:22pm      | fcolor    | Favorite Colors     | DSU with sketchy recursive merging |
+| Open 2020 | 11:14pm     | exercise  | Exercise            | DP with primes and fanciness |
+
+
+## Sunday, December 13th
+Start Time: 4:50pm
+
+This contest will be more like a virtual contest, since I hopefully haven't seen the problems before.
+After contest: I'd seen teamwork before but I don't think I ever solved it.
+Trimmed time to 1857ms after the virtual.
+Also, Cowpatibility passed with 1960ms on TC 10, which is very close.
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Dec 2018  | 5:08pm      | teamwork  | Teamwork (P3)       | DP with range max       |
+| Dec 2018  | 5:41pm      | dining    | Fine Dining (P1)    | Dijkstra with extra state |
+| Dec 2018  | 6:34pm      | cowpatibility | Cowpatibility   | PIE over flavor subset counts |
+
