@@ -10,7 +10,7 @@ class Feature:
     TIMESTAMP = "timestamp"
     FILE_IO = "file-io"
     TC_FORMAT = "tc-format"
-    PROBLEM_HEADER = "header"
+    PROBLEM_HEADER = "train-header"
     USE_CLASS = "class"
 
 
@@ -36,18 +36,14 @@ def main():
     basename = args.filename.rsplit('.', maxsplit=1)[0]
 
     if Feature.TIMESTAMP in features:
+        if Feature.PROBLEM_HEADER in features:
+            comment = gen_train_header(basename) + '\n' + comment
         with open(filename, 'w') as prog:
             prog.write(comment.strip() + '\n\n')
         return
     header = comment + HEADER
     if Feature.PROBLEM_HEADER in features:
-        header = f"""
-/*
-ID: zhongbr1
-TASK: {filename}
-LANG: C++11
-*/
-        """ + header
+        header = gen_train_header(filename) + '\n' + header
 
     io = IO
     if Feature.FILE_IO in features:
@@ -75,6 +71,15 @@ void solve(int testcase) {
 
     with open(filename, 'w') as prog:
         prog.write(file)
+
+
+def gen_train_header(problem_name):
+    return f"""
+/*
+ID: zhongbr1
+TASK: {problem_name}
+LANG: C++14
+*/"""
 
 
 HEADER = f"""

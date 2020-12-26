@@ -204,11 +204,24 @@ Start Time: 4:50pm
 
 This contest will be more like a virtual contest, since I hopefully haven't seen the problems before.
 After contest: I'd seen teamwork before but I don't think I ever solved it.
-Trimmed time to 1857ms after the virtual.
 Also, Cowpatibility passed with 1960ms on TC 10, which is very close.
+Trimmed time to 1857ms after the virtual.
 | Contest   | Time Solved | ID        | Name                | Method                  |
 | --------- | ----------- | --------- | ------------------- | ----------------------- |
 | Dec 2018  | 5:08pm      | teamwork  | Teamwork (P3)       | DP with range max       |
 | Dec 2018  | 5:41pm      | dining    | Fine Dining (P1)    | Dijkstra with extra state |
 | Dec 2018  | 6:34pm      | cowpatibility | Cowpatibility   | PIE over flavor subset counts |
+
+
+## Thursday, December 17th
+Start Time: 5:15pm
+
+This contest should also be more virtual-like since I don't think I've seen any of these before either.
+USACO's graders seem to be either very slow or overloaded right now, so it's taking a few minutes to get feedback.
+Did some CSES DP while waiting.
+| Contest   | Time Solved | ID        | Name                | Method                  |
+| --------- | ----------- | --------- | ------------------- | ----------------------- |
+| Jan 2019  | Approx 6pm  | poetry    | Cow Poetry          | Knapsack + combo        |
+| Jan 2019  | 6:17pm      | shortcut  | Shortcut            | Dijkstra w/ path, try all nodes |
+| Jan 2019  | 6:32pm      | sleepy    | Sleepy Cow Sorting  | Find sorted suffix, insert into suffix |
 
