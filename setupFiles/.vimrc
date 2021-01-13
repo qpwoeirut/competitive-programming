@@ -11,7 +11,9 @@ set smarttab smartindent
 set ruler
 set number relativenumber "https://jeffkreeftmeijer.com/vim-number/ basically line numbers
 set backspace=indent,eol,start
-set clipboard=unnamedplus "use system clipboard
+
+"use system clipboard
+set clipboard=unnamedplus
 
 "bracket completion
 inoremap {<CR> {<CR>}<Esc>O
@@ -23,3 +25,5 @@ map <C-a> <esc>gg"+yG<CR>
 noremap s "ss
 noremap x "xx
 
+"I'm using Vim on terminal so font changes are done through terminal
+"Terminal > Preferences > Profiles
