@@ -120,6 +120,7 @@ typedef long double dbl;
 typedef pair<int,bool> pib;
 typedef pair<ll,bool> plb;
 typedef pair<dbl,dbl> pdd;
+typedef map<int,int> mii;
 typedef map<ll,ll> mll;
 typedef map<char,int> mci;
 typedef map<string,int> msi;
@@ -146,27 +147,27 @@ ll binpow(ll x, ll p, const ll& mod) {assert(mod>0);
     return ret;
 }
 
-template <class T> bool chmn(T& a, const T& b) {return ((a>b) ? ((a=b) || true) : false);}
-template <class T> bool chmx(T& a, const T& b) {return ((a<b) ? ((a=b) || true) : false);}
+template <class T> bool chmn(T& a, const T& b) {return (greater<T>()(a, b) ? (a=b, true) : false);}
+template <class T> bool chmx(T& a, const T& b) {return (less<T>()(a, b) ? (a=b, true) : false);}
 """
 
 IO = """
 void setIO(const string& filename = "") {
-	cin.tie(0)->sync_with_stdio(0);
     if (filename.size() > 0) {
         freopen((filename + ".in").c_str(), "r", stdin);
         freopen((filename + ".out").c_str(), "w", stdout);
     }
+	cin.tie(0)->sync_with_stdio(0);
 }
 """
 
 def gen_file_io(basename):
     return f"""void setIO(const string& filename = "{basename}") """ + """{
-    cin.tie(0)->sync_with_stdio(0);
     if (filename.size() > 0) {
         freopen((filename + ".in").c_str(), "r", stdin);
         freopen((filename + ".out").c_str(), "w", stdout);
     }
+    cin.tie(0)->sync_with_stdio(0);
 }
 """
 
@@ -177,9 +178,10 @@ int chc[8] = {0, 1, 0, -1, -1, 1, -1, 1};
 const ll MOD = 1e9+7; //998244353 //1e9+9 //1e9+21 // 1e9+33;
 const int INIT = 1001001001;
 const int MN = 1001001;
+const ll INF = 2e18 + 1;
 
-ll N, M, K;
-ll A[MN];
+ll N, M, K, Q;
+ll A[MN]; //, B[MN];
 //ll G[MN][MN];
 //set<ll> adj[MN];
 """
@@ -191,7 +193,9 @@ int main() {
     ll T = 1;
     cin >> T;
     
-    for (int t=1; t<=T; t++) solve(t);
+    for (int t=1; t<=T; ++t) {
+        solve(t);
+    }
     
     return 0;
 }

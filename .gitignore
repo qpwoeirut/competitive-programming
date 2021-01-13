@@ -26,6 +26,9 @@ Debug
 # AI Cup Code
 /AI_Cup
 
+# BattleCode is stored in its own private repos
+/BattleCode
+
 ######## from IOI Solutions ########
 /sandbox/
 /tests/
