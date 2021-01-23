@@ -44,7 +44,7 @@ ll solve() {
 
     for (int i=0; i<N-1; ++i) {
         for (int j=0; j<MX; ++j) {
-            if (i > 0 && !ok(i, j)) continue;
+            if (!ok(i, j)) continue;
             if (good(2*i, 'x') && good(2*i+1, '-')) {
                 //cerr << "strike" << endl;
 
@@ -87,8 +87,8 @@ ll solve() {
         }
     }
 
-    //for (int i=1; i<=N; ++i) { for (int j=0; j<MX; ++j) if (ok(i, j)) for (int k=0; k<MS; ++k) {
-    //for (int l=0; l<MS; ++l) { if (j >= 0 && dp[i][j][k][l]) { cerr << i << ' ' << j << ' ' << k << ' ' << l << " = " << dp[i][j][k][l] << endl; } } } }
+    //for (int i=0; i<N; ++i) { const int j = A[i]; for (int k=0; k<MS; ++k) {
+    //for (int l=0; l<MS; ++l) { if (dp[i][j][k][l]) { cerr << i << ' ' << j << ' ' << k << ' ' << l << " = " << dp[i][j][k][l] << endl; } } } }
 
     ll ans = 0;
     const int i = N-1;
@@ -133,7 +133,7 @@ ll solve() {
                         //cerr << a << "/x" << ' ' << score << ' ' << ok(N, score) << endl;
                         if (ok(N, score)) ans += dp[i][j][a][10-a];
                     }
-                    for (int b=0; b<10; ++b) {
+                    for (int b=0; a+b<10; ++b) {
                         if (good(2*i + 2, '0' + b)) {
                             const int score = j + 10 + b;
                             //cerr << a << "/" << b << ' ' << score << ' ' << ok(N, score) << endl;
@@ -291,53 +291,15 @@ ll brute() {
     return bans;
 }
 
-void test() {
-    const string chars = "0123456789x/-?";
-    for (N=2; N<=8; ++N) {
-        for (int t=0; t<100000; ++t) {
-            if ((t & ((1 << 10) - 1)) == 0) {
-                cerr << N << ' ' << t << endl;
-            }
-            A[0] = rand() % 31;
-            for (int i=1; i<=N; ++i) {
-                A[i] = A[i-1] + (rand() % 31);
-            }
-            for (int i=1; i<=N; ++i) {
-                if (rand() & 1) {
-                    A[i] = -1;
-                }
-            }
-            S = "";
-            for (int i=0; i<=N+N; ++i) {
-                S.push_back(chars[rand() % chars.size()]);
-            }
-
-            const ll a = brute(); const ll b = solve();
-            if (a > 0 && a != b) {
-                cout << N << endl;
-                cout << S << endl;
-                for (int i=1; i<=N; ++i) {
-                    if (i > 1) cout << ' ';
-                    cout << A[i];
-                }
-                cout << endl;
-                cout << a << ' ' << b << endl;
-                assert(a == b);
-            }
-        }
-    }
-}
-
 int main() {
     cin.tie(0)->sync_with_stdio(0);
-    //test(); return 0;
 
     int test_cases;
     cin >> test_cases;
     for (int t=1; t<=test_cases; ++t) {
         cin >> N;
         cin >> S;
-        int x = 90;
+        int x = 0;
         for (int i=1; i<=N; ++i) cin >> A[i];
         for (char c: S) if (c == '?') ++x;
         if (x <= 6) cout << brute() << endl;
@@ -346,16 +308,6 @@ int main() {
 }
 
 /*
-2
-2
-22??2
--1 -1
-
-2
-?5?1/
-6 -1
-
-
 3
 
 10

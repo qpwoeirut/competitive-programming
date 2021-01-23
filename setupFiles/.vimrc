@@ -13,7 +13,7 @@ set number relativenumber "https://jeffkreeftmeijer.com/vim-number/ basically li
 set backspace=indent,eol,start
 
 "use system clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 "bracket completion
 inoremap {<CR> {<CR>}<Esc>O

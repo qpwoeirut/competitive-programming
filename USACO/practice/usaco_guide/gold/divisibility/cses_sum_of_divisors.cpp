@@ -16,19 +16,27 @@ int main() {
     ll ans = 0;
     ll i;
     for (i=1; i*i<=N; ++i) {
-        ans = (ans + (N / i) * i) % MOD;
-    }
-    ll terms = N - 1;
-    ll x = N + 2;
+        ll start = i*(i-1), finish = (N / i) * i;
+        ans = (ans + finish - start) % MOD;
+        //cerr << i << ' ' << ans << endl;
 
-    if (x & 1) {
-        terms >>= 1;
-    } else {
-        x >>= 1;
+        ll terms = (N / i) - i;
+        start = i+1;
+        finish = N / i;
+        ll x = start + finish;
+        //cerr << "s,f: " << start << ' ' << finish << endl;
+        //cerr << "t,x: " << terms << ' ' << x << endl;
+
+        if (x & 1) {
+            terms >>= 1;
+        } else {
+            x >>= 1;
+        }
+        terms %= MOD;
+        x %= MOD;
+        ans = (ans + terms * x) % MOD;
+        //cerr << i << ' ' << ans << endl;
     }
-    terms %= MOD;
-    x %= MOD;
-    ans = (ans + terms * x) % MOD;
 
     cout << ans << endl;
 }
