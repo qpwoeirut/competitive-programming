@@ -1,0 +1,47 @@
+2 2 3 a
+1 1 0 0
+ab
+bb
+
+2 3 3 a
+1 1 1 1
+aba
+bab
+
+2 3 3 a
+1 1 1 1
+abb
+bbb
+
+5 5 2 b
+1 1 16 17
+aabaa
+aabaa
+aaaaa
+aaaaa
+aaaaa
+
+5 5 2 b
+2 1 11 12
+aaaaa
+aaaaa
+aabaa
+aaaaa
+aaaaa
+
+2 2 1 a
+1 1 1 1
+aa
+aa
+
+2 4 3 a
+1 1 1 2
+abbb
+babb
+
+3 3 3 a
+1 1 2 1
+baa
+aaa
+aaa
+
