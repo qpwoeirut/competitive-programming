@@ -1,0 +1,1 @@
+int solve(int, int[]);
