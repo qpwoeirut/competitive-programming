@@ -54,7 +54,7 @@ def main():
 void solve(int testcase) {
 
 
-cout << "Case #" << testcase << ": " << ' ' << endl;
+    cout << "Case #" << testcase << ": " << ' ' << '\\n';
 }
         
         """ + MAIN
@@ -98,11 +98,11 @@ DEFINE = """
 #define debug3
 #endif
 
-#define PB push_back
-#define INS insert
+#define pb push_back
+#define ins insert
 
-#define FI first
-#define SE second
+#define fi first
+#define se second
 #define sz(obj) ((int)(obj.size()))
 #define all(obj) begin(obj), end(obj)
 
@@ -129,17 +129,6 @@ typedef map<string,string> mss;
 
 FUNC = """
 ll gcd(ll a, ll b) {return b ? gcd(b, a%b) : a;}
-
-template <class T1,class T2> struct cmpf {
-	bool rev;
-	inline bool operator()(const pair<T1,T2>& a, const pair<T1,T2>& b) const {return (a.first<b.first)^rev;}
-	cmpf(bool b=false) {rev=b;}
-};
-template <class T1,class T2> struct cmps {
-	bool rev;
-	inline bool operator()(const pair<T1,T2>& a, const pair<T1,T2>& b) const {return (a.second<b.second)^rev;}
-	cmps(bool b=false) {rev=b;}
-};
 
 ll binpow(ll x, ll p, const ll& mod) {assert(mod>0);
     ll ret = 1;
@@ -175,13 +164,14 @@ CONST = """
 int chr[8] = {-1, 0, 1, 0, -1, -1, 1, 1};
 int chc[8] = {0, 1, 0, -1, -1, 1, -1, 1};
 
-const ll MOD = 1e9+7; //998244353 //1e9+9 //1e9+21 // 1e9+33;
+const ll MOD = 1e9+7; //998244353; //1e9+9; //1e9+21; //1e9+33;
 const int INIT = 1001001001;
 const int MN = 1001001;
+const int LG = 24;
 const ll INF = 2e18 + 1;
 
 ll N, M, K, Q;
-ll A[MN]; //, B[MN];
+ll A[MN];// , B[MN];
 //ll G[MN][MN];
 //set<ll> adj[MN];
 """
@@ -193,8 +183,8 @@ int main() {
     ll T = 1;
     cin >> T;
     
-    for (int t=1; t<=T; ++t) {
-        solve(t);
+    for (int test_case=1; test_case<=T; ++test_case) {
+        solve(test_case);
     }
     
     return 0;
