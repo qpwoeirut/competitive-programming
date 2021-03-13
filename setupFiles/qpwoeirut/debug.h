@@ -2,6 +2,9 @@ string to_string(const char& c){return string(1, c);}
 string to_string(const string& s){return '"'+s+'"';}
 string to_string(const char* s){return to_string((string)s);}
 string to_string(const bool& b){return (b?"true":"false");}
+template <class T> string to_string(const complex<T>& p) {
+    return "(" + to_string(p.real()) + ", " + to_string(p.imag()) + ")";
+}
 string to_string(const vector<bool>& v,const string& sep=" ") {
 	string s = "[";
 	for (int i=0; i<v.size(); i++) {if (i){s += sep;} s += to_string(v[i]);}
