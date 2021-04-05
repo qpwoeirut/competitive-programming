@@ -138,6 +138,9 @@ ll binpow(ll x, ll p, const ll& mod) {assert(mod>0);
 
 template <class T> bool chmn(T& a, const T& b) {return (greater<T>()(a, b) ? (a=b, true) : false);}
 template <class T> bool chmx(T& a, const T& b) {return (less<T>()(a, b) ? (a=b, true) : false);}
+
+template <class T> T square(const T& a) {return a*a;}
+template <class T> T cube(const T& a) {return a*a*a;}
 """
 
 IO = """
@@ -171,19 +174,20 @@ const int LG = 24;
 const ll INF = 2e18 + 1;
 
 ll N, M, K, Q;
-ll A[MN];// , B[MN];
+ll A[MN], B[MN];
 //ll G[MN][MN];
 //set<ll> adj[MN];
+string S, T;
 """
 
 MAIN = """
 int main() {
     setIO();
     
-    ll T = 1;
-    cin >> T;
+    ll TEST_COUNT = 1;
+    cin >> TEST_COUNT;
     
-    for (int test_case=1; test_case<=T; ++test_case) {
+    for (int test_case=1; test_case<=TEST_COUNT; ++test_case) {
         solve(test_case);
     }
     
