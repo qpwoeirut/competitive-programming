@@ -1,98 +1,12 @@
-#!/usr/bin/env python3
+//1194e.cpp created at 04/09/21 12:44:24
 
-import argparse
-import datetime
-import os
-
-
-class Feature:
-    EMPTY = []
-    TIMESTAMP = "timestamp"
-    FILE_IO = "file-io"
-    TC_FORMAT = "tc-format"
-    PROBLEM_HEADER = "train-header"
-    USE_CLASS = "class"
-
-
-FEATURES = [Feature.EMPTY, Feature.TIMESTAMP, Feature.FILE_IO, Feature.TC_FORMAT,
-            Feature.PROBLEM_HEADER]  # , Feature.USE_CLASS]
-
-
-def main():
-    parser = argparse.ArgumentParser(description='Generate my competitive programming template')
-    parser.add_argument('filename', type=str, help='name of file to create, should end in ".cpp"')
-    parser.add_argument('features', nargs='*', help='list of features to include in template', choices=FEATURES)
-
-    args = parser.parse_args()
-    filename = args.filename
-    if os.path.isfile(filename):
-        if input("Replace existing file? y/n: ").lower() not in ['y', 'yes']:
-            return
-        else:
-            print("Replacing file")
-
-    features = args.features
-
-    comment = f"\n//{args.filename} created at {datetime.datetime.now().strftime('%D %T')}\n"
-    basename = args.filename.rsplit('.', maxsplit=1)[0]
-
-    if Feature.TIMESTAMP in features:
-        if Feature.PROBLEM_HEADER in features:
-            comment = gen_train_header(basename) + '\n' + comment
-        with open(filename, 'w') as prog:
-            prog.write(comment.strip() + '\n\n')
-        return
-    header = comment + HEADER
-    if Feature.PROBLEM_HEADER in features:
-        header = gen_train_header(filename) + '\n' + header
-
-    io = IO
-    if Feature.FILE_IO in features:
-        io = gen_file_io(basename)
-
-    if Feature.TC_FORMAT in features:
-        main_func = """
-void solve(int testcase) {
-
-
-    cout << "Case #" << testcase << ": " << ' ' << '\\n';
-}
-        
-""" + MAIN
-    else:
-        main_func = """
-void solve(int testcase) {
-
-}
-        
-""" + MAIN
-
-    parts = [header, DEFINE, TYPEDEF, FUNC, GEO, io, CONST, main_func]
-    file = '\n\n'.join([part.strip() for part in parts])
-
-    with open(filename, 'w') as prog:
-        prog.write(file)
-
-
-def gen_train_header(problem_name):
-    return f"""
-/*
-ID: zhongbr1
-TASK: {problem_name}
-LANG: C++14
-*/"""
-
-
-HEADER = f"""
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 #include <bits/stdc++.h>
 
 using namespace __gnu_pbds;
 using namespace std;
-"""
 
-DEFINE = """
 #ifdef LOCAL
 #include "qpwoeirut/debug.h"
 #else
@@ -112,9 +26,7 @@ DEFINE = """
 
 #define LB lower_bound
 #define UB upper_bound
-"""
 
-TYPEDEF = """
 using ll = long long;
 using pii = pair<int,int>;
 using pll = pair<ll,ll>;
@@ -132,9 +44,7 @@ using mss = map<string,string>;
 
 template <class T> using ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
 template <class T, class U> using ordered_map = tree<T,U,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
-"""
 
-FUNC = """
 ll gcd(ll a, ll b) {return b ? gcd(b, a%b) : a;}
 
 ll binpow(ll x, ll p, const ll& mod) {assert(mod>0);
@@ -148,16 +58,13 @@ template <class T> bool chmx(T& a, const T& b) {return (less<T>()(a, b) ? (a=b, 
 
 template <class T> T square(const T& a) {return a*a;}
 template <class T> T cube(const T& a) {return a*a*a;}
-"""
 
-GEO = """
-#ifdef DELETE_THIS_IN_CASE_OF_GEO
 const dbl EPS = 1e-16;
 
 #define x real()
 #define y imag()
 
-typedef PUT_SMTH_HERE _t; 
+typedef ll _t; 
 typedef complex<_t> pt;
 
 template <class T> string to_string(const complex<T>& p) {
@@ -183,6 +90,10 @@ struct Line {
     }
 };
 
+string to_string(const Line& l) {
+    return "[" + to_string(l.p1) + " " + to_string(l.p2) + "]";
+}
+
 // (hopefully) returns +1 for counterclockwise turn, -1 for clockwise turn, 0 for collinear
 int ccw(const pt& a, const pt& b, const pt& c) {
     const _t dx1 = b.x - a.x, dy1 = b.y - a.y;
@@ -191,10 +102,7 @@ int ccw(const pt& a, const pt& b, const pt& c) {
     if (dx1 * dy2 > dx2 * dy1) return -1;
     return 0;
 }
-#endif
-"""
 
-IO = """
 void setIO(const string& filename = "") {
     if (filename.size() > 0) {
         freopen((filename + ".in").c_str(), "r", stdin);
@@ -202,43 +110,94 @@ void setIO(const string& filename = "") {
     }
 	cin.tie(0)->sync_with_stdio(0);
 }
-"""
 
-
-def gen_file_io(basename):
-    return f"""void setIO(const string& filename = "{basename}") """ + """{
-    if (filename.size() > 0) {
-        freopen((filename + ".in").c_str(), "r", stdin);
-        freopen((filename + ".out").c_str(), "w", stdout);
-    }
-    cin.tie(0)->sync_with_stdio(0);
-}
-"""
-
-
-CONST = """
 int chr[8] = {-1, 0, 1, 0, -1, -1, 1, 1};
 int chc[8] = {0, 1, 0, -1, -1, 1, -1, 1};
 
 const ll MOD = 1e9+7; //998244353; //1e9+9; //1e9+21; //1e9+33;
 const int INIT = 1001001001;
-const int MN = 1001001;
+const int MN = 5001;
 const int LG = 24;
 const ll INF = 2e18 + 1;
+const int MX = 10005;
 
 ll N, M, K, Q;
-ll A[MN], B[MN];
+Line A[MN], B[MN];
 //ll G[MN][MN];
 //set<ll> adj[MN];
 string S, T;
-"""
 
-MAIN = """
+inline bool cmpx(const Line& a, const Line& b) {
+    if (a.p1 == b.p1) return a.p2 < b.p2;
+    return a.p1 < b.p1;
+}
+inline bool cmpx2(const Line& a, const Line& b) {
+    if (a.p2 == b.p2) return a.p1 < b.p1;
+    return a.p2 < b.p2;
+}
+
+void solve(int testcase) {
+    cin >> N;
+
+    int H = 0, V = 0;
+    for (int i=0; i<N; ++i) {
+        int px, py;
+        cin >> px >> py;
+        px += 5001;
+        py += 5001;
+        const pt p1(px, py);
+
+        cin >> px >> py;
+        px += 5001;
+        py += 5001;
+        const pt p2(px, py);
+
+        if (p1.x == p2.x) {
+            A[V++] = Line(p1, p2);
+        } else if (p1.y == p2.y) {
+            B[H++] = Line(p1, p2);
+        } else assert(0);
+    }
+
+    sort(A, A+V, cmpx);
+    sort(B, B+H, cmpx2);
+
+    debug(H, V);
+    debug1(A, V);
+    debug1(B, H);
+
+    ll ans = 0;
+    for (int i=0; i<V; ++i) {
+        debug(i, ans);
+        ordered_set<int> oset;
+        for (int j=0; j<H; ++j) {
+            if (B[j].p1.x <= A[i].p1.x && A[i].p1.x <= B[j].p2.x) {
+                assert(oset.insert(B[j].p1.y).se == true);
+            }
+        }
+        int h = 0;
+        for (int j=i+1; j<V; ++j) {
+            while (h < H && B[h].p2.x < A[j].p1.x) {
+                if (B[h].p1.x <= A[i].p1.x && A[i].p1.x <= B[h].p2.x) {
+                    oset.erase(B[h].p1.y);
+                }
+                ++h;
+            }
+
+            const ll hlines = ll(oset.order_of_key(min(A[i].p2.y, A[j].p2.y) + 1)) - ll(oset.order_of_key(max(A[i].p1.y, A[j].p1.y)));
+            if (hlines > 0) ans += (hlines * (hlines - 1)) >> 1;
+            debug(hlines);
+        }
+    }
+
+    cout << ans << '\n';
+}
+        
+
 int main() {
     setIO();
     
     ll TEST_COUNT = 1;
-    cin >> TEST_COUNT;
     
     for (int test_case=1; test_case<=TEST_COUNT; ++test_case) {
         solve(test_case);
@@ -246,7 +205,3 @@ int main() {
     
     return 0;
 }
-"""
-
-if __name__ == "__main__":
-    main()
