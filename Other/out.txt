@@ -1,0 +1,5 @@
+Help Bessie decode messages 
+sent to her by the double agents, Quick Brown Fox and Lazy Dog. Each letter has been replaced by "bessie": the
+capitalisation of the "b" indicating the capitalisation of the corresponding letter; that of the "essie" forming a binary code (with n indicating letter n in the alphabet). All other characters are unchanged.
+
+Write a program whose input is an encoded message of between 1 and 1000000 characters. Code submissions only.

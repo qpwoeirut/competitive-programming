@@ -1,0 +1,7 @@
+-p 20 -t 4 -m 262144
+
+test 1.in 1.out
+test 2.in 2.out
+test 3.in 3.out
+test 4.in 4.out
+test 5.in 5.out

@@ -1,0 +1,64 @@
+0 0
+===
+1 4
+===
+-23 43
+===
+234 -2
+===
+23423 213412765
+===
+0.0
+===
+10.0
+===
+a
+===
+b
+===
+c
+===
+0x10
+===
+1000000000 1000000000
+===
+-1000000000 -1000000000
+===
+0.0 3
+===
+23 a
+===
+a b
+===
+3,4
+===
+2 x
+===
+! @
+===
+no
+===
+asdf
+
+
+VALID
+VALID
+VALID
+VALID
+VALID
+INVALID
+INVALID
+INVALID
+INVALID
+INVALID
+INVALID
+VALID
+VALID
+INVALID
+INVALID
+INVALID
+INVALID
+INVALID
+INVALID
+INVALID
+INVALID

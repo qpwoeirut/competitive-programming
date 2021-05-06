@@ -1,0 +1,5 @@
+berry_batch = int(input())
+berry_numbers = input()
+berry_numbers = berry_numbers.split(' ')
+berry_numbers = list(map(int, berry_numbers))
+print(sum(berry_numbers))
