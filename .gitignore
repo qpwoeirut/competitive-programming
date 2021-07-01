@@ -8,6 +8,9 @@ Debug
 .cproject
 .settings
 
+.gradle
+build
+
 .idea
 *.iml
 *.xml
