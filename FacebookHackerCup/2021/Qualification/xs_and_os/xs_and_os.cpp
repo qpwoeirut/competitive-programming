@@ -1,98 +1,12 @@
-#!/usr/bin/env python3
+//xs_and_os.cpp created at 08/27/21 15:28:43
 
-import argparse
-import datetime
-import os
-
-
-class Feature:
-    EMPTY = []
-    TIMESTAMP = "timestamp"
-    FILE_IO = "file-io"
-    TC_FORMAT = "tc-format"
-    PROBLEM_HEADER = "train-header"
-    USE_CLASS = "class"
-
-
-FEATURES = [Feature.EMPTY, Feature.TIMESTAMP, Feature.FILE_IO, Feature.TC_FORMAT,
-            Feature.PROBLEM_HEADER]  # , Feature.USE_CLASS]
-
-
-def main():
-    parser = argparse.ArgumentParser(description='Generate my competitive programming template')
-    parser.add_argument('filename', type=str, help='name of file to create, should end in ".cpp"')
-    parser.add_argument('features', nargs='*', help='list of features to include in template', choices=FEATURES)
-
-    args = parser.parse_args()
-    filename = args.filename
-    if os.path.isfile(filename):
-        if input("Replace existing file? y/n: ").lower() not in ['y', 'yes']:
-            return
-        else:
-            print("Replacing file")
-
-    features = args.features
-
-    comment = f"\n//{args.filename} created at {datetime.datetime.now().strftime('%D %T')}\n"
-    basename = args.filename.rsplit('.', maxsplit=1)[0]
-
-    if Feature.TIMESTAMP in features:
-        if Feature.PROBLEM_HEADER in features:
-            comment = gen_train_header(basename) + '\n' + comment
-        with open(filename, 'w') as prog:
-            prog.write(comment.strip() + '\n\n')
-        return
-    header = comment + HEADER
-    if Feature.PROBLEM_HEADER in features:
-        header = gen_train_header(filename) + '\n' + header
-
-    io = IO
-    if Feature.FILE_IO in features:
-        io = gen_file_io(basename)
-
-    if Feature.TC_FORMAT in features:
-        main_func = """
-void solve(int testcase) {
-
-
-    cout << "Case #" << testcase << ": " << ' ' << '\\n';
-}
-        
-""" + MAIN
-    else:
-        main_func = """
-void solve(int testcase) {
-
-}
-        
-""" + MAIN
-
-    parts = [header, DEFINE, TYPEDEF, FUNC, GEO, io, CONST, main_func]
-    file = '\n\n'.join([part.strip() for part in parts])
-
-    with open(filename, 'w') as prog:
-        prog.write(file)
-
-
-def gen_train_header(problem_name):
-    return f"""
-/*
-ID: zhongbr1
-TASK: {problem_name}
-LANG: C++14
-*/"""
-
-
-HEADER = f"""
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 #include <bits/stdc++.h>
 
 using namespace __gnu_pbds;
 using namespace std;
-"""
 
-DEFINE = """
 #ifdef LOCAL
 #include "qpwoeirut/debug.h"
 #else
@@ -113,9 +27,7 @@ DEFINE = """
 
 #define LB lower_bound
 #define UB upper_bound
-"""
 
-TYPEDEF = """
 using ll = long long;
 using pii = pair<int,int>;
 using pll = pair<ll,ll>;
@@ -133,9 +45,7 @@ using mss = map<string,string>;
 
 template <class T> using ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
 template <class T, class U> using ordered_map = tree<T,U,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
-"""
 
-FUNC = """
 ll gcd(ll a, ll b) {return b ? gcd(b, a%b) : a;}
 
 ll binpow(ll x, ll p, const ll& mod) {assert(mod>0);
@@ -149,9 +59,7 @@ template <class T> bool chmx(T& a, const T& b) {return (less<T>()(a, b) ? (a=b, 
 
 template <class T> T square(const T& a) {return a*a;}
 template <class T> T cube(const T& a) {return a*a*a;}
-"""
 
-GEO = """
 #ifdef DELETE_THIS_IN_CASE_OF_GEO
 const dbl EPS = 1e-16;
 
@@ -193,31 +101,15 @@ int ccw(const pt& a, const pt& b, const pt& c) {
     return 0;
 }
 #endif
-"""
 
-IO = """
-void setIO(const string& filename = "") {
-    if (filename.size() > 0) {
-        freopen((filename + ".in").c_str(), "r", stdin);
-        freopen((filename + ".out").c_str(), "w", stdout);
-    }
-	cin.tie(0)->sync_with_stdio(0);
-}
-"""
-
-
-def gen_file_io(basename):
-    return f"""void setIO(const string& filename = "{basename}") """ + """{
+void setIO(const string& filename = "xs_and_os") {
     if (filename.size() > 0) {
         freopen((filename + ".in").c_str(), "r", stdin);
         freopen((filename + ".out").c_str(), "w", stdout);
     }
     cin.tie(0)->sync_with_stdio(0);
 }
-"""
 
-
-CONST = """
 int chr[8] = {-1, 0, 1, 0, -1, -1, 1, 1};
 int chc[8] = {0, 1, 0, -1, -1, 1, -1, 1};
 
@@ -230,12 +122,69 @@ const ll INF = 2e18 + 1;
 ll N, M, K, Q;
 ll A[MN];
 ll B[MN];
-//ll G[MN][MN];
+string G[MN];
 //set<ll> adj[MN];
 string S, T;
-"""
 
-MAIN = """
+int check_row(const int r) {
+    int cost = 0;
+    for (int c=0; c<N; ++c) {
+        if (G[r][c] == 'O') return INIT;
+        else if (G[r][c] == '.') ++cost;
+        else assert(G[r][c] == 'X');
+    }
+    return cost;
+}
+
+int check_col(const int c) {
+    int cost = 0;
+    for (int r=0; r<N; ++r) {
+        if (G[r][c] == 'O') return INIT;
+        else if (G[r][c] == '.') ++cost;
+        else assert(G[r][c] == 'X');
+    }
+    return cost;
+}
+
+void solve(int testcase) {
+    cin >> N;
+    for (int i=0; i<N; ++i) {
+        cin >> G[i];
+    }
+
+    int ans = INIT;
+    int ways = 0;
+    for (int i=0; i<N; ++i) {
+        const int rcost = check_row(i), ccost = check_col(i);
+
+        if (chmn(ans, rcost)) ways = 0;
+        if (chmn(ans, ccost)) ways = 0;
+        if (ans == rcost) ++ways;
+        if (ans == ccost) ++ways;
+    }
+
+    if (ways == 0 || ans >= INIT) {
+        cout << "Case #" << testcase << ": Impossible" << '\n';
+    } else {
+        if (ans == 0) {
+            ways = 1;
+        } else if (ans == 1) {
+            ways = 0;
+            for (int i=0; i<N; ++i) {
+                for (int j=0; j<N; ++j) {
+                    if (G[i][j] == '.' && (check_row(i) == 1 || check_col(j) == 1)) {
+                        ++ways;
+                    }
+                }
+            }
+        }
+
+        cout << "Case #" << testcase << ": " << ans << ' ' << ways << '\n';
+    }
+
+}
+        
+
 int main() {
     setIO();
     
@@ -248,7 +197,3 @@ int main() {
     
     return 0;
 }
-"""
-
-if __name__ == "__main__":
-    main()
