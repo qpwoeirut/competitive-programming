@@ -13,8 +13,25 @@ private fun readDoubles() = readStrings().map { it.toDouble() } // list of doubl
 private val MN = 1e6.toInt() + 6
 private val MOD = 1e9.toInt() + 7
 
-private fun solve() {
+typealias Tile = Array<IntArray>
 
+private fun solve() {
+    val (N, M) = readInts()
+    val tiles = List<Tile>(N) { Array(2) { readInts().toIntArray() } }
+
+    if (M % 2 == 1) {
+        println("NO")
+        return
+    }
+
+    for (tile in tiles) {
+        if (tile[1][0] == tile[0][1]) {
+            println("YES")
+            return
+        }
+    }
+
+    println("NO")
 }
 
 fun main() {
@@ -24,3 +41,14 @@ fun main() {
         solve()
     }
 }
+/*
+1
+1 2
+1 2
+2 3
+
+1 2 1 2
+2 3 2 3
+1 2 1 2
+2 3 2 3
+ */

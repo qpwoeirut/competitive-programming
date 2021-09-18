@@ -14,7 +14,12 @@ private val MN = 1e6.toInt() + 6
 private val MOD = 1e9.toInt() + 7
 
 private fun solve() {
+    val N = readInt()
 
+    println(IntArray(sqrt(N.toDouble()).toInt() + 1) { x ->
+        if (x == 0) MOD
+        else (x - 1) + (N - 1) / x
+    }.minOrNull())
 }
 
 fun main() {
