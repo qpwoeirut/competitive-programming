@@ -2,23 +2,21 @@ string to_string(const char& c){return string(1, c);}
 string to_string(const string& s){return '"'+s+'"';}
 string to_string(const char* s){return to_string((string)s);}
 string to_string(const bool& b){return (b?"true":"false");}
-string to_string(const vector<bool>& v,const string& sep=" ") {
+string to_string(const vector<bool>& vec,const string& sep=" ") {
 	string s = "[";
-	for (int i=0; i<v.size(); i++) {if (i){s += sep;} s += to_string(v[i]);}
+	for (int i=0; i<vec.size(); i++) {if (i){s += sep;} s += to_string(vec[i]);}
 	return s + "]";
 }
-template <size_t N> string to_string(const bitset<N>& v) {
-	string s = "[";
-	for (size_t i=0; i<N; i++) s += v[i] ? '1' : '0';
-	return s + "]";
+template <size_t BITSET_SIZE> string to_string(const bitset<BITSET_SIZE>& v) {
+    return "[" + v.to_string() + "]";
 }
 template <class T1,class T2> string to_string(const pair<T1, T2>& p, const string& sep=",");
 template <class T> string to_string(const T& v, const string& sep=" ") {
 	bool first = true; string s = "[";
-	for (const auto &x: v) {
+	for (const auto &elem: v) {
 		if (!first) s += sep;
 		else first = false;
-		s += to_string(x);
+		s += to_string(elem);
 	}
 	return s + "]";
 }
