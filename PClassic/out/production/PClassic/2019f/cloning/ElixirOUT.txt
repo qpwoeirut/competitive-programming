@@ -1,0 +1,8 @@
+Escaped in 8 steps.
+Escaped in 4 steps.
+Escaped in 3 steps.
+Escaped in 4 steps.
+Escaped in 19 steps.
+Escaped in 2 steps.
+Can't escape!
+Can't escape!
