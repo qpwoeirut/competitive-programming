@@ -7,9 +7,6 @@ const dbl EPS = 1e-16;
 #define x real()
 #define y imag()
 
-using _t=dbl;
-using pt=complex<_t>;
-
 namespace std {
     inline bool operator<(const pt& a, const pt& b) {
         if (abs(a.x - b.x) > EPS) return a.x < b.x;
