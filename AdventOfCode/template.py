@@ -16,5 +16,8 @@ print(A[:10])
 # for i in range(N):
 
 
+# for i in range(N):
+
+
 print("ans1:", ans)
 print("ans2:", ans2)
