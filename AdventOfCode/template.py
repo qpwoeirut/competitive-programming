@@ -1,3 +1,4 @@
+# from collections import *
 # from itertools import *
 # from math import *
 
@@ -5,9 +6,10 @@ ans = 0
 ans2 = 0
 
 with open("input.txt") as file:
-    # A = [line.strip() for line in file]
-    A = [int(line.strip()) for line in file]
     # A = list(map(int, file.readline().split(',')))
+    A = [int(line.strip()) for line in file]
+    # A = [line.strip() for line in file]
+    # A = [list(map(int, line.strip())) for line in file]
 
 N = len(A)
 print("N =", N)
