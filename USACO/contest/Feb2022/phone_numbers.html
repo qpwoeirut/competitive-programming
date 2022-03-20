@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0053)http://usaco.org/index.php?page=viewproblem&cpid=1202 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+ <title>USACO</title>
+ <link rel="stylesheet" type="text/css" href="./phone_numbers_files/usaco.css">
+ <script src="./phone_numbers_files/jquery.min.js"></script>
+ <script src="./phone_numbers_files/d3.v3.min.js"></script>
+ <meta http-equiv="EXPIRES" content="0">
+ <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+ <meta http-equiv="PRAGMA" content="NO-CACHE">
+
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+    "HTML-CSS": {
+	scale: 85,
+	preferredFont: "STIX"
+    },
+  tex2jax: {
+    inlineMath: [['$','$'],['\\(','\\)']],
+    processEscapes: true,
+    skipTags: ['pre'],
+    processClass: "mathjax",
+    ignoreClass: "no-mathjax"
+  }
+});
+</script>
+<script type="text/javascript" src="./phone_numbers_files/MathJax.js"></script>
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body class="no-mathjax"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+ <div align="center">
+  <div class="shadow1">
+
+   <div class="content">
+
+  
+ <a href="http://usaco.org/index.php"><img src="./phone_numbers_files/usaco_logo.png" height="130px" border="0px"></a> 
+
+    <div class="navbar" align="left" border="10px">
+     <ul>
+      <li><a href="http://usaco.org/index.php">Overview</a></li> 
+      <li><a href="http://usaco.org/index.php?page=training">Training</a></li>
+      <li><a href="http://usaco.org/index.php?page=contests">Contests</a></li>
+      <li><a href="http://usaco.org/index.php?page=history">History</a></li>
+      <li><a href="http://usaco.org/index.php?page=staff">Staff</a></li>
+      <li><a href="http://usaco.org/index.php?page=resources">Resources</a></li>
+     </ul>
+    </div><br>
+
+   
+    
+
+
+<div style="position:relative; float:left; left:10px; top:-50px; width:550px;"> 
+<div class="panel">
+
+<h2> USACO 2022 February Contest, Platinum </h2>
+<h2> Problem 3. Phone Numbers </h2>
+
+</div>
+</div>
+
+<div align="right" style="position:relative; float:right; right:30px; top:-40px; width:350px;">
+
+    <button style="margin-bottom:6px;" type="button" onclick="window.location=&#39;index.php?page=viewcontest&#39;;">Return to Problem List</button><br style="padding-top:6px">  
+   
+   Contest has ended.
+    
+</div>
+
+<br style="clear:both">
+
+
+<div id="last-status" style="padding:10px; position:relative; float:left; left:30px; top:-45px; width:820px; border:1px solid black; background-color:#FFF; " data-response-code="-1" data-sid="3740082" class="status-working"> 
+   <img src="./phone_numbers_files/medal_none.png"> <p style="display:inline;">Submitted; Results below show the outcome for each judge test case</p>
+<div id="trial-information"><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Correct answer" class="masterTooltip"><div class="trial-result trial-status-yes"><div class="res-symbol">*</div><div class="trial-num">1</div><div class="info"><span>3.4mb</span><span>10ms</span></div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Correct answer" class="masterTooltip"><div class="trial-result trial-status-yes"><div class="res-symbol">*</div><div class="trial-num">2</div><div class="info"><span>3.4mb</span><span>24ms</span></div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Correct answer" class="masterTooltip"><div class="trial-result trial-status-yes"><div class="res-symbol">*</div><div class="trial-num">3</div><div class="info"><span>3.4mb</span><span>25ms</span></div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Correct answer" class="masterTooltip"><div class="trial-result trial-status-yes"><div class="res-symbol">*</div><div class="trial-num">4</div><div class="info"><span>80.2mb</span><span>496ms</span></div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Correct answer" class="masterTooltip"><div class="trial-result trial-status-yes"><div class="res-symbol">*</div><div class="trial-num">5</div><div class="info"><span>80.2mb</span><span>499ms</span></div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Correct answer" class="masterTooltip"><div class="trial-result trial-status-yes"><div class="res-symbol">*</div><div class="trial-num">6</div><div class="info"><span>80.2mb</span><span>512ms</span></div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Correct answer" class="masterTooltip"><div class="trial-result trial-status-yes"><div class="res-symbol">*</div><div class="trial-num">7</div><div class="info"><span>80.2mb</span><span>521ms</span></div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">8</div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">9</div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Correct answer" class="masterTooltip"><div class="trial-result trial-status-yes"><div class="res-symbol">*</div><div class="trial-num">10</div><div class="info"><span>3.5mb</span><span>6ms</span></div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">11</div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">12</div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">13</div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">14</div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">15</div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">16</div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">17</div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">18</div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">19</div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">20</div></div></a><a href="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202#" title="Wrong answer" class="masterTooltip"><div class="trial-result trial-status-no"><div class="res-symbol">x</div><div class="trial-num">21</div></div></a>
+</div>
+<p style="text-align: left; display: none;" class="mono prewrap output-data">Submitted; Results below show the outcome for each judge test case</p>
+</div>
+
+<br style="clear:both">
+
+<div align="right" style="position:relative; float:right; right:40px; top:-93px; width:350px; z-index:2; padding:0px;">
+
+<form style="padding-top:60px;" action="http://usaco.org/index.php?page=viewproblem&amp;cpid=1202"> 
+<select name="lang" style="background-color:#eee;" id="choose-language">
+<option value="en" selected="yes">English (en)</option>
+<option value="fr">French (fr)</option>
+<option value="ru">Russian (ru)</option>
+<option value="es">Spanish (es)</option>
+</select>
+</form>
+
+</div>
+
+<div align="left" style="position:relative; float:left; left:30px; top:-100px; width:840px; z-index:1;"> 
+<div align="left" class="problem-text" style="width:800px; padding-top:10px;">
+<span id="probtext-text" class="mathjax">Bessie has a new cell phone with nine buttons, laid out as follows:
+
+<p></p><pre>123
+456
+789
+</pre>
+
+<p>Bessie is trying to type out a given phone number in a hurry, so she decides to
+save time by pressing multiple buttons at the same time with one of her hooves.
+Specifically, Bessie's hoof might press a single digit, two digits that share a
+side (for twelve possible pairs in total), or four digits that form a square 
+(1245, 2356, 4578, or 5689). 
+
+</p><p>For example, if the phone number Bessie is trying to type is 123659874, she
+might attempt to save time by
+
+</p><p></p><ol><li>Pressing 1 and 2 at the same time.</li><li>Pressing 3.</li><li>Pressing 6, 5, 9, and 8 at the same time.</li><li>Pressing 7 and 4 at the same time.</li></ol>
+
+<p>Unfortunately, Bessie drastically overestimated her skill at performing this
+task - if Bessie's hoof pressess multiple buttons at the same time, then  all of
+the digits will be typed in arbitrary order. So if Bessie attempts the above
+sequence of presses, she may end up typing 123596847 or 213659874 instead (or
+one of many other possibilities).
+
+</p><p>Given a sequence of digits that Bessie has typed, count the number of phone
+numbers that she could have been trying to type modulo <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 3.225em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.155em; height: 0px; font-size: 102%;"><span style="position: absolute; clip: rect(1.404em, 1003.09em, 2.805em, -999.996em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="msubsup" id="MathJax-Span-3"><span style="display: inline-block; position: relative; width: 1.404em; height: 0px;"><span style="position: absolute; clip: rect(3.085em, 1000.98em, 4.205em, -999.996em); top: -3.988em; left: 0em;"><span class="mn" id="MathJax-Span-4" style="font-family: STIXGeneral-Regular;">10</span><span style="display: inline-block; width: 0px; height: 3.995em;"></span></span><span style="position: absolute; top: -4.408em; left: 0.984em;"><span class="mn" id="MathJax-Span-5" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">9</span><span style="display: inline-block; width: 0px; height: 3.995em;"></span></span></span></span><span class="mo" id="MathJax-Span-6" style="font-family: STIXGeneral-Regular; padding-left: 0.284em;">+</span><span class="mn" id="MathJax-Span-7" style="font-family: STIXGeneral-Regular; padding-left: 0.284em;">7</span></span><span style="display: inline-block; width: 0px; height: 2.525em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.139em; border-left: 0px solid; width: 0px; height: 1.075em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>10</mn><mn>9</mn></msup><mo>+</mo><mn>7</mn></math></span></span><script type="math/tex" id="MathJax-Element-1">10^9+7</script>.
+
+</p><p><strong>**Note: the time limit for this problem is 4s, twice the default.**</strong>
+
+</p><p></p><div class="prob-in-spec"><h4>INPUT FORMAT (input arrives from the terminal / stdin):</h4>
+The first line contains <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-8" style="width: 0.634em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.634em; height: 0px; font-size: 102%;"><span style="position: absolute; clip: rect(1.684em, 1000.63em, 2.735em, -999.996em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-9"><span class="mi" id="MathJax-Span-10" style="font-family: STIXGeneral-Italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.074em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.525em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 0.789em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">T</script> (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-11" style="width: 4.765em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.625em; height: 0px; font-size: 102%;"><span style="position: absolute; clip: rect(1.614em, 1004.62em, 2.805em, -999.996em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-12"><span class="mn" id="MathJax-Span-13" style="font-family: STIXGeneral-Regular;">1</span><span class="mo" id="MathJax-Span-14" style="font-family: STIXGeneral-Regular; padding-left: 0.284em;">≤</span><span class="mi" id="MathJax-Span-15" style="font-family: STIXGeneral-Italic; padding-left: 0.284em;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.074em;"></span></span><span class="mo" id="MathJax-Span-16" style="font-family: STIXGeneral-Regular; padding-left: 0.284em;">≤</span><span class="mn" id="MathJax-Span-17" style="font-family: STIXGeneral-Regular; padding-left: 0.284em;">10</span></span><span style="display: inline-block; width: 0px; height: 2.525em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.139em; border-left: 0px solid; width: 0px; height: 0.932em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>10</mn></math></span></span><script type="math/tex" id="MathJax-Element-3">1\le T\le 10</script>), the number of independent test
+cases to solve.
+
+<p>The next <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-18" style="width: 0.634em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.634em; height: 0px; font-size: 102%;"><span style="position: absolute; clip: rect(1.684em, 1000.63em, 2.735em, -999.996em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-19"><span class="mi" id="MathJax-Span-20" style="font-family: STIXGeneral-Italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.074em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.525em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 0.789em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></span></span><script type="math/tex" id="MathJax-Element-4">T</script> lines each contain a nonempty string of the digits 1 through 9. It
+is guaranteed that the total length of these strings does not exceed <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-21" style="width: 1.474em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.404em; height: 0px; font-size: 102%;"><span style="position: absolute; clip: rect(-0.137em, 1001.4em, 1.194em, -999.996em); top: -0.977em; left: 0em;"><span class="mrow" id="MathJax-Span-22"><span class="msubsup" id="MathJax-Span-23"><span style="display: inline-block; position: relative; width: 1.404em; height: 0px;"><span style="position: absolute; clip: rect(3.085em, 1000.98em, 4.205em, -999.996em); top: -3.988em; left: 0em;"><span class="mn" id="MathJax-Span-24" style="font-family: STIXGeneral-Regular;">10</span><span style="display: inline-block; width: 0px; height: 3.995em;"></span></span><span style="position: absolute; top: -4.408em; left: 0.984em;"><span class="mn" id="MathJax-Span-25" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">5</span><span style="display: inline-block; width: 0px; height: 3.995em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 0.984em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.075em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>10</mn><mn>5</mn></msup></math></span></span><script type="math/tex" id="MathJax-Element-5">10^5</script>.
+</p></div>
+
+<p></p><div class="prob-out-spec"><h4>OUTPUT FORMAT (print output to the terminal / stdout):</h4>
+For each test case, the number of phone numbers Bessie might have been trying to
+type modulo <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-26" style="width: 3.225em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.155em; height: 0px; font-size: 102%;"><span style="position: absolute; clip: rect(1.404em, 1003.09em, 2.805em, -999.996em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-27"><span class="msubsup" id="MathJax-Span-28"><span style="display: inline-block; position: relative; width: 1.404em; height: 0px;"><span style="position: absolute; clip: rect(3.085em, 1000.98em, 4.205em, -999.996em); top: -3.988em; left: 0em;"><span class="mn" id="MathJax-Span-29" style="font-family: STIXGeneral-Regular;">10</span><span style="display: inline-block; width: 0px; height: 3.995em;"></span></span><span style="position: absolute; top: -4.408em; left: 0.984em;"><span class="mn" id="MathJax-Span-30" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">9</span><span style="display: inline-block; width: 0px; height: 3.995em;"></span></span></span></span><span class="mo" id="MathJax-Span-31" style="font-family: STIXGeneral-Regular; padding-left: 0.284em;">+</span><span class="mn" id="MathJax-Span-32" style="font-family: STIXGeneral-Regular; padding-left: 0.284em;">7</span></span><span style="display: inline-block; width: 0px; height: 2.525em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.139em; border-left: 0px solid; width: 0px; height: 1.075em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>10</mn><mn>9</mn></msup><mo>+</mo><mn>7</mn></math></span></span><script type="math/tex" id="MathJax-Element-6">10^9+7</script>.
+</div>
+
+<p></p><h4>SAMPLE INPUT:</h4><pre class="in">5
+1478
+4455
+5968
+31313211
+123659874
+</pre><h4>SAMPLE OUTPUT:</h4> <pre class="out">5
+2
+24
+3
+255
+</pre>
+
+<p>For the first case, Bessie might be trying to type any of the following five
+phone numbers:
+
+</p><p></p><pre>1478
+1487
+4178
+4187
+1748
+</pre>
+
+<p>For example, if Bessie was trying to type 4187, she might have tried pressing 1
+and 4 at the same time and then tried pressing 7 and 8 at the same time.
+
+</p><p>For the third case, as the numbers form a square, Bessie might have been trying
+to type any permutation of the input sequence.
+
+</p><p></p><div class="prob-section"><h4>SCORING:</h4>
+
+<p></p><ul><li>In inputs 2-3, all phone numbers have length at most <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-7-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-33" style="width: 0.494em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.494em; height: 0px; font-size: 102%;"><span style="position: absolute; clip: rect(1.614em, 1000.42em, 2.735em, -999.996em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-34"><span class="mn" id="MathJax-Span-35" style="font-family: STIXGeneral-Regular;">8</span></span><span style="display: inline-block; width: 0px; height: 2.525em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 0.861em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>8</mn></math></span></span><script type="math/tex" id="MathJax-Element-7">8</script>.</li><li>In inputs 4-5, the phone number only contains 1, 2, and 3.</li><li>In inputs 6-7, the phone number doesn't contain the digit 5.</li><li>In inputs 8-9, the phone number only contains 5, 6, 8, and 9.</li><li>In inputs 10-12, the sum of the string lengths does not exceed <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-8-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-36" style="width: 1.474em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.404em; height: 0px; font-size: 102%;"><span style="position: absolute; clip: rect(-0.137em, 1001.4em, 1.194em, -999.996em); top: -0.977em; left: 0em;"><span class="mrow" id="MathJax-Span-37"><span class="msubsup" id="MathJax-Span-38"><span style="display: inline-block; position: relative; width: 1.404em; height: 0px;"><span style="position: absolute; clip: rect(3.085em, 1000.98em, 4.205em, -999.996em); top: -3.988em; left: 0em;"><span class="mn" id="MathJax-Span-39" style="font-family: STIXGeneral-Regular;">10</span><span style="display: inline-block; width: 0px; height: 3.995em;"></span></span><span style="position: absolute; top: -4.408em; left: 0.984em;"><span class="mn" id="MathJax-Span-40" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 3.995em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 0.984em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.075em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>10</mn><mn>2</mn></msup></math></span></span><script type="math/tex" id="MathJax-Element-8">10^2</script>.</li><li>In inputs 13-15, the sum of the string lengths does not exceed <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-9-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-41" style="width: 1.474em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.404em; height: 0px; font-size: 102%;"><span style="position: absolute; clip: rect(-0.137em, 1001.4em, 1.194em, -999.996em); top: -0.977em; left: 0em;"><span class="mrow" id="MathJax-Span-42"><span class="msubsup" id="MathJax-Span-43"><span style="display: inline-block; position: relative; width: 1.404em; height: 0px;"><span style="position: absolute; clip: rect(3.085em, 1000.98em, 4.205em, -999.996em); top: -3.988em; left: 0em;"><span class="mn" id="MathJax-Span-44" style="font-family: STIXGeneral-Regular;">10</span><span style="display: inline-block; width: 0px; height: 3.995em;"></span></span><span style="position: absolute; top: -4.408em; left: 0.984em;"><span class="mn" id="MathJax-Span-45" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">3</span><span style="display: inline-block; width: 0px; height: 3.995em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 0.984em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.075em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>10</mn><mn>3</mn></msup></math></span></span><script type="math/tex" id="MathJax-Element-9">10^3</script>.</li><li>In inputs 16-18, the sum of the string lengths does not exceed <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-10-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-46" style="width: 1.474em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.404em; height: 0px; font-size: 102%;"><span style="position: absolute; clip: rect(-0.137em, 1001.4em, 1.194em, -999.996em); top: -0.977em; left: 0em;"><span class="mrow" id="MathJax-Span-47"><span class="msubsup" id="MathJax-Span-48"><span style="display: inline-block; position: relative; width: 1.404em; height: 0px;"><span style="position: absolute; clip: rect(3.085em, 1000.98em, 4.205em, -999.996em); top: -3.988em; left: 0em;"><span class="mn" id="MathJax-Span-49" style="font-family: STIXGeneral-Regular;">10</span><span style="display: inline-block; width: 0px; height: 3.995em;"></span></span><span style="position: absolute; top: -4.408em; left: 0.984em;"><span class="mn" id="MathJax-Span-50" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">4</span><span style="display: inline-block; width: 0px; height: 3.995em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 0.984em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.075em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>10</mn><mn>4</mn></msup></math></span></span><script type="math/tex" id="MathJax-Element-10">10^4</script>.</li><li>In inputs 19-21, no additional constraints.</li></ul>
+
+<p></p></div>
+
+<p>
+</p><p>Problem credits: Nick Wu
+
+</p></span></div>
+
+    <div style="height:0px;">
+       Contest has ended.  No further submissions allowed.
+</div>
+    
+</div>
+
+<div align="left" style="position:relative; float:left; left:30px; top:-30px; width:840px;"> 
+
+<h3>Previous Submissions:</h3>
+<a href="http://usaco.org/current/viewsource.php?sid=3738375">Sun, Feb 27, 2022 23:28:04 EST (C++17)</a><br>
+<a href="http://usaco.org/current/viewsource.php?sid=3738603">Sun, Feb 27, 2022 23:47:29 EST (C++17)</a><br>
+<a href="http://usaco.org/current/viewsource.php?sid=3738693">Sun, Feb 27, 2022 23:54:28 EST (C++17)</a><br>
+<a href="http://usaco.org/current/viewsource.php?sid=3739353">Mon, Feb 28, 2022 00:59:02 EST (C++17)</a><br>
+<a href="http://usaco.org/current/viewsource.php?sid=3739399">Mon, Feb 28, 2022 01:01:38 EST (C++17)</a><br>
+<a href="http://usaco.org/current/viewsource.php?sid=3739859">Mon, Feb 28, 2022 01:41:43 EST (C++17)</a><br>
+<a href="http://usaco.org/current/viewsource.php?sid=3740082">Mon, Feb 28, 2022 02:02:32 EST (C++17)</a><br>
+</div>
+
+<br style="clear:both">
+
+    <script>
+	var retries = 100, timeout = 1000;
+
+        function postback()
+        { 
+		var sid = $('#last-status').data('sid'); if (sid == -1) return;
+		$.post('current/tpcm/status-update.php', { sid: sid }, update_response, 'json'); 
+	}
+
+        function update_response(s)
+        {
+                // only try a limited number of times
+                if (--retries < 0) return;
+
+                // if there is xml data, update the DOM
+                if (s != null)
+                {
+		  $('#last-status img').attr("src","current/images/medal_none.png");
+		  if (parseInt(s.cd) <= -8 && s.sc == 'status-working') { $('#last-status img').attr("src","current/images/ajax.gif"); }
+
+                        // change class and text of the response box
+                        $('#last-status').removeClass().addClass(s.sc);
+                        $('#last-status p').text(s.sr);
+
+                        // change the response code of the data section
+                        $('#last-status').data('response-code', parseInt(s.cd));
+			$('#last-status .output-data').hide();
+
+		        if (s.output != null)
+			  {
+			    $('#last-status .output-data').show().text(s.output);
+			    // if the status is in a "working" state, keep checking
+			    if (parseInt($('#last-status').data('response-code')) <= -8)
+			      setTimeout(postback, timeout);
+
+			    return;
+			  }
+
+			if (s.jd != null && s.jd.length != 0)
+				$('#trial-information').html(s.jd);
+                }
+
+                // if the status is in a "working" state, keep checking
+                if (parseInt($('#last-status').data('response-code')) <= -8)
+            { setTimeout(postback, timeout); timeout *= 1.1; }
+        }
+
+    	// shade contests by clicking on their header
+	var sc_offset = -1;
+
+	function updateClocks()
+	{
+		$('.countdown').each(function(x)
+		{
+			// get the time remaining in seconds
+			var endtime = parseInt($(this).data('endtime'));
+			var sec = endtime - Math.floor(new Date()/1000) - sc_offset;
+
+			// closes while we are watching it
+			if (endtime != -1 && sec <= 0) window.location='index.php?page=viewcontest';
+
+			// convert time remaining to days, hrs, min, sec
+			var min = Math.floor(sec / 60); sec %= 60;		
+			var hrs = Math.floor(min / 60); min %= 60;		
+	
+			// zero pad the values
+			if (min < 10) min = '0' + min;
+			if (sec < 10) sec = '0' + sec;
+			
+			// generate text and print information to the screen
+			var interval;
+			if (hrs > 24) {
+			   interval = Math.floor(hrs/24) + ' days, ' + hrs%24 + ' hrs, ' + min + ' min, ' + sec + ' sec';
+			} else {
+			   interval = hrs + ' hrs, ' + min + ' min, ' + sec + ' sec';
+			}
+			$(this).text(endtime == -1 ? 'unlimited' : interval);
+		}).width(300);
+		
+		setTimeout(updateClocks, 500);
+	};
+
+	$(document).ready(function(){
+		$.post('current/tpcm/get-time.php', null, function(data)
+		{
+			sc_offset = data.time - Math.floor(new Date()/1000);
+			updateClocks();
+		}, 'json');
+	  	
+		$('#last-status .output-data').hide();
+		$('#last-status img').attr("src","current/images/medal_none.png");
+		if ($('#last-status').length) postback();
+
+     $('.masterTooltip').hover(function(){
+	 // Hover over code
+	 var title = $(this).attr('title');
+	 $(this).data('tipText', title).removeAttr('title');
+	 $('<p class="tooltip"></p>').text(title).appendTo('body').fadeIn('fast');
+     }, function() {
+	 // Hover out code
+	 $(this).attr('title', $(this).data('tipText'));
+	 $('.tooltip').remove();
+     }).mousemove(function(e) {
+	 var mousex = e.pageX + 20; //Get X coordinates
+	 var mousey = e.pageY + 10; //Get Y coordinates
+	 $('.tooltip').css({ top: mousey, left: mousex })
+     });
+
+	});
+
+	$('#choose-language').change(function(e){
+		window.location = "index.php?page=viewproblem&cpid=1202&lang=" + $(this).val();
+        });
+
+</script>
+
+
+   </div>
+  </div>
+ </div>
+
+ <br style="clear:both">
+
+
+
+
+
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: STIXSizeOneSym, sans-serif;"></div></div></body></html>
