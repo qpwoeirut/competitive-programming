@@ -1,13 +1,16 @@
 alias template='~/CompetitiveProgramming/templates/template.py'
 
+export ECC="ubuntu@52.91.19.240"
+export ORACLE="ubuntu@192.9.139.142"
+
 cmpl() {
     fname="${1%.*}"
-    g++-11 -std=c++17 -Wl,-stack_size -Wl,0x10000000 -O2 -lm -Wall -DLOCAL $fname.cpp -o $fname.out
+    g++-12 -std=c++17 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -O2 -lm -Wall -DLOCAL $fname.cpp -o $fname.out
 }
 
 run() {
     fname="${1%.*}"
-    g++-11 -std=c++17 -Wl,-stack_size -Wl,0x10000000 -O2 -lm -Wall -DLOCAL $fname.cpp -o temp_$fname.out
+    g++-12 -std=c++17 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -O2 -lm -Wall -DLOCAL $fname.cpp -o temp_$fname.out
     echo "Compiled!"
     $2 ./temp_$fname.out
     rm temp_$fname.out
