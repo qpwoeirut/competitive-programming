@@ -4,7 +4,7 @@ string to_string(const char* s){return to_string((string)s);}
 string to_string(const bool& b){return (b?"true":"false");}
 string to_string(const vector<bool>& vec,const string& sep=" ") {
 	string s = "[";
-	for (int i=0; i<vec.size(); i++) {if (i){s += sep;} s += to_string(vec[i]);}
+	for (int i=0; i<static_cast<int>(vec.size()); i++) {if (i){s += sep;} s += to_string(vec[i]);}
 	return s + "]";
 }
 template <size_t BITSET_SIZE> string to_string(const bitset<BITSET_SIZE>& v) {
