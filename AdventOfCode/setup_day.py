@@ -25,6 +25,7 @@ if not os.path.exists(f"{year}/day{day}"):
 # Create new Python file for the day
 with open(f"{year}/day{day}/day{day}.py", "w") as f, open("template.py") as template:
     f.write(template.read().replace("{{year}}", year).replace("{{day}}", day))
+open(f"{year}/day{day}/sample.txt", "w+").close()
 
 # Wait for midnight EST
 now = est_now()
@@ -39,4 +40,3 @@ print("Advent of Code started!")
 # Download input txt file from AoC website
 with open(f"{year}/day{day}/input.txt", "w") as f:
     f.write(requests.get(f"https://adventofcode.com/{year}/day/{day}/input", cookies=cookies).content.decode())
-open(f"{year}/day{day}/sample.txt", "w+").close()
