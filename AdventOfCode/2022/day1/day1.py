@@ -5,7 +5,7 @@ from submit_answer import submit_answer
 
 
 LEVEL = 2
-SAMPLE_ANSWERS = [, ]
+SAMPLE_ANSWERS = [24000, 45000]
 SAMPLE_ANSWER = SAMPLE_ANSWERS[LEVEL - 1]
 
 
@@ -26,15 +26,22 @@ def solve(s: str):
     print(A[:10])
     # M = len(A[0])
 
-    # for i in range(N):
+    cals = [0]
+    for i in range(N):
+        if A[i] == "":
+            cals.append(0)
+        else:
+            cals[-1] += int(A[i])
 
 
     # for i in range(N):
 
     if LEVEL == 1:
-        return
+        return max(cals)
     else:
-        return
+        cals.sort()
+        return sum(cals[-3:])
+
 
 def main():
     with open("sample.txt") as sample_file:
@@ -44,8 +51,8 @@ def main():
     assert solve(sample_input) == SAMPLE_ANSWER, f"Got {sample_answer} instead of {SAMPLE_ANSWER}"
 
     with open("input.txt") as input_file:
-        inp = input_file.read()
-    answer = solve(inp)
+        input = input_file.read()
+    answer = solve(input)
     print("Answer:", answer)
     assert submit_answer(2022, 1, LEVEL, answer) is True
 
