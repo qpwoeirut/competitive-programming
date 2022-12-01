@@ -47,7 +47,7 @@ def main():
         inp = input_file.read()
     answer = solve(inp)
     print("Answer:", answer)
-    assert submit_answer({{year}}, {{day}}, LEVEL, answer) is True
+    assert submit_answer(2022, 1, LEVEL, answer) is True
 
 
 if __name__ == '__main__':
