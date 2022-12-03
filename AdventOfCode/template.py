@@ -16,10 +16,10 @@ SAMPLE_ANSWER = SAMPLE_ANSWERS[LEVEL - 1]
 
 
 def solve(s: str) -> int:
-    # A = list(map(int, file.readline().split(',')))
+    # A = list(map(int, s.split(',')))
     A = [line.strip() for line in s.split('\n')]
-    # A = [line.strip() for line in file]
-    # A = [list(map(int, line.strip())) for line in file]
+    # A = [line.strip() for line in s.split('\n')]
+    # A = [list(map(int, line.strip())) for line in s.split('\n')]
 
     N = len(A)
     print("N =", N)
@@ -42,7 +42,7 @@ def main():
         sample_input = sample_file.read().strip()
     sample_answer = solve(sample_input)
     print("Answer for sample:", sample_answer)
-    assert solve(sample_input) == SAMPLE_ANSWER or SAMPLE_ANSWER is None,\
+    assert solve(sample_input) == SAMPLE_ANSWER,\
         f"Got {sample_answer} instead of {SAMPLE_ANSWER}"
 
     with open("input.txt") as input_file:
