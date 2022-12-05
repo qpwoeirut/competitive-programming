@@ -15,11 +15,11 @@ SAMPLE_ANSWERS = [None, None]
 SAMPLE_ANSWER = SAMPLE_ANSWERS[LEVEL - 1]
 
 
-def solve(s: str) -> int:
+def solve(s: str) -> int or str:
     # A = list(map(int, s.split(',')))
-    A = [line.strip() for line in s.split('\n')]
-    # A = [line.strip() for line in s.split('\n')]
-    # A = [list(map(int, line.strip())) for line in s.split('\n')]
+    A = [line for line in s.split('\n')]
+    # A = [line for line in s.split('\n')]
+    # A = [list(map(int, line)) for line in s.split('\n')]
 
     N = len(A)
     print("N =", N)
@@ -39,14 +39,13 @@ def solve(s: str) -> int:
 
 def main():
     with open("sample.txt") as sample_file:
-        sample_input = sample_file.read().strip()
+        sample_input = sample_file.read().strip('\n')
     sample_answer = solve(sample_input)
     print("Answer for sample:", sample_answer)
-    assert solve(sample_input) == SAMPLE_ANSWER,\
-        f"Got {sample_answer} instead of {SAMPLE_ANSWER}"
+    assert sample_answer == SAMPLE_ANSWER, f"Got {sample_answer} instead of {SAMPLE_ANSWER}"
 
     with open("input.txt") as input_file:
-        inp = input_file.read().strip()
+        inp = input_file.read().strip('\n')
     answer = solve(inp)
     print("Answer:", answer)
     assert submit_answer({{year}}, {{day}}, LEVEL, answer) is True
