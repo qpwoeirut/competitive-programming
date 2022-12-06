@@ -16,6 +16,7 @@ SAMPLE_ANSWER = SAMPLE_ANSWERS[LEVEL - 1]
 
 
 def solve(s: str) -> int or str:
+    # A = list(s)
     # A = list(map(int, s.split(',')))
     A = [line for line in s.split('\n')]
     # A = [line for line in s.split('\n')]
