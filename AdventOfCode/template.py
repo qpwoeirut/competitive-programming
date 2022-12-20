@@ -19,7 +19,7 @@ def solve(input_string: str) -> int or str:
     # A = list(input_string)
     # A = list(map(int, input_string.split(',')))
     A = [line for line in input_string.split('\n')]
-    # A = [line for line in input_string.split('\n')]
+    # A = [int(line) for line in input_string.split('\n')]
     # A = [list(map(int, line)) for line in input_string.split('\n')]
 
     N = len(A)
