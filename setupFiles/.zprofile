@@ -31,3 +31,12 @@ math() {
     python3 -c "from math import *; print($1)"
 }
 
+
+##
+# Your previous /Users/qpwoeirut/.zprofile file was backed up as /Users/qpwoeirut/.zprofile.macports-saved_2023-03-15_at_23:01:13
+##
+
+# MacPorts Installer addition on 2023-03-15_at_23:01:13: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
