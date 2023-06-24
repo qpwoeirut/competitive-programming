@@ -1,3 +1,6 @@
 [submodule "2023"]
 	path = CMIMC/CMIMC_Programming2023
 	url = git@github.com:qpwoeirut/CMIMC_Programming2023.git
+[submodule "GunnCompetitiveProgrammingClub/2023/CPCSummerBattlecode"]
+	path = GunnCompetitiveProgrammingClub/2023/CPCSummerBattlecode
+	url = git@github.com:qpwoeirut/CPCSummerBattlecode.git
