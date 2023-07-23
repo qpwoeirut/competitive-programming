@@ -27,3 +27,8 @@ noremap x "xx
 
 "I'm using Vim on terminal so font changes are done through terminal
 "Terminal > Preferences > Profiles
+
+
+"trying to make stuff faster
+"reduces lag while editing files with large lists of data
+set ttimeoutlen=50
