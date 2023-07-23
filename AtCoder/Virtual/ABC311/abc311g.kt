@@ -14,19 +14,28 @@ private val MOD = 1e9.toInt() + 7
 
 private fun solve() {
     val (N, M) = readInts()
-    val grid = Array(N) { readInts().toIntArray() }
+    val grid = Array(N) { r -> readInts().mapIndexed { c, x -> Triple(x, r, c) } }
 
-    val numbers = grid.mapIndexed { r, row -> row.mapIndexed { c, x -> Triple(x, r, c) } }.flatten().toTypedArray()
-    numbers.sort()
+    fun checkRectangle(r1: Int, c1: Int, r2: Int, c2: Int): Int {
+        if (r1 == r2 || c1 == c2) return 0
 
-    val sum = Array(N) { grid[it].copyOf() }
-    for (r in 1 until N) {
-        for (c in 1 until M) {
-            sum[r][c] += sum[r - 1][c] + sum[r][c - 1] - sum[r - 1][c - 1]
-        }
+        val rect = grid
+            .slice(r1 until r2)
+            .map { it.slice(c1 until c2) }
+        val sum = rect.sumBy { row -> row.sumBy { it.first } }
+        val min = rect.flatten().minBy { it.first }!!
+
+        val result = sum * min.first
+
+        val left = checkRectangle(r1, c1, r2, min.third)
+        val top = checkRectangle(r1, c1, min.second, c2)
+        val right = checkRectangle(r1, min.third + 1, r2, c2)
+        val bottom = checkRectangle(min.second + 1, c1, r2, c2)
+
+        return arrayOf(result, left, top, right, bottom).max()!!
     }
 
-
+    println(checkRectangle(0, 0, N, M))
 }
 
 fun main() {
