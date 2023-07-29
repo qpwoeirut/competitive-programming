@@ -1,6 +1,7 @@
 # competitive-programming 
 
 /venv/
+*.kotlin_module
 
 Debug
 .metadata
