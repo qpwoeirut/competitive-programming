@@ -1,3 +1,6 @@
+#ifndef QPWOEIRUT_DEBUG_H
+#define QPWOEIRUT_DEBUG_H
+
 string to_string(const char& c){return string(1, c);}
 string to_string(const string& s){return '"'+s+'"';}
 string to_string(const char* s){return to_string((string)s);}
@@ -37,4 +40,6 @@ template<class H, class... T> void DBG(H h, T... t) {
 #define debug1(obj, sz) cerr << #obj << ": " << to_string(obj, sz) << endl;
 #define debug2(obj, sz1, sz2) cerr << "-----" << #obj << "-----\n"; for (int i=0; i<sz1; i++) cerr << to_string(obj[i], sz2) << endl;
 #define debug3(obj, sz1, sz2, sz3) cerr << "-----" << #obj << "-----\n"; for (int i=0; i<sz1; i++) {for (int j=0; j<sz2; j++) cerr << to_string(obj[i][j], sz3) << " "; cerr << endl;}
+
+#endif // QPWOEIRUT_DEBUG_H
 
