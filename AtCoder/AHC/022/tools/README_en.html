@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AHC022 Tester</title>
+	<style type="text/css">
+		body {
+			margin: 10px 5%;
+			font-family: sans-serif;
+		}
+		h2 {
+			border-left: 8px solid gray;
+			margin-top:  40px;
+			padding-left: 10px;
+		}
+		code {
+			background-color: rgba(27, 31, 35, 0.05);
+			border-radius: 3px;
+			font-family: monospace;
+			padding: 0.2em 0.4em;
+		}
+		pre {
+			background-color: rgb(246, 248, 250);
+			padding: 16px;
+		}
+	</style>
+</head>
+<body>
+<h1>Local tools</h1>
+<p>
+We provide the contestant tools for <a href="https://atcoder.jp/contests/ahc022">RECRUIT Nihonbashi Half Marathon 2023 Summer (AHC022)</a>.
+</p>
+
+<h2>Requirements</h2>
+<p>Please install a compiler for Rust language (see <a href="https://www.rust-lang.org">https://www.rust-lang.org</a>).</p>
+<p>If a compile error occurs, the compiler version may be old. You can update to the latest compiler by executing the following command.</p>
+<pre>
+rustup update
+</pre>
+<p>For those who are not familiar with the Rust language environment, we have prepared a <a href="https://img.atcoder.jp/ahc022/u4u4grds7n_windows.zip">pre-compiled binary for Windows</a>.</p>
+<p>The following examples assume that you will be working in the directory where this README is located.</p>
+
+<h2>Input Generation</h2>
+<p>The <code>in</code> directory contains pre-generated input files for seed=0-99.</p>
+<p>If you want more inputs, prepare <code>seeds.txt</code> which contains a list of random seeds (unsigned 64bit integers) and execute the following command.</p>
+<pre>
+cargo run --release --bin gen seeds.txt
+</pre>
+<p>This will output input files into <code>in</code> directory.</p>
+
+<p>If you use the precompiled binary for Windows, replace <code>cargo run --release --bin gen</code> with <code>./gen.exe</code>.</p>
+
+<p>By putting space-separetad three integers <code>l</code>, <code>n</code>, <code>s</code> at the end of the each row of <code>seeds.txt</code>, the values of <code>L</code>, <code>N</code>, <code>S</code> in the generated input can be fixed to <code>l</code>, <code>n</code> and <code>s</code> , respectively.</p>
+<p>To fix only some of them, set the values to <code>0</code> for the others.</p>
+<p>For example, the following <code>seeds.txt</code> will generate an input with <code>seed=1, N=35, S=121</code>.</p>
+<pre>
+1 35 0 121
+</pre>
+
+<h2>Local Tester</h2>
+<p>Let <code>in.txt</code> be an input file, <code>out.txt</code> be a file to which output of your program will be written, and <code>cmd</code> be a command to run your program. You can test your program by executing the following command.</p>
+<pre>
+cargo run --release --bin tester cmd &lt; in.txt &gt; out.txt
+</pre>
+<p>The above command outputs the score to standard error. You can specify arguments to your program by</p>
+<pre>
+cargo run --release --bin tester cmd arg1 arg2 ... &lt; in.txt &gt; out.txt
+</pre>
+
+<p>If you use the precompiled binary for Windows, replace <code>cargo run --release --bin tester</code> with <code>./tester.exe</code>.</p>
+<p>You can visualize the contents of the output file by pasting it into the <a href="https://img.atcoder.jp/ahc022/u4u4grds7n.html?lang=en">visualizer</a>.</p>
+
+<h3>Examples</h3>
+<p>When executing a binary <code>a.out</code> which has been compiled in C++, etc.</p>
+<pre>
+cargo run --release --bin tester ./a.out &lt; in.txt &gt; out.txt
+</pre>
+<p>When executing a program <code>main.py</code> using python3.</p>
+<pre>
+cargo run --release --bin tester python3 main.py &lt; in.txt &gt; out.txt
+</pre>
+
+<h3>When using Powershell on Windows</h3>
+<p>Because you cannot use <code>&lt;</code> in the above examples, please execute as follows.</p>
+<pre>
+cat in.txt | cargo run --release --bin tester cmd &gt; out.txt
+</pre>
+<p>For some execution commands, you may need to specify the full path, as in the following example.</p>
+<pre>
+cat in.txt | cargo run --release --bin tester C:\Users\myname\AppData\Local\Microsoft\WindowsApps\python3.exe main.py &gt; out.txt
+</pre>
+<p>You can check the full path of a command by executing <code>gcm python3</code></p>
+
+<h2>Visualization</h2>
+<p>Let <code>in.txt</code> be an input file and <code>out.txt</code> be an output file. You can visualize the output by executing the following command.</p>
+<pre>
+cargo run --release --bin vis in.txt out.txt
+</pre>
+<p>The above command writes a visualization result to <code>vis.html</code>. It also outputs the score to standard error.</p>
+<p>If you use the precompiled binary for Windows, replace <code>cargo run --release --bin vis</code> with <code>./vis.exe</code>.</p>
+<p>You can also use a <a href="https://img.atcoder.jp/ahc022/u4u4grds7n.html?lang=en">web visualizer</a>.</p>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AHC022 Tester</title>
+	<style type="text/css">
+		body {
+			margin: 10px 5%;
+			font-family: sans-serif;
+		}
+		h2 {
+			border-left: 8px solid gray;
+			margin-top:  40px;
+			padding-left: 10px;
+		}
+		code {
+			background-color: rgba(27, 31, 35, 0.05);
+			border-radius: 3px;
+			font-family: monospace;
+			padding: 0.2em 0.4em;
+		}
+		pre {
+			background-color: rgb(246, 248, 250);
+			padding: 16px;
+		}
+	</style>
+</head>
+<body>
+<h1>ローカル用ツール</h1>
+<p>
+これは <a href="https://atcoder.jp/contests/ahc022">RECRUIT 日本橋ハーフマラソン 2023夏（AHC022）</a> の開発用ツールです。これらを用いることで、ローカル環境でプログラムのテストを行うことができます。
+</p>
+
+<h2>実行環境</h2>
+<p>Rust言語のコンパイル環境が必要です。 <a href="https://www.rust-lang.org/ja">https://www.rust-lang.org/ja</a> を参考に各自インストールしてください。</p>
+
+<p>コンパイルエラーになった場合、コンパイラのバージョンが古い可能性があります。
+以下のコマンド実行することで最新のコンパイラに更新が可能です。</p>
+<pre>
+rustup update
+</pre>
+<p dir="auto">Rust言語の環境構築が面倒な方向けに、<a href="https://img.atcoder.jp/ahc022/u4u4grds7n_windows.zip">Windows用のコンパイル済みバイナリ</a>も用意してあります。</p>
+<p>以下の実行例では、このREADMEが置かれているディレクトリに移動して作業することを想定しています。</p>
+
+<h2>入力生成</h2>
+<p><code>in</code> ディレクトリに、あらかじめ生成された seed=0~99 に対する入力ファイルが置かれています。</p>
+<p>より多くの入力が欲しい場合は、 <code>seeds.txt</code> に欲しい入力ファイルの数だけ乱数seed値(符号なし64bit整数値)を記入し、以下のコマンドを実行します。</p>
+<pre>
+cargo run --release --bin gen seeds.txt
+</pre>
+<p>生成された入力ファイルは <code>in</code> ディレクトリに出力されます。</p>
+<p>Windows用のコンパイル済バイナリを使用する場合は <code>cargo run --release --bin gen</code> の部分を <code>./gen.exe</code> に置き換えてください。</p>
+
+<p><code>seeds.txt</code> の各行の末尾に3つの整数 <code>l</code>, <code>n</code>, <code>s</code> をスペース区切りで続けることで、生成する入力の <code>L</code>, <code>N</code>, <code>S</code> の値をそれぞれ <code>l</code>, <code>n</code>, <code>s</code> に固定できます。</p>
+<p>一部のみを固定したい場合は、それら以外の値を <code>0</code> とします。</p>
+<p>たとえば <code>seeds.txt</code> を以下のようにすると、 <code>seed=1, L=35, S=121</code> の入力が生成されます。</p>
+<pre>
+1 35 0 121
+</pre>
+
+<h2>ローカルテスタ</h2>
+<p>入力ファイル名を <code>in.txt</code>、出力結果を書き出す先のファイル名を <code>out.txt</code>、あなたのプログラムの実行コマンドを <code>cmd</code> としたとき、以下のコマンドを実行します。</p>
+<pre>
+cargo run --release --bin tester cmd &lt; in.txt &gt; out.txt
+</pre>
+<p>実行が終わると、スコアが標準エラーに出力されます。 引数が必要な場合には</p>
+<pre>
+cargo run --release --bin tester cmd arg1 arg2 ... &lt; in.txt &gt; out.txt
+</pre>
+<p>のようにします。</p>
+<p>Windows用のコンパイル済バイナリを使用する場合は <code>cargo run --release --bin tester</code> の部分を <code>./tester.exe</code> に置き換えてください。</p>
+<p>出力された <code>out.txt</code> の中身を <a href="https://img.atcoder.jp/ahc022/u4u4grds7n.html?lang=ja">ビジュアライザ</a> に貼り付けると、ビジュアライズが可能です。</p>
+
+<h3>例</h3>
+<p>C++などでコンパイル済みの <code>a.out</code> というバイナリを実行する場合</p>
+<pre>
+cargo run --release --bin tester ./a.out &lt; in.txt &gt; out.txt
+</pre>
+<p>python3 で <code>main.py</code> というプログラムを実行する場合</p>
+<pre>
+cargo run --release --bin tester python3 main.py &lt; in.txt &gt; out.txt
+</pre>
+
+<h3>Windows で Powershell を使用する場合</h3>
+<p>上記の <code>&lt;</code> が使えないため、以下のように実行してください。</p>
+<pre>
+cat in.txt | cargo run --release --bin tester cmd &gt; out.txt
+</pre>
+<p>実行コマンドによっては以下の例のようにフルパスで指定する必要がある場合があります。</p>
+<pre>
+cat in.txt | cargo run --release --bin tester C:\Users\myname\AppData\Local\Microsoft\WindowsApps\python3.exe main.py &gt; out.txt
+</pre>
+<p>コマンドのフルパスは <code>gcm python3</code> というコマンドを実行することで確認できます。</p>
+
+<h2>ビジュアライザ</h2>
+<p>入力ファイル名を <code>in.txt</code>、出力ファイル名を <code>out.txt</code> としたとき、以下のコマンドを実行します。</p>
+<pre>
+cargo run --release --bin vis in.txt out.txt
+</pre>
+<p>出力のビジュアライズ結果は <code>vis.html</code> というファイルに書き出されます。標準エラーにはスコアを出力します。</p>
+<p>Windows用のコンパイル済バイナリを使用する場合は <code>cargo run --release --bin vis</code> の部分を <code>./vis.exe</code> に置き換えてください。</p>
+<p>より機能が豊富な <a href="https://img.atcoder.jp/ahc022/u4u4grds7n.html?lang=ja">ウェブ版のビジュアライザ</a> も利用可能です。</p>
+</body>
+</html>

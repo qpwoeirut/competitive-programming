@@ -1,0 +1,6 @@
+temp_range = 1000
+s_margin = 5
+PATTERN_TIME = 250ms
+
+
+
