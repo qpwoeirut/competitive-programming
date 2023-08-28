@@ -2,6 +2,7 @@ alias template='~/CompetitiveProgramming/templates/template.py'
 
 export ECC="ubuntu@52.91.19.240"
 export ORACLE="ubuntu@192.9.139.142"
+export PERSONAL="ubuntu@54.145.69.255"
 
 cmpl() {
     fname="${1%.*}"
