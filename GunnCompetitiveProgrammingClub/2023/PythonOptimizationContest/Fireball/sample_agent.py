@@ -19,10 +19,3 @@ class Agent:
         else:
             self.loads += 1
             return random.choice(['load', 'shield'])
-
-# create an instance of the agent
-agent = Agent()
-
-# define the play function for the tournament to use
-def play(opponent_last_move):
-    return agent.play(opponent_last_move)

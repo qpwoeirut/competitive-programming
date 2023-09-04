@@ -16,13 +16,14 @@ def determine_winner(move1, move2):
 
 def run_match(agent1, agent2, rounds=100):
     """
-    eech match consists of a certain number of rounds (default 100).
+    Each match consists of a certain number of rounds (default 100).
     """
     score1, score2 = 0, 0
-    last_move1, last_move2 = None, None
+    move1 = None
+    move2 = None
     for _ in range(rounds):
-        move1 = agent1.play(last_move2)
-        move2 = agent2.play(last_move1)
+        move1 = agent1.play(move2)
+        move2 = agent2.play(move1)
 
         winner = determine_winner(move1, move2)
         if winner == 0:
@@ -33,29 +34,30 @@ def run_match(agent1, agent2, rounds=100):
             score1 += 1
             score2 += 1
 
-        last_move1, last_move2 = move1, move2
-
     return score1, score2
 
 def main():
     agent_files = [f for f in os.listdir('.') if f.endswith('_agent.py')]
-    #print(f"Found agent files: {agent_files}")
-    agents = []
     
+    agents = []
+    agent_instances = []
+
     # dynamically import all agent modules
     for agent_file in agent_files:
         module_name = agent_file[:-3]
         module = __import__(module_name)
         agents.append(module)
+        agent_instances.append(module.Agent())
 
     scores = {agent.__name__: 0 for agent in agents}
     print(f"Imported {len(agents)} agents.")
-    for i, agent1 in enumerate(agents):
-        for j, agent2 in enumerate(agents):
+    
+    for i, agent1_instance in enumerate(agent_instances):
+        for j, agent2_instance in enumerate(agent_instances):
             if i != j:  # don't play an agent against itself
-                score1, score2 = run_match(agent1, agent2)
-                scores[agent1.__name__] += score1
-                scores[agent2.__name__] += score2
+                score1, score2 = run_match(agent1_instance, agent2_instance)
+                scores[agents[i].__name__] += score1
+                scores[agents[j].__name__] += score2
 
     sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
     

@@ -118,11 +118,15 @@ def main():
     for i, agent_name1 in enumerate(agent_names):
         for j, agent_name2 in enumerate(agent_names):
             if i != j:  # don't play an agent against itself
+                s1, s2 = 0, 0
                 for k in range(100): 
                     match = Match(agent_classes[agent_name1](), agent_classes[agent_name2]())  # New instances for every match
                     score1, score2 = match.run()
-                    scores[agent_name1] += score1
-                    scores[agent_name2] += score2
+                    s1 += score1
+                    s2 += score2
+                print(agent_name1, round(s1, 1), '-', round(s2, 1), agent_name2)
+                scores[agent_name1] += s1
+                scores[agent_name2] += s2
 
 
     sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
