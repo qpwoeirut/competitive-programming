@@ -19,11 +19,11 @@ def run_match(agent1, agent2, rounds=100):
     Each match consists of a certain number of rounds (default 100).
     """
     score1, score2 = 0, 0
-    move1 = None
-    move2 = None
+    old_move1 = None
+    old_move2 = None
     for _ in range(rounds):
-        move1 = agent1.play(move2)
-        move2 = agent2.play(move1)
+        move1 = agent1.play(old_move2)
+        move2 = agent2.play(old_move1)
 
         winner = determine_winner(move1, move2)
         if winner == 0:
@@ -33,6 +33,9 @@ def run_match(agent1, agent2, rounds=100):
         else:
             score1 += 1
             score2 += 1
+
+        old_move1 = move1
+        old_move2 = move2
 
     return score1, score2
 
