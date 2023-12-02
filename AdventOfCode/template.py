@@ -27,15 +27,17 @@ def solve(input_string: str) -> int or str:
     print(A[:10])
     # M = len(A[0])
 
+    ans1 = 0
+    ans2 = 0
     # for i in range(N):
 
 
     # for i in range(N):
 
     if LEVEL == 1:
-        return
+        return ans1
     else:
-        return
+        return ans2
 
 
 def main():
