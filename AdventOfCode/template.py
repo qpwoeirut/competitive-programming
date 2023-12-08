@@ -1,6 +1,3 @@
-# from collections import *
-# from itertools import *
-# from math import *
 from submit_answer import submit_answer
 
 
