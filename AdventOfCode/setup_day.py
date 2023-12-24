@@ -51,12 +51,10 @@ def main():
         cookies = {"session": token.read().strip()}
 
     # Get current year, day (adding 3 hours for those running it before 12EST)
-    # year, day = est_now().strftime("%Y"), (est_now() + timedelta(hours=3)).strftime("%-d")
+    year, day = est_now().strftime("%Y"), (est_now() + timedelta(hours=3)).strftime("%-d")
 
-    year = "2023"
-    day = "22"
     pre_setup(year, day)
-    # wait_for_start()
+    wait_for_start()
 
     # 12:00 AM Eastern!
     print("Advent of Code started!")
