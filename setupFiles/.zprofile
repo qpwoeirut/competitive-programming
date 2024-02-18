@@ -25,9 +25,27 @@ run20() {
     rm temp_$fname.out
 }
 
+drun() {
+    fname="${1%.*}"
+    g++-12 -std=c++17 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -g -lm -Wall -fsanitize=address,undefined,signed-integer-overflow -ftrapv -DLOCAL $fname.cpp -o temp_$fname.out
+    echo "Compiled!"
+    $2 ./temp_$fname.out
+    rm temp_$fname.out
+    rm -r temp_$fname.out.dYSM
+}
+
 drun20() {
     fname="${1%.*}"
     g++-12 -std=c++20 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -g -lm -Wall -fsanitize=address,undefined,signed-integer-overflow -ftrapv -DLOCAL $fname.cpp -o temp_$fname.out
+    echo "Compiled!"
+    $2 ./temp_$fname.out
+    rm temp_$fname.out
+    rm -r temp_$fname.out.dYSM
+}
+
+optrun() {
+    fname="${1%.*}"
+    g++-12 -std=c++20 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -O3 -funroll-loops -mtune=native -march=native -lm -Wall -DLOCAL $fname.cpp -o temp_$fname.out
     echo "Compiled!"
     $2 ./temp_$fname.out
     rm temp_$fname.out
