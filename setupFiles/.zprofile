@@ -45,7 +45,7 @@ drun20() {
 
 optrun() {
     fname="${1%.*}"
-    g++-13 -std=c++20 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -O3 -funroll-loops -mtune=native -march=native -lm -Wall -DLOCAL $fname.cpp -o temp_$fname.out
+    g++-13 -std=c++20 -I ~/CompetitiveProgramming/setupFiles -O3 -funroll-loops -mtune=native -march=native -lm -Wall -DLOCAL $fname.cpp -o temp_$fname.out
     echo "Compiled!"
     $2 ./temp_$fname.out
     rm temp_$fname.out
