@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:////home/wata/.vscode/extensions/goessner.mdmath-2.7.4/themes/default/style.css">
+
+</head>
+<body class="markdown-body">
+<ul dir="auto">
+<li dir="auto"><a href="#usage">Usage</a>
+<ul dir="auto">
+<li dir="auto"><a href="#requirements">Requirements</a></li>
+<li dir="auto"><a href="#input-generation">Input Generation</a></li>
+<li dir="auto"><a href="#visualization">Visualization</a></li>
+</ul>
+</li>
+<li dir="auto"><a href="#%E4%BD%BF%E3%81%84%E6%96%B9">使い方</a>
+<ul dir="auto">
+<li dir="auto"><a href="#%E5%AE%9F%E8%A1%8C%E7%92%B0%E5%A2%83">実行環境</a></li>
+<li dir="auto"><a href="#%E5%85%A5%E5%8A%9B%E7%94%9F%E6%88%90">入力生成</a></li>
+<li dir="auto"><a href="#%E3%83%93%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%A9%E3%82%A4%E3%82%B6">ビジュアライザ</a></li>
+</ul>
+</li>
+</ul>
+<h1 dir="auto" id="usage">Usage</h1>
+<h2 dir="auto" id="requirements">Requirements</h2>
+<p dir="auto">Please install a compiler for Rust language (see <a href="https://www.rust-lang.org">https://www.rust-lang.org</a>).
+If a compile error occurs, the compiler version may be old.
+You can update to the latest compiler by executing the following command.</p>
+<pre><code dir="auto">rustup update
+</code></pre>
+<p dir="auto">For those who are not familiar with the Rust language environment, we have prepared a <a href="https://img.atcoder.jp/ahc031/PJcas1sL_windows.zip">pre-compiled binary for Windows</a>.
+The following examples assume that you will be working in the directory where this README is located.</p>
+<h2 dir="auto" id="input-generation">Input Generation</h2>
+<p dir="auto">The <code>in</code> directory contains pre-generated input files for seed=0-99.
+If you want more inputs, prepare <code>seeds.txt</code> which contains a list of random seeds (unsigned 64bit integers) and execute the following command.</p>
+<pre><code dir="auto">cargo run -r --bin gen seeds.txt
+</code></pre>
+<p dir="auto">This will output input files into <code>in</code> directory.
+When using the precompiled binary for Windows, execute the following command.</p>
+<pre><code dir="auto">./gen.exe seeds.txt
+</code></pre>
+<p dir="auto">If you use the command prompt instead of WSL, use <code>gen.exe</code> instead of <code>./gen.exe</code>.</p>
+<p dir="auto">The following options are available.</p>
+<ul dir="auto">
+<li dir="auto"><code>--dir=in2</code> Change the destination of the input files to the specified one instead of <code>in</code>.</li>
+<li dir="auto"><code>--D=10</code> Fix the <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span></eq> value of the generated inputs to the specified one.</li>
+<li dir="auto"><code>--N=10</code> Fix the <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></eq> value of the generated inputs to the specified one.</li>
+<li dir="auto"><code>--E=10000</code> Fix the <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span></eq> value of the generated inputs to the specified one.</li>
+</ul>
+<h2 dir="auto" id="visualization">Visualization</h2>
+<p dir="auto">Let <code>in.txt</code> be an input file and <code>out.txt</code> be an output file.
+You can visualize the output by executing the following command.</p>
+<pre><code dir="auto">cargo run -r --bin vis in.txt out.txt
+</code></pre>
+<p dir="auto">When using the precompiled binary for Windows,</p>
+<pre><code dir="auto">./vis.exe in.txt out.txt
+</code></pre>
+<p dir="auto">The above command writes a visualization result to <code>vis.html</code>.
+It also outputs the score to standard output.</p>
+<p dir="auto">You can also use a <a href="https://img.atcoder.jp/ahc031/PJcas1sL.html?lang=en">web visualizer</a> which is more rich in features.</p>
+<h1 dir="auto" id="%E4%BD%BF%E3%81%84%E6%96%B9">使い方</h1>
+<h2 dir="auto" id="%E5%AE%9F%E8%A1%8C%E7%92%B0%E5%A2%83">実行環境</h2>
+<p dir="auto">Rust言語のコンパイル環境が必要です。
+<a href="https://www.rust-lang.org/ja">https://www.rust-lang.org/ja</a> を参考に各自インストールして下さい。
+コンパイルエラーになった場合、コンパイラのバージョンが古い可能性があります。
+以下のコマンド実行することで最新のコンパイラに更新が可能です。</p>
+<pre><code dir="auto">rustup update
+</code></pre>
+<p dir="auto">Rust言語の環境構築が面倒な方向けに、<a href="https://img.atcoder.jp/ahc031/PJcas1sL_windows.zip">Windows用のコンパイル済みバイナリ</a>も用意してあります。
+以下の実行例では、このREADMEが置かれているディレクトリに移動して作業することを想定しています。</p>
+<h2 dir="auto" id="%E5%85%A5%E5%8A%9B%E7%94%9F%E6%88%90">入力生成</h2>
+<p dir="auto"><code>in</code> ディレクトリに予め生成された seed=0~99 に対する入力ファイルが置かれています。
+より多くの入力が欲しい場合は、<code>seeds.txt</code> に欲しい入力ファイルの数だけ乱数seed値(符号なし64bit整数値)を記入し、以下のコマンドを実行します。</p>
+<pre><code dir="auto">cargo run -r --bin gen seeds.txt
+</code></pre>
+<p dir="auto">生成された入力ファイルは <code>in</code> ディレクトリに出力されます。
+Windows用のコンパイル済バイナリを使用する場合は以下のようにします。</p>
+<pre><code dir="auto">./gen.exe seeds.txt
+</code></pre>
+<p dir="auto">WSLではなくコマンドプロンプトを使用する場合は <code>./gen.exe</code> ではなく <code>gen.exe</code> として下さい。</p>
+<p dir="auto">以下のオプションが使用可能です</p>
+<ul dir="auto">
+<li dir="auto"><code>--dir=in2</code> 入力ファイルの出力先を <code>in</code> ではなく、指定されたものに変更</li>
+<li dir="auto"><code>--D=10</code> 生成される入力の <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span></eq> の値を指定されたものに固定</li>
+<li dir="auto"><code>--N=10</code> 生成される入力の <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></eq> の値を指定されたものに固定</li>
+<li dir="auto"><code>--E=10000</code> 生成される入力の <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span></eq> の値を指定されたものに固定</li>
+</ul>
+<h2 dir="auto" id="%E3%83%93%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%A9%E3%82%A4%E3%82%B6">ビジュアライザ</h2>
+<p dir="auto">入力ファイル名を<code>in.txt</code>、出力ファイル名を<code>out.txt</code>としたとき、以下のコマンドを実行します。</p>
+<pre><code dir="auto">cargo run -r --bin vis in.txt out.txt
+</code></pre>
+<p dir="auto">Windows用のコンパイル済バイナリを使用する場合は以下のようにします。</p>
+<pre><code dir="auto">./vis.exe in.txt out.txt
+</code></pre>
+<p dir="auto">出力のビジュアライズ結果は <code>vis.html</code> というファイルに書き出されます。
+標準出力にはスコアを出力します。</p>
+<p dir="auto">より機能が豊富な<a href="https://img.atcoder.jp/ahc031/PJcas1sL.html?lang=ja">ウェブ版のビジュアライザ</a>も利用可能です。</p>
+
+</body>
+</html>
