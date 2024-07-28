@@ -4,3 +4,9 @@
 [submodule "GunnCompetitiveProgrammingClub/2023/CPCSummerBattlecode"]
 	path = GunnCompetitiveProgrammingClub/2023/CPCSummerBattlecode
 	url = git@github.com:qpwoeirut/CPCSummerBattlecode.git
+[submodule "CodeWeekend/CodeWeekend/CodeWeekend-1"]
+	path = CodeWeekend/CodeWeekend/CodeWeekend-1
+	url = git@github.com:qpwoeirut/CodeWeekend-1.git
+[submodule "CodeWeekend/CodeWeekend-1"]
+	path = CodeWeekend/CodeWeekend-1
+	url = git@github.com:qpwoeirut/CodeWeekend-1.git
