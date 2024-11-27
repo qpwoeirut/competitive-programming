@@ -27,7 +27,7 @@ run20() {
 
 drun() {
     fname="${1%.*}"
-    g++-14 -std=c++17 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -g -lm -Wall -fsanitize=address,undefined,signed-integer-overflow -ftrapv -DLOCAL $fname.cpp -o temp_$fname.out
+    clang++ -std=c++17 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -g -lm -Wall -fsanitize=address,undefined,signed-integer-overflow -ftrapv -DLOCAL $fname.cpp -o temp_$fname.out
     >&2 echo "Compiled!"
     $2 ./temp_$fname.out
     rm temp_$fname.out
@@ -36,7 +36,7 @@ drun() {
 
 drun20() {
     fname="${1%.*}"
-    g++-14 -std=c++20 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -g -lm -Wall -fsanitize=address,undefined,signed-integer-overflow -ftrapv -DLOCAL $fname.cpp -o temp_$fname.out
+    clang++ -std=c++20 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -g -lm -Wall -fsanitize=address,undefined,signed-integer-overflow -ftrapv -DLOCAL $fname.cpp -o temp_$fname.out
     >&2 echo "Compiled!"
     $2 ./temp_$fname.out
     rm temp_$fname.out

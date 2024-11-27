@@ -14,5 +14,3 @@ using mci = map<char,int>;
 using msi = map<string,int>;
 using mss = map<string,string>;
 
-template <class T> using ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
-template <class T, class U> using ordered_map = tree<T,U,less<T>,rb_tree_tag,tree_order_statistics_node_update>;

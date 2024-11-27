@@ -45,7 +45,7 @@ def main():
         with open(filename, 'w') as prog:
             prog.write(comment.strip() + '\n\n')
         return
-    header = comment + HEADER
+    header = comment + HEADER + PB_DS
     if Feature.PROBLEM_HEADER in features:
         header = gen_train_header(filename) + '\n' + header
 
@@ -86,11 +86,17 @@ LANG: C++14
 
 template_path = "/Users/qpwoeirut/CompetitiveProgramming/templates/"
 
-with open(template_path + "header.cpp") as header_file, open(template_path + "define.cpp") as define_file,\
-        open(template_path + "typedef.cpp") as typedef_file, open(template_path + "func.cpp") as func_file,\
-        open(template_path + "geo.cpp") as geo_file, open(template_path + "debug.cpp") as debug_file, \
-        open(template_path + "const.cpp") as const_file, open(template_path + "main.cpp") as main_file:
+with open(template_path + "header.cpp") as header_file, \
+        open(template_path + "pb_ds.cpp") as pb_ds_file, \
+        open(template_path + "define.cpp") as define_file, \
+        open(template_path + "typedef.cpp") as typedef_file, \
+        open(template_path + "func.cpp") as func_file, \
+        open(template_path + "geo.cpp") as geo_file, \
+        open(template_path + "debug.cpp") as debug_file, \
+        open(template_path + "const.cpp") as const_file, \
+        open(template_path + "main.cpp") as main_file:
     HEADER = header_file.read()
+    PB_DS = pb_ds_file.read()
     DEFINE = define_file.read()
     TYPEDEF = typedef_file.read()
     FUNC = func_file.read()
