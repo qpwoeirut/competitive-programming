@@ -1,0 +1,21 @@
+Register A: 38610541
+Register B: 0
+Register C: 0
+
+Program: 2,4,1,1,7,5,1,5,4,3,5,5,0,3,3,0
+
+
+b = a % 8       2,4
+b ^= 1          1,1
+c = a >> b      7,5
+b ^= 5          1,5
+b ^= c          4,3
+out.append(b)   5,5
+a >>= 3         0,3
+i = a ? 0 : end 3,0
+
+
+b = (a % 8) ^ 1
+out.append(b ^ (a >> b) ^ 5)
+a >>= 3
+i = a ? 0 : end
