@@ -12,6 +12,7 @@ except FileNotFoundError:
 
 
 def submit_answer(year: int, day: int, level: int, answer) -> bool:
+    assert answer is not None
     hash_value = f"{year}-{day}-{level}={answer}"
     with open("/Users/qpwoeirut/CompetitiveProgramming/AdventOfCode/.cache", "r") as cache:
         entries = {line.strip() for line in cache}
@@ -29,7 +30,8 @@ def submit_answer(year: int, day: int, level: int, answer) -> bool:
     if b"To play, please identify yourself" in resp.content:
         raise Exception("Not logged in")
     if b"You gave an answer too recently" in resp.content:
-        raise Exception("Need to wait")
+        after = resp.content.split(b'You have ')[1].split(b' left to wait')[0]  # too lazy to regex
+        raise Exception("Need to wait " + after.decode())
     return True
 
 
