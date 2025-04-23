@@ -10,3 +10,6 @@
 [submodule "CodeWeekend/CodeWeekend-1"]
 	path = CodeWeekend/CodeWeekend-1
 	url = git@github.com:qpwoeirut/CodeWeekend-1.git
+[submodule "CMIMC/PRIZE-CUTOFF-CMIMC-2025"]
+	path = CMIMC/PRIZE-CUTOFF-CMIMC-2025
+	url = git@github.com:EnchLolz/PRIZE-CUTOFF-CMIMC-2025.git
