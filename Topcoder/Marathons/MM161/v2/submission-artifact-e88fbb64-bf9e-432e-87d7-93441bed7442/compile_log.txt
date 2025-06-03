@@ -1,0 +1,27 @@
+Compile start...
+In file included from /workdir/board.cpp:5:0,
+                 from /workdir/HordeChess.cpp:7:
+/workdir/table.h: In member function 'U LargeTable<T, U>::set(const T&, const U&)':
+/workdir/table.h:78:28: error: 'make_tuple' is not a member of 'std'
+         items[size] = std::make_tuple(hash, item, indexes[hash & MASK]);
+                            ^~~~~~~~~~
+/workdir/table.h:78:28: note: suggested alternative: 'make_heap'
+         items[size] = std::make_tuple(hash, item, indexes[hash & MASK]);
+                            ^~~~~~~~~~
+                            make_heap
+/workdir/table.h: In instantiation of 'struct LargeTable<long unsigned int, float>':
+/workdir/HordeChess.cpp:41:56:   required from here
+/workdir/table.h:57:43: error: 'LargeTable<T, U>::items' has incomplete type
+     std::tuple<T, U, int> items[LARGE_SIZE];
+                                           ^
+In file included from /usr/include/c++/7/bits/move.h:54:0,
+                 from /usr/include/c++/7/bits/nested_exception.h:40,
+                 from /usr/include/c++/7/exception:143,
+                 from /usr/include/c++/7/ios:39,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from /workdir/HordeChess.cpp:3:
+/usr/include/c++/7/type_traits:2560:11: note: declaration of 'class std::tuple<long unsigned int, float, int>'
+     class tuple;
+           ^~~~~
+Compile end.

@@ -1,0 +1,21 @@
+Score = 120.0
+Assertion failed: (status == 0), function main, file HordeChess.cpp, line 38.
+Score = 588.0
+Score = 2437.0
+Score = 256.0
+Score = 10793.0
+Score = 14029.0
+Score = 10971.0
+Score = 124.0
+Score = 6395.0
+Score = 1777.0
+Score = 140.0
+Score = 721.0
+Score = 13457.0
+Score = 392.0
+Score = 847.0
+Score = 162.0
+Score = 6393.0
+Score = 3635.0
+Score = 420.0
+Score = 276.0
