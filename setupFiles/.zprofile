@@ -9,6 +9,12 @@ cmpl() {
     g++-14 -std=c++17 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -O2 -lm -Wall -DLOCAL $fname.cpp -o $fname.out
 }
 
+dcmpl() {
+    fname="${1%.*}"
+    clang++ -std=c++17 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -g -lm -Wall -fsanitize=address,undefined,signed-integer-overflow -ftrapv -DLOCAL $fname.cpp -o $fname.out
+    >&2 echo "Compiled!"
+}
+
 run() {
     fname="${1%.*}"
     g++-14 -std=c++17 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -O2 -lm -Wall -DLOCAL $fname.cpp -o temp_$fname.out
