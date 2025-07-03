@@ -37,6 +37,9 @@ Testing
 # BattleCode is stored in its own private repos
 /BattleCode
 
+# code.golf solutions shouldn't be shared
+/CodeGolf
+
 ######## from IOI Solutions ########
 /sandbox/
 /tests/
