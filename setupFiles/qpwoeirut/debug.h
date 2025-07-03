@@ -14,6 +14,7 @@ template <size_t BITSET_SIZE> string to_string(const bitset<BITSET_SIZE>& v) {
     return "[" + v.to_string() + "]";
 }
 template <class T1,class T2> string to_string(const pair<T1, T2>& p, const string& sep=",");
+template <class T> string to_string(const complex<T>& p, const string& sep=",");
 template <class T> string to_string(const T& v, const string& sep=" ") {
 	bool first = true; string s = "[";
 	for (const auto &elem: v) {
@@ -23,13 +24,13 @@ template <class T> string to_string(const T& v, const string& sep=" ") {
 	}
 	return s + "]";
 }
-template <class T> string to_string(const T& v, const int& sz, const string& sep=" ") {
+template <class T> string to_string(const T v[], const int& sz, const string& sep=" ") {
 	string s = "[";
 	for (int i=0; i<sz; i++) {if (i){s += sep;} s += to_string(v[i]);}
 	return s + "]";
 }
 template <class T1,class T2> string to_string(const pair<T1,T2>& p, const string& sep) {return "(" + to_string(p.first) + sep + to_string(p.second) + ")";}
-
+template <class T> string to_string(const complex<T>& p, const string& sep) {return "(" + to_string(p.real()) + sep + to_string(p.imag()) + ")";}
 
 void DBG() { cerr << '}' << endl; }
 template<class H, class... T> void DBG(H h, T... t) {
