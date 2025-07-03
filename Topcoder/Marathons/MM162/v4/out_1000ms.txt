@@ -1,0 +1,31 @@
+Seed = 101, Score = 30015.0, RunTime = 1221 ms
+Seed = 102, Score = 28046.0, RunTime = 1030 ms
+Seed = 103, Score = 28246.0, RunTime = 1026 ms
+Seed = 104, Score = 55022.0, RunTime = 1028 ms
+Seed = 105, Score = 35716.0, RunTime = 1024 ms
+Seed = 106, Score = 4160.0, RunTime = 1025 ms
+Seed = 107, Score = 76730.0, RunTime = 1028 ms
+Seed = 108, Score = 33184.0, RunTime = 1027 ms
+Seed = 109, Score = 47431.0, RunTime = 1027 ms
+Seed = 110, Score = 81522.0, RunTime = 1031 ms
+Seed = 111, Score = 63696.0, RunTime = 1030 ms
+Seed = 112, Score = 53018.0, RunTime = 1026 ms
+Seed = 113, Score = 82010.0, RunTime = 1026 ms
+Seed = 114, Score = 33671.0, RunTime = 1026 ms
+Seed = 115, Score = 45157.0, RunTime = 1029 ms
+Seed = 116, Score = 42430.0, RunTime = 1025 ms
+Seed = 117, Score = 66074.0, RunTime = 1034 ms
+Seed = 118, Score = 66128.0, RunTime = 1031 ms
+Seed = 119, Score = 82026.0, RunTime = 1028 ms
+Seed = 120, Score = 4121.0, RunTime = 1027 ms
+Seed = 121, Score = 94057.0, RunTime = 1029 ms
+Seed = 122, Score = 43640.0, RunTime = 1027 ms
+Seed = 123, Score = 72728.0, RunTime = 1029 ms
+Seed = 124, Score = 45230.0, RunTime = 1025 ms
+Seed = 125, Score = 83066.0, RunTime = 1026 ms
+
+            Seeds: 101 to 125
+   Executed Cases: 25
+     Failed Cases: 0
+    Avg. Run Time: 1035 ms
+    Max. Run Time: 1221 ms

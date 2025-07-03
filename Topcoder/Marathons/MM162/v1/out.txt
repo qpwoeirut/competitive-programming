@@ -1,0 +1,57 @@
+Seed = 101, Score = 32007.0, RunTime = 9831 ms
+Seed = 102, Score = 31009.0, RunTime = 9528 ms
+Seed = 103, Score = 69014.0, RunTime = 9527 ms
+Seed = 104, Score = 58000.0, RunTime = 9527 ms
+Seed = 105, Score = 71128.0, RunTime = 9523 ms
+Seed = 106, Score = 19002.0, RunTime = 9524 ms
+Seed = 107, Score = 96003.0, RunTime = 9525 ms
+Seed = 108, Score = 42000.0, RunTime = 9526 ms
+Seed = 109, Score = 71037.0, RunTime = 9524 ms
+Seed = 110, Score = 99002.0, RunTime = 9524 ms
+Seed = 111, Score = 92020.0, RunTime = 9525 ms
+Seed = 112, Score = 55000.0, RunTime = 9529 ms
+Seed = 113, Score = 84000.0, RunTime = 9527 ms
+Seed = 114, Score = 64035.0, RunTime = 9525 ms
+Seed = 115, Score = 53019.0, RunTime = 9524 ms
+Seed = 116, Score = 54054.0, RunTime = 9524 ms
+Seed = 117, Score = 68044.0, RunTime = 9530 ms
+Seed = 118, Score = 73004.0, RunTime = 9527 ms
+Seed = 119, Score = 85009.0, RunTime = 9526 ms
+Seed = 120, Score = 43034.0, RunTime = 9522 ms
+Seed = 121, Score = 98000.0, RunTime = 9526 ms
+Seed = 122, Score = 68000.0, RunTime = 9522 ms
+Seed = 123, Score = 91000.0, RunTime = 9528 ms
+Seed = 123, Score = 91000.0, RunTime = 9528 ms
+Seed = 124, Score = 70000.0, RunTime = 9525 ms
+Seed = 125, Score = 88007.0, RunTime = 9525 ms
+Seed = 126, Score = 81006.0, RunTime = 9526 ms
+Seed = 127, Score = 33000.0, RunTime = 9531 ms
+Seed = 128, Score = 38026.0, RunTime = 9522 ms
+Seed = 129, Score = 96021.0, RunTime = 9525 ms
+Seed = 130, Score = 75159.0, RunTime = 9524 ms
+Seed = 131, Score = 48006.0, RunTime = 9531 ms
+Seed = 132, Score = 26004.0, RunTime = 9528 ms
+Seed = 133, Score = 32000.0, RunTime = 9526 ms
+Seed = 134, Score = 20008.0, RunTime = 9525 ms
+Seed = 135, Score = 40004.0, RunTime = 9526 ms
+Seed = 136, Score = 24000.0, RunTime = 9528 ms
+Seed = 137, Score = 98000.0, RunTime = 9522 ms
+Seed = 138, Score = 65006.0, RunTime = 9524 ms
+Seed = 139, Score = 25010.0, RunTime = 9527 ms
+Seed = 140, Score = 96019.0, RunTime = 9524 ms
+Seed = 141, Score = 72038.0, RunTime = 9525 ms
+Seed = 142, Score = 40000.0, RunTime = 9526 ms
+Seed = 143, Score = 58008.0, RunTime = 9526 ms
+Seed = 144, Score = 47008.0, RunTime = 9528 ms
+Seed = 145, Score = 91007.0, RunTime = 9526 ms
+Seed = 146, Score = 30004.0, RunTime = 9526 ms
+Seed = 147, Score = 31004.0, RunTime = 9527 ms
+Seed = 148, Score = 42000.0, RunTime = 9523 ms
+Seed = 149, Score = 45000.0, RunTime = 9526 ms
+Seed = 150, Score = 60008.0, RunTime = 9528 ms
+
+            Seeds: 101 to 150
+   Executed Cases: 50
+     Failed Cases: 0
+    Avg. Run Time: 9531 ms
+    Max. Run Time: 9831 ms
