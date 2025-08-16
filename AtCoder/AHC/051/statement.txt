@@ -1,0 +1,224 @@
+A - Probabilistic Waste Sorting / 
+Time Limit: 2 sec / Memory Limit: 1024 MiB
+
+Story
+The city of Takahashi is currently constructing a new waste processing facility.
+Various types of waste will be brought into this facility, so it must be sorted before processing.
+Sorting can be performed using several types of equipment, such as using magnets to separate items containing iron from others.
+However, the sorters probabilistically distribute waste into two paths and cannot accurately identify the type of waste.
+Therefore, it is necessary to appropriately combine multiple sorters, such as first separating cans from other items by shape, and then separating aluminum cans from steel cans using magnets.
+By effectively combining multiple sorters, please perform waste sorting as accurately as possible.
+
+Problem Statement
+A waste processing facility is under construction to process and sort N types of waste.
+The facility is represented as a square region on a 2D plane with 0 ≤ x ≤ 10^4 and 0 ≤ y ≤ 10^4.
+Various types of waste will be brought into the facility through the waste inlet, and by installing processors and sorters connected by conveyor belts, the aim is to sort the waste as accurately as possible before processing.
+
+Waste Inlet
+There is exactly one waste inlet in the facility, located at coordinates (0,5000).
+A single conveyor belt extends from the inlet to transport waste to a processor or a sorter.
+
+Processors
+Exactly one processor is installed for each type of waste. The goal is to deliver each type of waste to its correct processor.
+
+There are exactly N locations within the facility where processors can be installed, and the coordinates of the i-th location are (x_i^d, y_i^d). You are free to assign which type of waste processor to install at each location.
+
+Sorters
+There are K types of automatic waste sorters.
+The same sorter may be installed in multiple locations.
+
+Each sorter probabilistically routes incoming waste into one of two paths, discharging it through either Exit 1 or Exit 2.
+The probability that the i-th sorter routes waste of type j to Exit 1 is p_{i,j}, and the probability it goes to Exit 2 is 1−p_{i,j}.
+
+There are M available locations within the facility for installing sorters, and the coordinates of the i-th location are (x_i^s, y_i^s). At most one sorter can be installed at each location.
+
+Conveyor Belts
+From the waste inlet and from each of the two exits of a sorter, conveyor belts must extend to deliver waste to either a processor or another sorter.
+Each conveyor belt is laid as a line segment connecting a start and end point, and two belts that do not share any endpoints must not intersect.
+Under this condition, it is allowed for the two exits of a sorter to be directed to the same destination.
+
+Considering a directed graph where the waste inlet, processors, and sorters are vertices, and conveyor belts are edges, the graph must not contain any cycles (including self-loops).
+
+Hint: Segment Intersection Detection
+To determine whether two line segments (p1,p2) and (q1,q2) share any point, use the following pseudocode. Since all computed values are integers, no rounding errors will occur.
+
+Copy
+def sign(x):
+    return 1 if x > 0 else -1 if x < 0 else 0
+ 
+def orientation(a, b, c):
+    cross = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)
+    return sign(cross)
+ 
+def segments_intersect(p1, p2, q1, q2):
+    if (max(p1.x, p2.x) < min(q1.x, q2.x) or
+        max(q1.x, q2.x) < min(p1.x, p2.x) or
+        max(p1.y, p2.y) < min(q1.y, q2.y) or
+        max(q1.y, q2.y) < min(p1.y, p2.y)):
+        return False
+    o1 = orientation(p1, p2, q1)
+    o2 = orientation(p1, p2, q2)
+    o3 = orientation(q1, q2, p1)
+    o4 = orientation(q1, q2, p2)
+    return (o1 * o2 <= 0) and (o3 * o4 <= 0)
+Score
+Let q_i be the probability that waste of type i is ultimately delivered to its corresponding processor. Then, the following absolute score is awarded:
+
+round(1e9 * sum_{i=0}^{N-1} (1 - q_i))
+
+The lower the absolute score, the better.
+
+For each test case, we compute the relative score round(1e9 * YOUR / MIN), where YOUR is your absolute score and MIN is the lowest absolute score among all competitors obtained on that test case. The score of the submission is the sum of the relative scores.
+
+The final ranking will be determined by the system test with more inputs which will be run after the contest is over.
+In both the provisional/system test, if your submission produces illegal output or exceeds the time limit for some test cases, only the score for those test cases will be zero, and your submission will be excluded from the MIN calculation for those test cases.
+
+The system test will be performed only for the last submission which received a result other than .
+Be careful not to make a mistake in the final submission.
+
+Number of test cases
+Provisional test: 50
+System test: 2000. We will publish seeds.txt (sha256=b61fb5678d480a79e25a50141403e14e8e245d5699e90aa53d4fad893e10dee8) after the contest is over.
+About relative evaluation system
+In both the provisional/system test, the standings will be calculated using only the last submission which received a result other than .
+Only the last submissions are used to calculate the MIN for each test case when calculating the relative scores.
+
+The scores shown in the standings are relative, and whenever a new submission arrives, all relative scores are recalculated.
+On the other hand, the score for each submission shown on the submissions page is the sum of the absolute score for each test case, and the relative scores are not shown.
+In order to know the relative score of submission other than the latest one in the current standings, you need to resubmit it.
+If your submission produces illegal output or exceeds the time limit for some test cases, the score shown on the submissions page will be 0, but the standings show the sum of the relative scores for the test cases that were answered correctly.
+
+About execution time
+Execution time may vary slightly from run to run.
+In addition, since system tests simultaneously perform a large number of executions, it has been observed that execution time increases by several percent compared to provisional tests.
+For these reasons, submissions that are very close to the time limit may result in TLE in the system test.
+Please measure the execution time in your program to terminate the process, or have enough margin in the execution time.
+
+Input
+Input is given from Standard Input in the following format.
+
+N M K
+x_0^d y_0^d
+⋮
+x_{N-1}^d y_{N-1}^d
+x_0^s y_0^s
+⋮
+x_{M-1}^s y_{M-1}^s
+p_{0,0} ⋯ p_{0,N-1}
+⋮
+p_{K-1,0} ⋯ p_{K-1,N-1}
+Constraints have been revised (August 1, 19:30, JST)
+
+The number of waste types 
+N satisfies 
+5≤N≤20.
+The number of sorter installation locations 
+M satisfies 
+10N≤M≤50N.
+The number of sorter types 
+K satisfies 
+N≤K≤4N.
+The coordinates (x_i^d, y_i^d) of the i-th processor installation location are integers satisfying 0≤x_i^d, y_i^d≤10^4.
+The coordinates (x_i^s, y_i^s) of the i-th sorter installation location are integers satisfying 0≤x_i^s, y_i^s≤10^4.
+The coordinates of the inlet and all installation locations are mutually distinct.
+The probability p_{i,j} that sorter i routes waste of type j to Exit 1 is a real number satisfying 0≤p_{i,j}≤1.
+Output
+The destinations of conveyor belts are represented by the following numbers:
+
+If the destination is the 
+i-th processor installation location: 
+i
+If the destination is the 
+i-th sorter installation location: 
+N+i
+Let d_i (0≤d_i≤N−1) be the waste type of the processor installed at the i-th processor installation location.
+Let s (0≤s≤N+M−1) be the number representing the destination of the conveyor belt from the waste inlet.
+Output the following to Standard Output in the specified format:
+
+d_0 ⋯ d_{N−1}
+s
+Then output 
+M additional lines.
+The 
+i-th line should be output according to the state of the 
+i-th sorter installation location:
+
+If no sorter is installed:
+-1
+If the k-th (0≤k≤K−1) sorter is installed, and the destination of the conveyor belt from Exit 1 is v1, and from Exit 2 is v2 (0≤v1, v2≤N+M−1):
+k v1 v2
+If the destination of a conveyor belt is a sorter installation location, a sorter must be installed there.
+
+Show example
+
+Sample Solution (Python)
+Details
+An example solution written in Python is shown below.
+This program performs the following steps:
+1. Installs processor of type 
+i at the 
+i-th processor installation location
+2. Connects the waste inlet to the nearest sorter installation location
+3. Installs sorter type 0 at that location, connecting Exit 1 to the processor of the waste type with the highest probability, and Exit 2 to the processor of the type with the lowest probability
+Copy
+import sys
+import math
+ 
+input = sys.stdin.readline
+ 
+# Read input
+N, M, K = map(int, input().split())
+processor_positions = []
+for _ in range(N):
+    x, y = map(int, input().split())
+    processor_positions.append((x, y))
+sorter_positions = []
+for _ in range(M):
+    x, y = map(int, input().split())
+    sorter_positions.append((x, y))
+prob = []
+for _ in range(K):
+    row = list(map(float, input().split()))
+    prob.append(row)
+ 
+# Install processor of type i at position i
+proc_assign = ' '.join(str(i) for i in range(N))
+# Connect inlet (0,5000) to the nearest sorter installation location
+inlet = (0, 5000)
+dist_sq = [((x - inlet[0])**2 + (y - inlet[1])**2, i) for i, (x, y) in enumerate(sorter_positions)]
+_, nearest_i = min(dist_sq)
+inlet_conn = N + nearest_i
+ 
+# Install sorter type 0, connect Exit 1 to processor with highest prob, Exit 2 to lowest
+first_row = prob[0]
+imax = first_row.index(max(first_row))
+imin = first_row.index(min(first_row))
+sorter_assigns = []
+for i in range(M):
+    if i == nearest_i:
+        sorter_assigns.append(f"0 {imax} {imin}")
+    else:
+        sorter_assigns.append("-1")
+ 
+print(proc_assign)
+print(inlet_conn)
+print("\n".join(sorter_assigns))
+Input Generation
+rand(L,U): Uniformly generates an integer between L and U, inclusive.
+N, M, and K are each generated uniformly at random within their respective ranges.
+
+The coordinates for the N processor installation locations and M sorter installation locations are generated using the following procedure to create a total of N+M coordinates, where the first N are used for processor locations and the remaining M for sorter locations.
+
+Initialize the set of used coordinates as S={(0,5000)}.
+Generate a coordinate (x,y) with x=rand(0,10^4), y=rand(0,10^4).
+If no point within a Euclidean distance of 100 from the generated point is in S, accept the point and add it to S.
+Repeat this until 
+N+M points have been generated.
+
+Each classification probability p_{i,j} is generated independently as rand(1000,9000)×10^{-4}.
+
+Tools (Input generator and visualizer)
+Web version: This is more powerful than the local version providing animations.
+Local version: You need a compilation environment of Rust language.
+Pre-compiled binary for Windows: If you are not familiar with the Rust language environment, please use this instead.
+Please be aware that sharing visualization results or discussing solutions/ideas during the contest is prohibited.
