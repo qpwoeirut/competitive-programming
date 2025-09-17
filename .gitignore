@@ -18,24 +18,9 @@ build
 
 .DS_Store
 
-Testing
-
-# This stuff is stored on YT
-/Recordings
+/HSCSA/Testing
 
 /testing
-
-*.zip
-
-/CSES/contests/BOI/2019/Day2/primes.out
-/GunnCompetitiveProgrammingClub/attendanceImages
-/GunnCompetitiveProgrammingClub/BAPC
-/USACO/resources
-# AI Cup Code
-/AI_Cup
-
-# BattleCode is stored in its own private repos
-/BattleCode
 
 # code.golf solutions shouldn't be shared
 /CodeGolf
