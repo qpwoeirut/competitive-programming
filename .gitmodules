@@ -13,3 +13,6 @@
 [submodule "CMIMC/PRIZE-CUTOFF-CMIMC-2025"]
 	path = CMIMC/PRIZE-CUTOFF-CMIMC-2025
 	url = git@github.com:EnchLolz/PRIZE-CUTOFF-CMIMC-2025.git
+[submodule "ICFPC/ICFPC2025"]
+	path = ICFPC/ICFPC2025
+	url = git@github.com:qpwoeirut/ICFPC2025.git
