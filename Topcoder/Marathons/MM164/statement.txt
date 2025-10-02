@@ -1,0 +1,59 @@
+You are given a map describing an archipelago consisting of N islands, with no bridges connecting them. There are B bridgemen, each of whom can carry a special folded bridge up to a length of 60 (initially, they are partially loaded, with bridge parts of length 50). Multiple bridgemen can stay on the same island. A bridgeman can construct a bridge of length e between his location and any other island if the folded bridge he carries is long enough. After unpacking a bridge, the bridgeman's carried bridge length is reduced by e. A bridgeman can also pack an existing bridge he is adjacent to, assuming the combined bridge length will not exceed his capacity. Packing and unpacking take a single turn.
+
+When a bridge exists, everyone can traverse it to move between connecting islands. Moving through a bridge takes a single turn, and multiple bridgemen can cross the same bridge in the same turn. Two bridgemen staying on two separate islands can combine their efforts to construct a single long bridge that connects their islands. The first of the bridgemen is the primary contributor, and he will provide a defined bridge length. His partner will provide the remaining required length. It is also possible for two bridgemen to collaboratively pack a bridge. The primary contributor will pack a defined length, while his partner will take care of the rest.
+
+The islands' occupants are issuing orders to deliver messages to one another. Each order contains an origin and a destination island. At all times, O such orders are publicly listed. The first bridgeman who visits the issuing island will pick the message, and a new order will become publicly listed. If a bridgeman carrying a message visits the destination island, the message is instantly delivered. A bridgeman can carry only one message at a time.
+
+Your task is to deliver as many messages as possible in 1000 turns.
+
+Input and Output
+This is an interactive problem, so your code must interact with the tester for each turn. Initially, your code will receive the following input values, each on a separate line:
+
+N, the number of islands.
+B, the number of bridgemen.
+O, the number of orders visible at the same time.
+Next, the distances between every island are provided.
+
+N lines will contain the information for islands in ascending order of IDs, starting with island 0. The i-th line consists of N space-separated integers, providing the distance between island i and islands 0, 1, ... N-1 in order.
+The following loop repeats for 1000 turns:
+
+The tester provides the following output:
+Elapsed time (in milliseconds).
+B lines containing information about each bridgeman, in order of ascending IDs. Each line is formatted as "islandID carry target", indicating that the bridgeman is located on island "islandID", carries "carry" length of the bridge, and their target for message delivery is "target" (if the bridgeman does not have a message, it is -1).
+O lines containing available orders. Each order is represented as "orig dest", where "orig" is the ID of the island that needs to be visited to receive a message and "dest" is the destination of this message.
+You give commands to your bridgemen by outputting a single line with actions separated by "|". Actions will be applied in the given order. Each bridgeman can be a part of at most one action per turn. Possible actions are formatted as follows:
+"MOVE bridgemanID islandID" - the indicated bridgeman moves via the existing bridge between his location and the given island.
+"UNPACK bridgemanID islandID" - the indicated bridgeman constructs a new bridge between his location and the given island.
+"PACK bridgemanID islandID" - the indicated bridgeman deconstructs the existing bridge between his location and the given island.
+"TEAMUNPACK bridgemanID1 bridgemanID2 length1" - both indicated bridgemen construct a new bridge between their locations. The first bridgeman's contribution is "length1", the second covers the remaining required length.
+"TEAMPACK bridgemanID1 bridgemanID2 length1" - both indicated bridgemen deconstruct the existing bridge between their locations. The first bridgeman takes "length1", the second takes the remaining required length.
+"MSG any" - an optional debug message to be displayed on the visualizer. Cannot contain "|". You can create multiline messages by printing "\n". Only the content of the last "MSG" command will be displayed.
+Scoring
+Your raw score is the number of successfully delivered messages during 1000 turns of the game.
+If your return is invalid, your raw score for that test case is -1. Possible reasons include:
+
+Using an invalid move format.
+Making an illegal move.
+Exceeding the time limit.
+If your raw score for a test case is negative, then your normalized score for that test case is 0. Otherwise, your normalized score for each test case is YOUR/MAX, where YOUR is your raw score and MAX is the largest positive raw score currently obtained on this test case (considering only the last submission from each competitor). Finally, the sum of all your test scores is normalized to 100.
+
+Test Case Generation
+Please look at the generate() method in the visualizer's source code for the exact details about test case generation. Each test case is generated as follows:
+
+N (number of islands) is between 25 and 80, inclusive.
+B (number of bridgemen) is between 4 and 20, inclusive.
+O (number of orders) is between 4 and 10, inclusive.
+Islands are placed randomly on a square of length 10000, with the first island always at the middle of the screen. There is a guaranteed minimal distance between each pair, as well as a guaranteed distance from the edge of the screen (mostly for aesthetic reasons).
+In-game distances between islands are proportional to on-screen distances (on-screen distance divided by 40)
+It is guaranteed that there is a bridgeman on every connected component of the graph of islands that can be connected by a single bridgeman. Thus, it is always possible to travel (with collaboration) between any pair of islands.
+Each order is a random pair of islands, excluding the origin and destination being the same island.
+All possible orders are generated before the game, forming a queue. Only the top O are visible to the player each time.
+All values are chosen uniformly at random.
+Notes
+The distance between the island and itself is always 0.
+If there are multiple orders originating from the same island, the first given will be the one first on the list.
+When a bridgeman receives a message, the next order becomes available, and it can be immediately picked up by a free bridgeman staying on its origin island without being seen in the input order list. If there are multiple candidates on the same island to pick up such an order, the one with the lowest ID will take the message.
+The time limit is 10 seconds per test case (this includes only the time spent in your code). The memory limit is 1024 megabytes.
+The compilation time limit is 30 seconds.
+There are 10 example test cases and 100 full submission (provisional) test cases. There will be 2000 test cases in the final testing.
+The match is rated.
