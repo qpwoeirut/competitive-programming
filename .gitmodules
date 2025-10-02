@@ -16,3 +16,15 @@
 [submodule "ICFPC/ICFPC2025"]
 	path = ICFPC/ICFPC2025
 	url = git@github.com:qpwoeirut/ICFPC2025.git
+[submodule "Battlecode/Battlecode2021"]
+	path = Battlecode/Battlecode2021
+	url = git@github.com:ryanbai1412/Battlecode2021.git
+[submodule "Battlecode/Battlecode2023"]
+	path = Battlecode/Battlecode2023
+	url = git@github.com:TheK098/Battlecode2023.git
+[submodule "Battlecode/Battlecode2024"]
+	path = Battlecode/Battlecode2024
+	url = git@github.com:qpwoeirut/Battlecode2024.git
+[submodule "Battlecode/Battlecode2025"]
+	path = Battlecode/Battlecode2025
+	url = git@github.com:qpwoeirut/Battlecode2025.git
