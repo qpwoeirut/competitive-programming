@@ -6,7 +6,7 @@ export PERSONAL="ubuntu@54.145.69.255"
 
 cmpl() {
     fname="${1%.*}"
-    g++-14 -std=c++17 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -O2 -lm -Wall -DLOCAL $fname.cpp -o $fname.out
+    g++-15 -std=c++17 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -O2 -lm -Wall -DLOCAL $fname.cpp -o $fname.out
 }
 
 dcmpl() {
@@ -17,7 +17,7 @@ dcmpl() {
 
 run() {
     fname="${1%.*}"
-    g++-14 -std=c++17 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -O2 -lm -Wall -DLOCAL $fname.cpp -o temp_$fname.out
+    g++-15 -std=c++17 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -O2 -lm -Wall -DLOCAL $fname.cpp -o temp_$fname.out
     >&2 echo "Compiled!"
     $2 ./temp_$fname.out
     rm temp_$fname.out
@@ -25,7 +25,7 @@ run() {
 
 run20() {
     fname="${1%.*}"
-    g++-14 -std=c++20 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -O2 -lm -Wall -DLOCAL $fname.cpp -o temp_$fname.out
+    g++-15 -std=c++20 -I ~/CompetitiveProgramming/setupFiles -Wl,-stack_size -Wl,0x10000000 -O2 -lm -Wall -DLOCAL $fname.cpp -o temp_$fname.out
     >&2 echo "Compiled!"
     $2 ./temp_$fname.out
     rm temp_$fname.out
@@ -51,7 +51,7 @@ drun20() {
 
 optrun() {
     fname="${1%.*}"
-    g++-14 -std=c++20 -I ~/CompetitiveProgramming/setupFiles -O3 -funroll-loops -mtune=native -march=native -lm -Wall -DLOCAL $fname.cpp -o temp_$fname.out
+    g++-15 -std=c++20 -I ~/CompetitiveProgramming/setupFiles -O3 -funroll-loops -mtune=native -march=native -lm -Wall -DLOCAL $fname.cpp -o temp_$fname.out
     >&2 echo "Compiled!"
     $2 ./temp_$fname.out
     rm temp_$fname.out
