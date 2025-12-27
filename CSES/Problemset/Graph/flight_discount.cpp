@@ -56,6 +56,10 @@ int main() {
     while (pq.size() > 0) {
         Item cur = pq.top(); pq.pop();
 
+        if (dist[cur.node][cur.discount] < cur.cost) {
+            continue;
+        }
+
         if (cur.node == N-1 && cur.discount) {
             cout << cur.cost << '\n';
             return 0;
