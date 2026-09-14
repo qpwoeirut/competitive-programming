@@ -1,0 +1,18 @@
+a       b       c       d
+a       2a-b    2a-c    2a-d
+3a-2d   2a-2d+b 2a-2d+c 2a-d
+3a-2d   4a-2d-b 4a-2d-c 4a-3d
+5a-4d   4a-4d+b 4a-4d+c 4a-3d
+
+a       b       c       d
+a       b       c       2c-d
+a       b       2b-c    2b-2c+d
+4b-2c-a 3b-2c   2b-c    2b-2c+d
+2b-2c+a 3b-2c   2b-c    2b-2c+d
+
+
+6 9 11 11 14
+6 9 11 11 8
+6 9 7 7 10
+8 5 7 7 10
+2 5 7 7 10
