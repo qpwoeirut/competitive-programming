@@ -28,3 +28,9 @@
 [submodule "Battlecode/Battlecode2025"]
 	path = Battlecode/Battlecode2025
 	url = git@github.com:qpwoeirut/Battlecode2025.git
+[submodule "CMIMC/cmimc-programming-2026"]
+	path = CMIMC/cmimc-programming-2026
+	url = git@github.com:qpwoeirut/cmimc-programming-2026.git
+[submodule "GameAiCup/2026"]
+	path = GameAiCup/2026
+	url = git@github.com:qpwoeirut/GameAiCup2026.git
